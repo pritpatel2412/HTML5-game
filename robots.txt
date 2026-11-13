@@ -28,3 +28,4 @@ Allow: /
 
 # XML Sitemap declaration
 Sitemap: https://pritpatel2412.github.io/HTML5-game/sitemap.xml
+

@@ -303,3 +303,4 @@ We have implemented a privacy-conscious, non-blocking telemetry hook in `index.h
 - [ ] Review Google AdSense performance metrics (viewability, CTR, and eCPM across responsive slots).
 - [ ] Implement A/B testing on homepage callout copy to optimize game-start conversion rate.
 - [ ] Expand localization into Spanish (`/es/`) and Japanese (`/ja/`) to capture massive international casual puzzle query volumes.
+

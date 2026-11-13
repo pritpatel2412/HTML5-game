@@ -54,3 +54,4 @@
 - [Privacy Policy](https://pritpatel2412.github.io/HTML5-game/privacy-policy/)
 - [Terms of Service](https://pritpatel2412.github.io/HTML5-game/terms/)
 - [Contact Support](https://pritpatel2412.github.io/HTML5-game/contact/)
+
