@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Endless vs Zen vs Daily Challenge: Stardust Merge Game Modes</title>
+  <meta name="description" content="Compare the 3 game modes in Stardust Merge: Endless Odyssey, Daily Challenge, and Zen Nebula. Find out which mode matches your mood and playstyle." />
+  <link rel="canonical" href="https://pritpatel2412.github.io/HTML5-game/game-modes/" />
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Endless vs Zen vs Daily Challenge: Stardust Merge Game Modes" />
+  <meta property="og:description" content="In-depth comparison of Stardust Merge's 3 modes: competitive Daily Challenge with seeded PRNG, roguelite Endless Odyssey, and zero-pressure Zen Nebula." />
+  <meta property="og:url" content="https://pritpatel2412.github.io/HTML5-game/game-modes/" />
+  <meta property="og:image" content="https://pritpatel2412.github.io/HTML5-game/og-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Endless vs Zen vs Daily Challenge: Stardust Merge Game Modes" />
+  <meta name="twitter:description" content="In-depth comparison of Stardust Merge's 3 modes." />
+  <meta name="twitter:image" content="https://pritpatel2412.github.io/HTML5-game/og-preview.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/HTML5-game/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/HTML5-game/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/HTML5-game/apple-touch-icon.png" />
+  <link rel="manifest" href="/HTML5-game/site.webmanifest" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/HTML5-game/assets/content.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pritpatel2412.github.io/HTML5-game/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Game Modes",
+            "item": "https://pritpatel2412.github.io/HTML5-game/game-modes/"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Endless vs Zen vs Daily Challenge: Which Stardust Merge Mode Should You Play?",
+        "description": "Compare the 3 game modes in Stardust Merge: Endless Odyssey, Daily Challenge, and Zen Nebula. Find out which mode matches your mood and playstyle.",
+        "image": "https://pritpatel2412.github.io/HTML5-game/og-preview.png",
+        "datePublished": "2026-11-13T12:00:00+00:00",
+        "dateModified": "2026-11-13T12:00:00+00:00",
+        "mainEntityOfPage": "https://pritpatel2412.github.io/HTML5-game/game-modes/",
+        "author": {
+          "@type": "Organization",
+          "name": "Stardust Merge Arcade Studio"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Stardust Merge",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pritpatel2412.github.io/HTML5-game/android-chrome-512x512.png"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/HTML5-game/" class="brand-link">
+        <div class="brand-orb"></div>
+        <span>Stardust Merge</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="/HTML5-game/how-to-play/" class="nav-link">How to Play</a>
+        <a href="/HTML5-game/tips-and-strategy/" class="nav-link">Strategy</a>
+        <a href="/HTML5-game/tiers/" class="nav-link">Orb Tiers</a>
+        <a href="/HTML5-game/game-modes/" class="nav-link active">Modes</a>
+        <a href="/HTML5-game/" class="btn-header-play">🎮 Play Game</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/HTML5-game/">Home</a></li>
+      <li aria-current="page">Game Modes</li>
+    </ol>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    <article>
+      <header class="article-header">
+        <span class="badge-category">Game Modes Guide</span>
+        <h1>Endless vs Zen vs Daily Challenge: Which Mode Should You Play?</h1>
+        <p class="article-subtitle">
+          Whether you want high-stakes roguelite progression, fair competitive seeded runs, or pure stress-free mindfulness.
+        </p>
+        <div class="article-meta">Published by Stardust Merge Arcade Studio • Updated November 2026 • 5 min read</div>
+      </header>
+
+      <!-- AEO Direct Answer Box -->
+      <section class="answer-box">
+        <div class="answer-box-title">
+          <span>✨</span>
+          <span>Quick Summary: The 3 Stardust Merge Modes</span>
+        </div>
+        <p>
+          Stardust Merge features three modes catering to different moods:
+          <strong>1. Endless Odyssey</strong> provides the core roguelite arcade experience with unlocked Cosmic Perks and high scores.
+          <strong>2. Daily Challenge</strong> uses a globally synchronized date seed (<code>mulberry32</code>) giving all players worldwide the identical sequence of orbs for competitive parity.
+          <strong>3. Zen Nebula</strong> removes the Event Horizon game-over barrier completely, allowing unlimited pressure-free cosmic stacking.
+        </p>
+      </section>
+
+      <!-- Article Body -->
+      <div class="article-body">
+        <h2>1. Mode Comparison Master Matrix</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Endless Odyssey</th>
+                <th>Daily Challenge</th>
+                <th>Zen Nebula</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Focus</strong></td>
+                <td>High-score arcade survival</td>
+                <td>Competitive global parity</td>
+                <td>Relaxation &amp; mindfulness</td>
+              </tr>
+              <tr>
+                <td><strong>Game Over Barrier</strong></td>
+                <td>2.5s Event Horizon countdown</td>
+                <td>2.5s Event Horizon countdown</td>
+                <td><strong>None (Infinite play)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>RNG Generation</strong></td>
+                <td>Dynamic runtime PRNG</td>
+                <td><strong>Deterministic Date-Seeded</strong></td>
+                <td>Dynamic runtime PRNG</td>
+              </tr>
+              <tr>
+                <td><strong>Cosmic Perks</strong></td>
+                <td>Yes (milestone unlocks)</td>
+                <td>Yes (identical choices)</td>
+                <td>No (pure physics sandbox)</td>
+              </tr>
+              <tr>
+                <td><strong>Visual Theme</strong></td>
+                <td>Player-selected space theme</td>
+                <td>Cosmic Gold daily theme</td>
+                <td>Deep calm blue-purple glow</td>
+              </tr>
+              <tr>
+                <td><strong>Soundtrack Mood</strong></td>
+                <td>Adaptive dynamic chimes</td>
+                <td>Focused rhythmic chimes</td>
+                <td>Gentle ambient frequencies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>2. Endless Odyssey: The Definitive Experience</h2>
+        <p>
+          If you want the complete Stardust Merge journey, <strong>Endless Odyssey</strong> is your go-to mode.
+        </p>
+        <p>
+          Here, you drop orbs with standard arcade physics, chase personal high scores, trigger multi-tier chain combos, and draft stackable <em>Cosmic Perks</em> as you cross 1,000, 3,000, and 7,500 points. If you manage to fuse two Black Holes into a Supernova Ascension, your run continues endlessly with multiplied scoring!
+        </p>
+
+        <h2>3. Daily Challenge: 100% Fair Competition</h2>
+        <p>
+          In many puzzle games, high scores are heavily influenced by lucky random drops. Stardust Merge eliminates luck through the <strong>Daily Challenge</strong>:
+        </p>
+        <ul>
+          <li>Every midnight UTC, the game initializes a deterministic <code>mulberry32</code> pseudo-random number generator seeded with the current calendar date (<code>YYYYMMDD</code>).</li>
+          <li>Every player in the world receives the <strong>exact same sequence of upcoming orbs</strong>.</li>
+          <li>Your final score reflects pure skill, spatial foresight, and combo precision!</li>
+        </ul>
+
+        <h2>4. Zen Nebula: Mindful Cosmic Meditation</h2>
+        <p>
+          Sometimes you just want to unwind after a long day without the stress of alarms, flashing timers, or game-over screens.
+        </p>
+        <p>
+          <strong>Zen Nebula</strong> mode deactivates the Event Horizon entirely. Orbs can stack as high as you like. You can experiment with physics, listen to soothing procedural chimes, and admire the beautiful cosmic colors without fear of losing your run.
+        </p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 How to Switch Modes Instantly</div>
+          <p>
+            You can switch modes at any time directly inside the in-game header tabs or by launching the game with mode anchors (such as <code>/HTML5-game/#daily</code> or <code>/HTML5-game/#zen</code>). Your settings, high scores, and unlocked themes are preserved independently for each mode!
+          </p>
+        </div>
+
+        <!-- Play Game Call to Action -->
+        <div class="cta-banner">
+          <h3>Which Mode Will You Play First?</h3>
+          <p>Jump into Endless, compete in the Daily Challenge, or relax in Zen mode right now.</p>
+          <a href="/HTML5-game/" class="btn-large-play">🎮 Launch Stardust Merge</a>
+        </div>
+
+        <h2>Related Gameplay Guides</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <h4>10 Strategy Tips</h4>
+            <p>Master corner anchoring and combo chaining for high Endless &amp; Daily scores.</p>
+            <a href="/HTML5-game/tips-and-strategy/">Read Strategy Guide →</a>
+          </div>
+          <div class="related-card">
+            <h4>All 11 Orb Tiers</h4>
+            <p>Learn the size, colors, and accessibility cues of every celestial body.</p>
+            <a href="/HTML5-game/tiers/">Explore Orb Tiers →</a>
+          </div>
+          <div class="related-card">
+            <h4>Supernova Guide</h4>
+            <p>Learn how Supernova Ascensions unlock permanent score multipliers.</p>
+            <a href="/HTML5-game/supernova/">Supernova Guide →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Stardust Merge</h4>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            A cozy, original browser physics merge puzzle game. Drop glowing orbs, merge cosmic tiers, and trigger supernovas.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Game Guides</h4>
+          <ul>
+            <li><a href="/HTML5-game/how-to-play/">How to Play</a></li>
+            <li><a href="/HTML5-game/tips-and-strategy/">10 Strategy Tips</a></li>
+            <li><a href="/HTML5-game/tiers/">All 11 Orb Tiers</a></li>
+            <li><a href="/HTML5-game/supernova/">Supernova Guide</a></li>
+            <li><a href="/HTML5-game/game-modes/">Game Modes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Play &amp; Challenge</h4>
+          <ul>
+            <li><a href="/HTML5-game/">Play Stardust Merge</a></li>
+            <li><a href="/HTML5-game/#daily">Daily Challenge</a></li>
+            <li><a href="/HTML5-game/#zen">Zen Mode</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About &amp; Legal</h4>
+          <ul>
+            <li><a href="/HTML5-game/about/">About Stardust Merge</a></li>
+            <li><a href="/HTML5-game/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/HTML5-game/terms/">Terms of Service</a></li>
+            <li><a href="/HTML5-game/contact/">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Stardust Merge Arcade Studio. All rights reserved.</div>
+        <div>Free online browser game • No download required</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

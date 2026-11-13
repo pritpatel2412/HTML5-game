@@ -31,26 +31,44 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Stardust Merge — Cozy Cosmic Physics Puzzle Game</title>
-  <meta name="description" content="Play Stardust Merge free in your browser! Drop glowing cosmic orbs into a space jar, chain combos from Dust to Black Hole, trigger Supernovas, and unlock perks." />
+  <title>Stardust Merge – Play Free Cosmic Physics Merge Game Online</title>
+  <meta name="description" content="Play Stardust Merge free online in your browser! Drop and merge glowing cosmic orbs from Dust to Black Hole in a cozy physics puzzle. No downloads required." />
+  <meta name="keywords" content="play merge games online, free merge games, physics merge game, cosmic puzzle game, relaxing merge games, browser puzzle games, no download puzzle games, free online puzzle games" />
+  <meta name="author" content="Stardust Merge Arcade Studio" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B1020" />
   <link rel="canonical" href="https://pritpatel2412.github.io/HTML5-game/" />
 
-  <!-- Open Graph / Twitter Sharing -->
+  <!-- Search Engine Verification Placeholders -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_TOKEN" /> -->
+  <!-- <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_TOKEN" /> -->
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stardust Merge — Cozy Cosmic Physics Puzzle" />
-  <meta property="og:description" content="Drop cosmic orbs, merge from Dust to Black Hole, and trigger Supernovas in this cozy endless physics game." />
+  <meta property="og:site_name" content="Stardust Merge" />
+  <meta property="og:title" content="Stardust Merge – Play Free Cosmic Physics Merge Game Online" />
+  <meta property="og:description" content="Play Stardust Merge free online in your browser! Drop and merge glowing cosmic orbs from Dust to Black Hole in a cozy physics puzzle. No downloads required." />
   <meta property="og:url" content="https://pritpatel2412.github.io/HTML5-game/" />
-  <meta property="og:image" content="https://pritpatel2412.github.io/HTML5-game/" />
+  <meta property="og:image" content="https://pritpatel2412.github.io/HTML5-game/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Stardust Merge — Cosmic Physics Puzzle Game" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Sharing -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stardust Merge — Cozy Cosmic Physics Puzzle" />
-  <meta name="twitter:description" content="Drop cosmic orbs, merge from Dust to Black Hole, and trigger Supernovas!" />
-  <meta name="twitter:image" content="https://stardustmerge.example.com/og-preview.png" />
+  <meta name="twitter:title" content="Stardust Merge – Play Free Cosmic Physics Merge Game Online" />
+  <meta name="twitter:description" content="Play Stardust Merge free online in your browser! Drop and merge cosmic orbs in this cozy physics puzzle." />
+  <meta name="twitter:image" content="https://pritpatel2412.github.io/HTML5-game/og-preview.png" />
 
-  <!-- Inline SVG Data-URI Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='30%25' r='65%25'%3E%3Cstop offset='0%25' stop-color='%23FFE45E'/%3E%3Cstop offset='50%25' stop-color='%23FF5DA2'/%3E%3Cstop offset='100%25' stop-color='%232A1A5E'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)' stroke='%235EF2FF' stroke-width='2.5'/%3E%3Ccircle cx='22' cy='22' r='6' fill='%23ffffff' fill-opacity='0.65'/%3E%3Cpath d='M8 36 Q32 48 56 26' fill='none' stroke='%235EF2FF' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <!-- App Icons and Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="/HTML5-game/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/HTML5-game/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/HTML5-game/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/HTML5-game/apple-touch-icon.png" />
+  <link rel="manifest" href="/HTML5-game/site.webmanifest" />
 
-  <!-- Google Fonts: Fredoka (600) & Nunito (600/700) -->
+  <!-- Google Fonts: Fredoka (600/700) & Nunito (600/700/800) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -58,30 +76,178 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   <!-- Pinned Matter.js 0.20.0 from cdnjs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js" crossorigin="anonymous"></script>
 
-  <!-- Google AdSense / H5 Games Ads Placement API Script (Placeholder Publisher ID) -->
+  <!-- Google AdSense / H5 Games Ads Placement API Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8074288228358823" crossorigin="anonymous"></script>
   <script>
     window.adsbygoogle = window.adsbygoogle || [];
     window.adBreak = window.adConfig = function(o) { window.adsbygoogle.push(o); };
   </script>
 
-  <!-- JSON-LD VideoGame Structured Data -->
+  <!-- Google Analytics 4 (Privacy-Conscious Deferred Setup Placeholder) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // To activate live GA4 tracking, insert your measurement ID:
+    // gtag('js', new Date());
+    // gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    window.trackGameEvent = function(eventName, params) {
+      if (typeof gtag === 'function' && window.GA_MEASUREMENT_ID) {
+        gtag('event', eventName, params || {});
+      }
+    };
+  </script>
+
+  <!-- Comprehensive JSON-LD Structured Data: WebSite, VideoGame, FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Stardust Merge",
-    "description": "A cozy cosmic physics merge puzzle game in a floating glass jar. Drop glowing celestial orbs, merge 11 tiers from Dust to Black Hole, trigger Supernovas, and collect roguelite Cosmic Perks.",
-    "genre": ["Puzzle", "Physics", "Arcade", "Casual"],
-    "playMode": "SinglePlayer",
-    "applicationCategory": "Game",
-    "operatingSystem": "Any (Web Browser)",
-    "inLanguage": "en",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pritpatel2412.github.io/HTML5-game/#website",
+        "url": "https://pritpatel2412.github.io/HTML5-game/",
+        "name": "Stardust Merge",
+        "description": "Play Stardust Merge free online! Drop and merge glowing cosmic orbs from Dust to Black Hole in a cozy physics puzzle game.",
+        "inLanguage": "en-US",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Stardust Merge Arcade Studio",
+          "url": "https://pritpatel2412.github.io/HTML5-game/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pritpatel2412.github.io/HTML5-game/android-chrome-512x512.png"
+          }
+        }
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://pritpatel2412.github.io/HTML5-game/#game",
+        "name": "Stardust Merge",
+        "url": "https://pritpatel2412.github.io/HTML5-game/",
+        "description": "An original cosmic physics-based merge puzzle game in a floating glass jar. Drop glowing celestial bodies, chain fusions through 11 astronomical tiers from Dust to Black Hole, trigger Supernovas, and unlock roguelite Cosmic Perks.",
+        "genre": ["Puzzle", "Physics", "Arcade", "Casual", "Merge Game"],
+        "gamePlatform": ["Web Browser", "Desktop", "Mobile Browser", "Tablet"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Any modern web browser (Chrome, Safari, Firefox, Edge)",
+        "inLanguage": "en",
+        "image": "https://pritpatel2412.github.io/HTML5-game/og-preview.png",
+        "screenshot": "https://pritpatel2412.github.io/HTML5-game/og-preview.png",
+        "playMode": "SinglePlayer",
+        "isFamilyFriendly": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Stardust Merge Arcade Studio"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://pritpatel2412.github.io/HTML5-game/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Stardust Merge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Stardust Merge is a free browser-based physics merge puzzle game where players drop glowing cosmic orbs into a glass container, combine matching orbs to create higher tiers, and work toward the ultimate Black Hole and Supernova Ascension."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you play Stardust Merge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Drag horizontally with your mouse, touch screen, or arrow keys to aim the laser guidance line at the top of the jar. Release to drop an orb. When two identical celestial bodies collide, they smoothly fuse into the next higher tier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Stardust Merge free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Stardust Merge is 100% free to play in any modern web browser with no download, no installation, and no in-app purchases required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play Stardust Merge without downloading?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Stardust Merge runs entirely in your browser using HTML5 Canvas and vanilla JavaScript. It starts in under one second on desktop, mobile, and tablet browsers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Stardust Merge work on mobile phones?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Stardust Merge features responsive touch controls, dedicated bottom thumb drop/nudge capsules, haptic vibration support, and viewport scaling optimized for iOS and Android smartphones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the orb merging system work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When two orbs of the identical tier touch, realistic 2D rigid-body physics pull them together into a fusion point. The two parent orbs disappear and the next astronomical tier spawns instantly, releasing kinetic energy and score points."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when two Black Holes merge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Merging two Tier-11 Black Holes triggers a Supernova Ascension! The entire jar clears in a slow-motion shockwave, awarding +5,000 bonus points and increasing your permanent run score multiplier by x1.5 while your run continues endlessly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Daily Challenge mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Daily Challenge mode initializes a deterministic mulberry32 pseudo-random number generator seeded with the calendar date (YYYYMMDD). Every player worldwide receives the exact same sequence of upcoming orbs for 100% fair competitive comparison."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Zen Nebula mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zen Nebula mode removes the Event Horizon game-over barrier completely, allowing players to relax and stack cosmic orbs indefinitely with soothing procedural ambient chimes and no countdown pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Cosmic Perks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cosmic Perks are roguelite run modifiers unlocked at score milestones (such as 1,000, 3,000, and 7,500 points). They offer choices such as Attractor Pulse (magnetic pull between matching orbs), Shockwave, Slow Orbit (extended Event Horizon buffer), and Combo Keeper."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Stardust Merge require an account or registration?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Stardust Merge has a strict zero-account, privacy-first design. All high scores, unlocked cosmetic skins, and game settings are saved locally and securely inside your browser's localStorage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the combo scoring system work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Consecutive merges completed within a 1.2-second window (extendable to 2.2 seconds with the Combo Keeper perk) raise your combo multiplier from x1 up to x8, accompanied by an ascending musical chime scale."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -1212,6 +1378,105 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       margin-bottom: 14px;
     }
 
+    .editorial-answer-box {
+      background: linear-gradient(135deg, rgba(94, 242, 255, 0.12) 0%, rgba(199, 125, 255, 0.08) 100%);
+      border: 1.5px solid var(--accent-cyan);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin-bottom: 24px;
+    }
+
+    .editorial-answer-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .editorial-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+    }
+
+    .editorial-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .editorial-table th {
+      background: rgba(19, 24, 46, 0.9);
+      color: var(--accent-cyan);
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .editorial-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .editorial-guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .editorial-guide-card {
+      background: rgba(19, 24, 46, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .editorial-guide-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+
+    .editorial-guide-card p {
+      font-size: 13px !important;
+      color: var(--text-muted);
+      margin-bottom: 10px !important;
+      flex-grow: 1;
+    }
+
+    .editorial-guide-card a {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .footer-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-cyan);
+      text-decoration: underline;
+    }
+
     .site-footer {
       width: 100%;
       max-width: 880px;
@@ -1642,32 +1907,145 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   <!-- =========================================================================
        BELOW-THE-FOLD ORIGINAL EDITORIAL CONTENT (>=400 words for AdSense Review)
        ========================================================================= -->
-  <article class="editorial-section">
+  <article class="editorial-section" id="gameInfoSection">
+    <!-- Direct AEO Quick Answer Box -->
+    <div class="editorial-answer-box">
+      <div class="editorial-answer-title">
+        <span>⚡</span>
+        <span>Quick Summary: What Is Stardust Merge?</span>
+      </div>
+      <p>
+        <strong>Stardust Merge</strong> is a free, browser-based physics merge puzzle game where players drop glowing cosmic bodies into a floating glass jar. When matching celestial orbs collide, they fuse into larger astronomical tiers—progressing through 11 tiers from microscopic Dust to supermassive Black Holes. Merging two Black Holes triggers a screen-clearing Supernova Ascension with permanent score multipliers. The game runs directly in modern web browsers with zero downloads, zero account requirements, and instant restart times.
+      </p>
+    </div>
+
     <h2>What Is Stardust Merge?</h2>
     <p>
-      <strong>Stardust Merge</strong> is a cozy cosmic physics puzzle game built directly for modern mobile and desktop web browsers. Set inside a frosted glass containment jar drifting through deep space, your mission is to synthesize increasingly massive celestial bodies. Starting from tiny specs of stardust and glowing plasma sparks, every pair of identical orbs that collides fuses together into the next astronomical tier. With realistic 2D rigid-body physics, momentum, and orbital cushions, every drop shifts the balance of the entire jar.
+      Set inside a frosted glass containment jar drifting through deep space, <strong>Stardust Merge</strong> reinvents the tactile joy of arcade physics puzzles with a cozy, cosmic atmosphere and roguelite progression. Unlike static grid puzzles where tiles snap into rigid rows, Stardust Merge simulates real-time 2D rigid-body dynamics using Matter.js. Every dropped orb possesses mass, momentum, surface friction, and gravitational pull.
     </p>
     <p>
-      Unlike static grid puzzles, Stardust Merge blends tactile arcade physics with roguelite progression. Reaching score milestones unlocks stackable <em>Cosmic Perks</em>—from localized gravitational attraction to chain-reaction shockwaves—ensuring no two runs ever play out the same way. If you manage to unite two Tier-11 Black Holes at the pinnacle of the evolution ladder, you trigger a blinding <strong>Supernova Ascension</strong>, clearing the containment vessel, awarding a massive stardust bonus, and permanently multiplying all points earned for the remainder of your run.
+      Starting from tiny specs of stardust and plasma sparks, every pair of matching bodies that collides fuses into the next astronomical tier. As your jar fills with glowing orbs, spatial management becomes paramount. Reaching score milestones unlocks stackable <em>Cosmic Perks</em>—such as magnetic attraction pulses and kinetic shockwaves—ensuring no two cosmic runs play out the same way.
     </p>
 
     <h2>How to Play Stardust Merge</h2>
-    <ul>
-      <li><strong>Aim &amp; Drop:</strong> Drag your finger or mouse horizontally across the top of the glass jar to position the laser guide line and ghost preview orb. Release to drop the orb into the jar. Keyboard players can also use <code>Left</code> / <code>Right</code> arrow keys and <code>Space</code> or <code>Down</code> to drop.</li>
-      <li><strong>Merge Identical Tiers:</strong> Whenever two orbs of the exact same tier touch, they smoothly pull toward their midpoint and fuse into a single orb of the next higher tier, releasing a burst of kinetic energy.</li>
-      <li><strong>Use the Hold / Swap Slot:</strong> Tap the <strong>Hold</strong> capsule in the top-left HUD to store an inconvenient orb for later or swap it with your currently queued drop.</li>
-      <li><strong>Watch the Event Horizon:</strong> A dashed warning boundary spans the top of the jar. If stacked orbs rest above the Event Horizon continuously for 2.5 seconds (4.0 seconds with the Slow Orbit perk), the containment field destabilizes and the run ends.</li>
-    </ul>
-
-    <h2>Pro Tips &amp; Cosmic Strategy Guide</h2>
     <p>
-      Mastering high-score runs in Stardust Merge requires careful spatial ordering and combo timing:
+      Stardust Merge is intuitive for newcomers yet offers immense depth for high-score puzzle enthusiasts. Here is the core gameplay loop:
     </p>
     <ul>
-      <li><strong>Anchor Heavy Tiers on One Side:</strong> Keep your largest bodies (Ocean World, Ringed Giant, Sun, and Neutron Star) tucked against either the left or right wall, and arrange smaller tiers in descending order toward the opposite side so merges naturally cascade downhill.</li>
-      <li><strong>Chain Within the 1.2-Second Combo Window:</strong> Consecutive merges completed within 1.2 seconds (or 2.2 seconds with <em>Combo Keeper</em>) raise your active multiplier up to <strong>×8</strong>, accompanied by an ascending pentatonic musical scale.</li>
-      <li><strong>Save Star Bombs for Tight Jams:</strong> When tiny Tier-1 Dust or Tier-2 Spark orbs wedge between two high-tier planets and block a merge, trigger your <strong>Star Bomb</strong> to vaporize the five smallest orbs inside the jar instantly.</li>
+      <li><strong>Aim &amp; Drop:</strong> Drag your mouse, swipe your finger, or use the <code>Left</code> and <code>Right</code> arrow keys to position the laser guidance line and ghost preview orb along the top of the container. Release or press <code>Space</code> / <code>Enter</code> to drop the orb into the jar.</li>
+      <li><strong>Merge Matching Tiers:</strong> When two identical celestial bodies collide, localized gravity pulls them together and fuses them into the next higher tier, releasing score points and kinetic impulse.</li>
+      <li><strong>Use the Hold / Swap Slot:</strong> Inconvenient drop? Tap the <strong>Hold</strong> capsule in the top-left HUD (or press <code>H</code>) to store an orb in reserve or swap it with your active drop once per turn.</li>
+      <li><strong>Watch the Event Horizon:</strong> A dashed red danger line marks the upper boundary of the containment vessel. If stacked orbs rest above this line continuously for 2.5 seconds (4.0 seconds with the <em>Slow Orbit</em> perk), containment collapses and the run ends.</li>
     </ul>
+
+    <h2>The 11 Cosmic Orb Tiers</h2>
+    <p>
+      The complete cosmic evolution hierarchy scales exponentially in radius and physical mass:
+    </p>
+    <div class="editorial-table-wrap">
+      <table class="editorial-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Celestial Body</th>
+            <th>Radius</th>
+            <th>Base Color</th>
+            <th>Surface Pattern &amp; Accessibility Cue</th>
+            <th>Spawn Probability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td><strong>Dust</strong></td>
+            <td>13 px</td>
+            <td>Periwinkle (<code>#B8C4FF</code>)</td>
+            <td>Concentric Dots</td>
+            <td>42% (Launcher)</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td><strong>Spark</strong></td>
+            <td>19 px</td>
+            <td>Electric Cyan (<code>#5EF2FF</code>)</td>
+            <td>Diamond Sparkle</td>
+            <td>30% (Launcher)</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td><strong>Comet</strong></td>
+            <td>26 px</td>
+            <td>Aurora Mint (<code>#7CFFB2</code>)</td>
+            <td>Trailing Tail</td>
+            <td>19% (Launcher)</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td><strong>Asteroid</strong></td>
+            <td>33 px</td>
+            <td>Golden Ochre (<code>#FFD166</code>)</td>
+            <td>Crystalline Polygon</td>
+            <td>9% (Launcher)</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td><strong>Moon</strong></td>
+            <td>41 px</td>
+            <td>Lunar Pearl (<code>#E8E6FF</code>)</td>
+            <td>Impact Craters</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td><strong>Ember</strong></td>
+            <td>50 px</td>
+            <td>Solar Coral (<code>#FF8A5B</code>)</td>
+            <td>Thermal Swirl</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>7</strong></td>
+            <td><strong>Ocean World</strong></td>
+            <td>60 px</td>
+            <td>Deep Azure (<code>#3D9BFF</code>)</td>
+            <td>Tidal Waves</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>8</strong></td>
+            <td><strong>Ringed Giant</strong></td>
+            <td>71 px</td>
+            <td>Nebula Violet (<code>#C77DFF</code>)</td>
+            <td>Planetary Rings</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>9</strong></td>
+            <td><strong>Sun</strong></td>
+            <td>83 px</td>
+            <td>Corona Gold (<code>#FFE45E</code>)</td>
+            <td>Radiant Solar Rays</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td><strong>Neutron Star</strong></td>
+            <td>96 px</td>
+            <td>Pulsar Magenta (<code>#FF5DA2</code>)</td>
+            <td>High-Energy Pulsar</td>
+            <td>Fusion Only</td>
+          </tr>
+          <tr>
+            <td><strong>11</strong></td>
+            <td><strong>Black Hole</strong></td>
+            <td>110 px</td>
+            <td>Singularity Void (<code>#0B0B14</code>)</td>
+            <td>Blazing Accretion Disk</td>
+            <td>Fusion Only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Responsive Content Ad Unit inside Editorial Section -->
     <div style="margin: 22px 0; display:flex; flex-direction:column; align-items:center;">
@@ -1677,37 +2055,168 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       </div>
     </div>
 
-    <h2>Key Game Features</h2>
+    <h2>Three Distinct Game Modes</h2>
+    <p>
+      Stardust Merge accommodates competitive strategists and casual players alike with three dedicated game modes:
+    </p>
     <ul>
-      <li><strong>11 Distinct Celestial Tiers with Accessibility Cues:</strong> Progress from <em>Dust (1)</em>, <em>Spark (2)</em>, <em>Comet (3)</em>, <em>Asteroid (4)</em>, <em>Moon (5)</em>, <em>Ember (6)</em>, <em>Ocean World (7)</em>, <em>Ringed Giant (8)</em>, <em>Sun (9)</em>, and <em>Neutron Star (10)</em> all the way to the <em>Black Hole (11)</em>. Every orb features unique silhouette and geometric surface patterns plus an optional high-contrast numeral overlay.</li>
-      <li><strong>Three Playable Modes:</strong> Jump straight into <em>Endless Odyssey</em>, compete globally on the deterministic <em>Daily Challenge</em> (powered by a date-seeded PRNG), or unwind in pressure-free <em>Zen Nebula</em> mode.</li>
-      <li><strong>Procedural Cosmetics &amp; Zero-Account Retention:</strong> Earn Stardust Coins on every run to unlock Candy, Neon, Crystal, and Retro Pixel orb skins alongside Aurora, Deep Ocean, Sunset Nebula, and Void space themes—all stored privately on your device.</li>
+      <li><strong>Endless Odyssey:</strong> The classic endless arcade mode. Level up your score, draft stackable Cosmic Perks at milestones, and chase personal bests while surviving the Event Horizon.</li>
+      <li><strong>Daily Challenge:</strong> A globally synchronized competitive challenge powered by a date-seeded <code>mulberry32</code> pseudo-random number generator. Every player worldwide receives the exact same sequence of orbs, creating a level playing field for high-score prestige.</li>
+      <li><strong>Zen Nebula:</strong> A peaceful, mindful puzzle mode with no Event Horizon barrier and no game-over screen. Stack cosmic orbs as high as you like accompanied by gentle generative ambient soundscapes.</li>
+    </ul>
+
+    <h2>Supernova Ascension: The Endgame Mechanic</h2>
+    <p>
+      In traditional drop-and-merge games, creating the largest body often leaves you stuck with an immovable barrier that ends your run. Stardust Merge turns endgame mastery into an exhilarating reward:
+    </p>
+    <p>
+      Uniting two Tier-11 Black Holes triggers a <strong>Supernova Ascension</strong>! Time dilates into slow motion as a radiant shockwave clears the entire glass vessel, granting <strong>+5,000 bonus points</strong> and permanently increasing your score multiplier by <strong>×1.5</strong>. Your run continues seamlessly, allowing skilled players to stack multiple Supernovas on a single run.
+    </p>
+
+    <h2>Pro Strategy Tips for High Scores</h2>
+    <ul>
+      <li><strong>Anchor Heavy Tiers in One Corner:</strong> Keep your largest bodies (Ocean World, Sun, Neutron Star) resting against one side wall. Arrange smaller tiers in descending order toward the opposite wall so incoming drops naturally roll downhill into matching partners.</li>
+      <li><strong>Chain Within the 1.2s Combo Window:</strong> Consecutive merges completed within 1.2 seconds raise your multiplier up to <strong>×8</strong>. When a cascade starts, drop your next queued orb promptly to sustain the multiplier.</li>
+      <li><strong>Triage with Star Bombs:</strong> When tiny Dust or Spark orbs get trapped beneath giant planets and cannot merge, deploy your <strong>Star Bomb</strong> to instantly vaporize the five smallest orbs in the jar and lower your stack ceiling.</li>
     </ul>
 
     <h2>Frequently Asked Questions (FAQ)</h2>
-    <h3>Does Stardust Merge require an account or download?</h3>
+    <h3>What is Stardust Merge?</h3>
     <p>
-      No. Stardust Merge runs natively inside your web browser with zero downloads, zero sign-ups, and instant one-tap restarts. All progress, achievements, and cosmetic unlocks are saved automatically in your browser's local storage.
+      Stardust Merge is a free, web-based cosmic physics merge puzzle game where players drop glowing orbs into a space jar, combining matching tiers from Dust to Black Hole to trigger Supernovas and unlock roguelite perks.
     </p>
+
+    <h3>How do I play Stardust Merge?</h3>
+    <p>
+      Aim your drop by dragging with your mouse, swiping on touchscreens, or using the Left/Right arrow keys. Release to drop. When two orbs of the identical tier touch, they fuse into the next higher astronomical tier.
+    </p>
+
+    <h3>Is Stardust Merge free to play?</h3>
+    <p>
+      Yes, Stardust Merge is 100% free to play in any modern web browser with no download, no installation, and no paywalls.
+    </p>
+
+    <h3>Can I play Stardust Merge without downloading?</h3>
+    <p>
+      Yes. The game runs directly in your web browser (Chrome, Safari, Edge, Firefox) using vanilla HTML5 Canvas and Matter.js. It loads in under one second on desktop and mobile.
+    </p>
+
+    <h3>Does Stardust Merge work on mobile?</h3>
+    <p>
+      Yes. Stardust Merge is fully responsive for smartphones and tablets, featuring touch-optimized drag-to-aim controls, bottom thumb buttons for dropping and nudging, and haptic feedback.
+    </p>
+
+    <h3>How does the orb merging system work?</h3>
+    <p>
+      When two bodies of the same tier collide, a localized gravitational pull draws them together into a fusion point. The parent orbs vanish and a body of the next tier spawns with dynamic kinetic momentum.
+    </p>
+
     <h3>What happens when two Black Holes merge?</h3>
     <p>
-      Fusing two Tier-11 Black Holes triggers a <strong>Supernova Ascension</strong>! The entire jar clears in a slow-motion shockwave, awarding massive bonus points and increasing your permanent run score multiplier by ×1.5 while the cosmic ladder continues endlessly.
+      Merging two Tier-11 Black Holes triggers a Supernova Ascension! The container clears in a cinematic slow-motion shockwave, awarding +5,000 bonus points and permanently multiplying future score gains by ×1.5.
     </p>
-    <h3>How does the Daily Challenge stay fair for everyone?</h3>
+
+    <h3>What is the Daily Challenge mode?</h3>
     <p>
-      Daily Challenge mode initializes a deterministic <code>mulberry32</code> pseudo-random number generator seeded by the current calendar date (<code>YYYYMMDD</code>). Every player worldwide receives the exact same sequence of upcoming orbs for that day.
+      Daily Challenge mode uses a deterministic PRNG seeded with the calendar date (YYYYMMDD). Every player worldwide receives the identical sequence of incoming orbs for fair competitive comparison.
     </p>
+
+    <h3>What is Zen Nebula mode?</h3>
+    <p>
+      Zen Nebula mode removes the Event Horizon game-over barrier completely, allowing players to relax, experiment with physics, and enjoy soothing generative audio without timer pressure.
+    </p>
+
+    <h3>How does the combo scoring system work?</h3>
+    <p>
+      Merges completed within a 1.2-second window (extendable to 2.2 seconds with the Combo Keeper perk) raise your active combo multiplier from ×1 up to ×8, accompanied by ascending musical chimes.
+    </p>
+
+    <h3>What are Cosmic Perks?</h3>
+    <p>
+      Cosmic Perks are roguelite run modifiers unlocked at score milestones (1,000, 3,000, 7,500 points). Options include Attractor Pulse, Kinetic Shockwaves, Slow Orbit, and Combo Keeper.
+    </p>
+
+    <h3>What does the Hold / Swap slot do?</h3>
+    <p>
+      The Hold slot in the top-left HUD allows you to store an inconvenient orb or swap it with your queued drop once per turn, providing essential tactical flexibility during tight situations.
+    </p>
+
+    <h3>What is the Event Horizon danger line?</h3>
+    <p>
+      The Event Horizon is the dashed boundary near the top of the jar. If stacked orbs rest above this line continuously for 2.5 seconds (or 4.0s with Slow Orbit), containment collapses and the run ends.
+    </p>
+
+    <h3>Does Stardust Merge save my progress?</h3>
+    <p>
+      Yes. All high scores, unlocked cosmetic skins, and audio preferences are saved locally and securely inside your browser's <code>localStorage</code>.
+    </p>
+
+    <h3>Does the game require an account or registration?</h3>
+    <p>
+      No. Stardust Merge has a strict zero-account, privacy-first design. You can start playing immediately without entering an email, password, or username.
+    </p>
+
+    <h3>Is Stardust Merge accessible for colorblind players?</h3>
+    <p>
+      Yes. Every celestial orb features a unique geometric surface pattern (dots, diamonds, craters, pulsar rings) in addition to color, and players can toggle on high-contrast numeral overlays (1–11) in Settings.
+    </p>
+
+    <h2>Explore In-Depth Game Guides</h2>
+    <div class="editorial-guides-grid">
+      <div class="editorial-guide-card">
+        <h4>How to Play Guide</h4>
+        <p>Complete walkthrough of beginner mechanics, controls, hold slot, and container rules.</p>
+        <a href="/HTML5-game/how-to-play/">Read Beginner's Guide →</a>
+      </div>
+      <div class="editorial-guide-card">
+        <h4>10 Strategy Tips</h4>
+        <p>Master corner anchoring, decrescendo slopes, and combo chaining to maximize score.</p>
+        <a href="/HTML5-game/tips-and-strategy/">Read Strategy Guide →</a>
+      </div>
+      <div class="editorial-guide-card">
+        <h4>11 Cosmic Orb Tiers</h4>
+        <p>Detailed breakdown of physical radii, mass, colors, and accessibility cues for all tiers.</p>
+        <a href="/HTML5-game/tiers/">Explore Orb Tiers →</a>
+      </div>
+      <div class="editorial-guide-card">
+        <h4>Supernova Guide</h4>
+        <p>Everything you need to know about triggering Supernova Ascensions and score multipliers.</p>
+        <a href="/HTML5-game/supernova/">Supernova Breakdown →</a>
+      </div>
+      <div class="editorial-guide-card">
+        <h4>Game Modes Comparison</h4>
+        <p>Compare Endless Odyssey, Daily Challenge, and Zen Nebula to find your playstyle.</p>
+        <a href="/HTML5-game/game-modes/">Compare Game Modes →</a>
+      </div>
+      <div class="editorial-guide-card">
+        <h4>About the Studio</h4>
+        <p>Learn about Stardust Merge's design philosophy, tech stack, and independent developer.</p>
+        <a href="/HTML5-game/about/">About Stardust Merge →</a>
+      </div>
+    </div>
   </article>
 
-  <!-- Footer with In-Page Modal Links -->
+  <!-- Semantic Footer with Crawlable Links & In-Page Modals -->
   <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="/HTML5-game/">Play Game</a> •
+      <a href="/HTML5-game/how-to-play/">How to Play</a> •
+      <a href="/HTML5-game/tips-and-strategy/">Strategy Guide</a> •
+      <a href="/HTML5-game/tiers/">Orb Tiers</a> •
+      <a href="/HTML5-game/supernova/">Supernova</a> •
+      <a href="/HTML5-game/game-modes/">Modes</a> •
+      <a href="/HTML5-game/about/">About</a> •
+      <a href="/HTML5-game/privacy-policy/">Privacy</a> •
+      <a href="/HTML5-game/terms/">Terms</a> •
+      <a href="/HTML5-game/contact/">Contact</a>
+    </nav>
     <div class="footer-links">
-      <button type="button" class="footer-link-btn" data-legal="about">About the Game</button>
+      <button type="button" class="footer-link-btn" data-legal="about">About (In-Game Modal)</button>
       <button type="button" class="footer-link-btn" data-legal="privacy">Privacy Policy</button>
       <button type="button" class="footer-link-btn" data-legal="terms">Terms of Service</button>
       <button type="button" class="footer-link-btn" data-legal="contact">Contact Support</button>
     </div>
-    <div>© 2026 Stardust Merge Arcade Studio • Original HTML5 Cosmic Physics Game</div>
+    <div>© 2026 Stardust Merge Arcade Studio • Free HTML5 Cosmic Physics Game • No Download Required</div>
   </footer>
 
   <!-- =========================================================================

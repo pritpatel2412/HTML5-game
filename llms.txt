@@ -1,0 +1,56 @@
+# Stardust Merge — Cosmic Physics Merge Puzzle
+
+> Stardust Merge is a free, single-file browser-based cosmic physics puzzle game. Players drop glowing celestial orbs into a floating glass jar, fusing identical bodies through 11 astronomical tiers from microscopic Dust to supermassive Black Holes, triggering Supernovas, and collecting stackable roguelite Cosmic Perks.
+
+- **Official Website & Play Live**: https://pritpatel2412.github.io/HTML5-game/
+- **Game Engine**: Vanilla HTML5 Canvas + Matter.js 0.20.0 2D physics
+- **Audio Engine**: Synthesized real-time audio via Web Audio API (zero external sound files)
+- **Platforms**: Modern web browsers (Desktop Chrome, Safari, Firefox, Edge, iOS Safari, Android Chrome)
+- **Monetization**: Free to play with optional non-intrusive Google AdSense / H5 Game ads; zero pay-to-win, zero mandatory accounts.
+
+## Core Gameplay & Rules
+
+1. **Aim & Drop**: Players move their cursor or finger horizontally across the top of the jar to position an orb, then release to drop.
+2. **Merge Mechanics**: When two orbs of the same tier collide, they fuse into a single orb of the next tier, granting score points and kinetic impulse.
+3. **Hold / Swap Slot**: Players can hold one orb in reserve or swap it with the active drop to navigate tricky situations.
+4. **Event Horizon**: A dashed danger line near the top of the container. If orbs rest continuously above this line for 2.5 seconds (or 4.0s with Slow Orbit perk), the run ends.
+5. **Supernova Ascension**: Merging two Tier-11 Black Holes triggers a screen-clearing cosmic Supernova, multiplying all future score gains by 1.5x and clearing the container.
+
+## 11 Celestial Tiers
+
+1. **Dust** (Tier 1, Radius 13px, Periwinkle `#B8C4FF`)
+2. **Spark** (Tier 2, Radius 19px, Electric Cyan `#5EF2FF`)
+3. **Comet** (Tier 3, Radius 26px, Aurora Mint `#7CFFB2`)
+4. **Asteroid** (Tier 4, Radius 33px, Golden Ochre `#FFD166`)
+5. **Moon** (Tier 5, Radius 41px, Lunar Pearl `#E8E6FF`)
+6. **Ember** (Tier 6, Radius 50px, Solar Coral `#FF8A5B`)
+7. **Ocean World** (Tier 7, Radius 60px, Deep Azure `#3D9BFF`)
+8. **Ringed Giant** (Tier 8, Radius 71px, Nebula Violet `#C77DFF`)
+9. **Sun** (Tier 9, Radius 83px, Corona Gold `#FFE45E`)
+10. **Neutron Star** (Tier 10, Radius 96px, Pulsar Magenta `#FF5DA2`)
+11. **Black Hole** (Tier 11, Radius 110px, Singularity Void `#0B0B14`)
+
+## Game Modes
+
+- **Endless Odyssey**: The classic endless arcade mode with score milestones and roguelite Cosmic Perks.
+- **Daily Challenge**: A globally synchronized run seeded by `mulberry32(YYYYMMDD)` so all players worldwide receive the identical orb sequence.
+- **Zen Nebula**: Relaxing, pressure-free mode with no game-over barrier, allowing mindful stacking and experimentation.
+
+## Controls
+
+- **Desktop Mouse**: Move cursor to aim, Left Click to drop.
+- **Mobile Touch**: Touch & drag across screen to aim, release or tap Drop button.
+- **Keyboard**: Left/Right Arrow keys or `A`/`D` to aim; `Space`, `Enter`, or Down Arrow to drop; `Q`/`E` for fine-tuned nudges.
+
+## Official Content & Guides
+
+- [Play Game Online](https://pritpatel2412.github.io/HTML5-game/)
+- [Complete Beginner's Guide](https://pritpatel2412.github.io/HTML5-game/how-to-play/)
+- [10 High-Score Strategies & Pro Tips](https://pritpatel2412.github.io/HTML5-game/tips-and-strategy/)
+- [Complete 11 Cosmic Orb Tiers Guide](https://pritpatel2412.github.io/HTML5-game/tiers/)
+- [How the Supernova Mechanic Works](https://pritpatel2412.github.io/HTML5-game/supernova/)
+- [Endless vs Zen vs Daily Challenge Mode Comparison](https://pritpatel2412.github.io/HTML5-game/game-modes/)
+- [About Stardust Merge](https://pritpatel2412.github.io/HTML5-game/about/)
+- [Privacy Policy](https://pritpatel2412.github.io/HTML5-game/privacy-policy/)
+- [Terms of Service](https://pritpatel2412.github.io/HTML5-game/terms/)
+- [Contact Support](https://pritpatel2412.github.io/HTML5-game/contact/)

@@ -1,0 +1,35 @@
+{
+  "name": "Stardust Merge — Cosmic Physics Puzzle",
+  "short_name": "Stardust Merge",
+  "description": "Play Stardust Merge free online! Drop and merge cosmic orbs from Dust to Black Hole in a cozy physics puzzle game.",
+  "start_url": "/HTML5-game/",
+  "scope": "/HTML5-game/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "categories": ["games", "puzzle", "arcade"],
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
