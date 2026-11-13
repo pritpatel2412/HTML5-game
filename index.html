@@ -253,22 +253,23 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
   <style>
     :root {
-      --bg-top: #0B1020;
-      --bg-mid: #1B1448;
-      --bg-bot: #2A1A5E;
-      --surface-charcoal: #13182E;
-      --glass-bg: rgba(24, 30, 58, 0.68);
-      --glass-border: rgba(255, 255, 255, 0.22);
-      --glass-highlight: rgba(255, 255, 255, 0.35);
-      --text-primary: #F8FAFC;
-      --text-secondary: #CBD5E1;
-      --text-muted: #94A3B8;
-      --accent-cyan: #5EF2FF;
-      --accent-gold: #FFD166;
-      --accent-pink: #FF5DA2;
-      --accent-green: #7CFFB2;
-      --accent-purple: #C77DFF;
-      --danger: #FF4D6D;
+      --bg-top: #120A2E;
+      --bg-mid: #22144F;
+      --bg-bot: #381A6C;
+      --surface-charcoal: #1C123B;
+      --glass-bg: rgba(42, 28, 80, 0.72);
+      --glass-border: rgba(216, 180, 254, 0.35);
+      --glass-highlight: rgba(255, 255, 255, 0.45);
+      --text-primary: #FFFDF9;
+      --text-secondary: #E9D8FD;
+      --text-muted: #B8A9D9;
+      --accent-cyan: #5CE1E6;
+      --accent-gold: #FFE047;
+      --accent-pink: #FF70A6;
+      --accent-green: #70E4A4;
+      --accent-purple: #C084FC;
+      --accent-lavender: #E9D5FF;
+      --danger: #FF5A7E;
       --font-display: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-ui: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --ease-spring: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -276,29 +277,29 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     /* Background Theme Overrides */
     body[data-bg-theme="aurora"] {
-      --bg-top: #071A24;
-      --bg-mid: #0E383A;
-      --bg-bot: #1F2041;
+      --bg-top: #081B2B;
+      --bg-mid: #103D42;
+      --bg-bot: #242250;
     }
     body[data-bg-theme="ocean"] {
-      --bg-top: #041122;
-      --bg-mid: #0A2748;
-      --bg-bot: #134074;
+      --bg-top: #06152B;
+      --bg-mid: #0E3259;
+      --bg-bot: #194F8A;
     }
     body[data-bg-theme="sunset"] {
-      --bg-top: #180B20;
-      --bg-mid: #3D1635;
-      --bg-bot: #6B2346;
+      --bg-top: #220E2C;
+      --bg-mid: #481B40;
+      --bg-bot: #782952;
     }
     body[data-bg-theme="void"] {
-      --bg-top: #070913;
-      --bg-mid: #101426;
-      --bg-bot: #1A1F38;
+      --bg-top: #0A0D1B;
+      --bg-mid: #141A33;
+      --bg-bot: #1F2648;
     }
     body[data-zen="true"] {
-      --bg-top: #0C192C;
-      --bg-mid: #182B49;
-      --bg-bot: #253D5B;
+      --bg-top: #101E35;
+      --bg-mid: #1B3156;
+      --bg-bot: #2C486F;
     }
 
     * {
@@ -311,7 +312,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     html, body {
       width: 100%;
       min-height: 100%;
-      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bot) 100%);
+      background: radial-gradient(circle at 50% 15%, #2A155C 0%, #170B38 52%, #0E0624 100%);
       color: var(--text-primary);
       font-family: var(--font-ui);
       overflow-x: hidden;
@@ -324,7 +325,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       outline-offset: 2px;
     }
 
-    /* Top Stage Layout: Game Center + Policy-Safe Side Ad Rails (>=1100px, >=150px gap) */
+    /* Top Stage Layout */
     .stage-wrapper {
       position: relative;
       width: 100%;
@@ -340,11 +341,158 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     .play-row {
       width: 100%;
-      max-width: 1460px;
+      max-width: 1400px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    /* Mascot Desktop Column */
+    .mascot-stage-desktop {
+      display: none;
+      width: 310px;
+      flex-shrink: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: 1100px) {
+      .mascot-stage-desktop {
+        display: flex;
+      }
+    }
+
+    .kawaii-brand-card {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(62, 32, 115, 0.75) 0%, rgba(35, 18, 75, 0.8) 100%);
+      border: 2px solid rgba(216, 180, 254, 0.4);
+      border-radius: 28px;
+      padding: 16px 18px;
+      text-align: center;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 30px rgba(18, 5, 42, 0.5);
+    }
+
+    .kawaii-title {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 700;
+      background: linear-gradient(180deg, #FFF9C4 0%, #FFE047 42%, #FF70A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .kawaii-sub {
+      font-size: 12px;
+      color: var(--accent-lavender);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .mascot-canvas-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mascot-canvas {
+      display: block;
+      width: 290px;
+      height: 330px;
+      filter: drop-shadow(0 14px 28px rgba(25, 8, 60, 0.55));
+    }
+
+    .mascot-speech-bubble {
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #3B1268;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+      max-width: 190px;
+      text-align: center;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px) scale(0.9);
+      transition: opacity 220ms ease, transform 220ms var(--ease-spring);
+      z-index: 20;
+    }
+
+    .mascot-speech-bubble.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .mascot-speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -7px;
+      left: 28px;
+      border-width: 8px 7px 0;
+      border-style: solid;
+      border-color: rgba(255, 255, 255, 0.95) transparent transparent;
+    }
+
+    .mascot-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .mascot-feature-pill {
+      background: rgba(48, 26, 92, 0.7);
+      border: 1px solid rgba(216, 180, 254, 0.3);
+      border-radius: 16px;
+      padding: 8px 10px;
       display: flex;
       align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent-lavender);
+    }
+
+    .mascot-feature-pill .feat-icon {
+      font-size: 15px;
+    }
+
+    /* Mobile Mascot Avatar in Top HUD */
+    .mobile-mascot-avatar {
+      display: none;
+      align-items: center;
       justify-content: center;
-      gap: 160px; /* Strictly >=150px away from the game canvas edge per Section 8 policy */
+      width: 44px;
+      height: 44px;
+      background: rgba(55, 32, 105, 0.8);
+      border: 1.5px solid var(--accent-lavender);
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    @media (max-width: 1099px) {
+      .mobile-mascot-avatar {
+        display: flex;
+      }
+    }
+
+    .mobile-mascot-avatar canvas {
+      width: 44px;
+      height: 44px;
     }
 
     .ad-rail-desktop {
@@ -676,7 +824,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       position: relative;
       width: 100%;
       aspect-ratio: 400 / 700;
-      max-height: min(74dvh, 720px);
+      max-height: min(60dvh, 560px);
       width: auto;
       height: auto;
       display: flex;
@@ -691,12 +839,12 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       max-width: 440px;
       aspect-ratio: 400 / 700;
       display: block;
-      border-radius: 26px;
+      border-radius: 30px;
       touch-action: none;
       user-select: none;
       -webkit-user-select: none;
       cursor: crosshair;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 16px 48px rgba(25, 8, 55, 0.6), 0 0 0 2.5px rgba(216, 180, 254, 0.35);
     }
 
     /* First-load lightweight floating title card (auto-fades in 1.5s or first touch) */
@@ -1525,10 +1673,27 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   <main class="stage-wrapper">
     <div class="play-row">
 
-      <!-- Left Desktop Display Ad (160x600, >=150px away from canvas) -->
-      <aside class="ad-rail-desktop" aria-label="Left Advertisement">
-        <span class="ad-label">Advertisement</span>
-        <div class="ad-slot-box ad-160x600" id="adSlotLeft">
+      <!-- Left Desktop Column: Mochi Mascot Showcase + Brand Logo + Left Ad -->
+      <aside class="mascot-stage-desktop" id="mascotStageDesktop">
+        <div class="kawaii-brand-card">
+          <div class="kawaii-title">Stardust Merge</div>
+          <div class="kawaii-sub">Merge • Relax • Reach for the Stars!</div>
+        </div>
+
+        <div class="mascot-canvas-container">
+          <div class="mascot-speech-bubble" id="mascotSpeech">Hi, I'm Mochi! Drop an orb! ✨</div>
+          <canvas id="mascotCanvasDesktop" width="300" height="340" class="mascot-canvas" aria-label="Mochi the Mascot"></canvas>
+        </div>
+
+        <div class="mascot-feature-grid">
+          <div class="mascot-feature-pill"><span class="feat-icon">⭐</span><span>11 Cosmic Tiers</span></div>
+          <div class="mascot-feature-pill"><span class="feat-icon">⚡</span><span>Cosmic Perks</span></div>
+          <div class="mascot-feature-pill"><span class="feat-icon">👑</span><span>Endless Fun</span></div>
+          <div class="mascot-feature-pill"><span class="feat-icon">🎮</span><span>3 Game Modes</span></div>
+        </div>
+
+        <!-- Left Desktop Display Ad Slot -->
+        <div class="ad-slot-box ad-160x600" id="adSlotLeft" style="margin-top:20px;">
           <span>160 × 600 Display Ad</span>
         </div>
       </aside>
@@ -1538,6 +1703,11 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
         <!-- Top HUD -->
         <header class="hud-top">
+          <!-- Mobile Mochi Companion Avatar -->
+          <div class="mobile-mascot-avatar" id="mobileMascotAvatar" title="Mochi the Cosmic Mascot">
+            <canvas id="mascotCanvasMobile" width="88" height="88"></canvas>
+          </div>
+
           <div class="glass-pill score-pill">
             <div class="score-block">
               <span class="hud-caption" id="modeScoreLabel">SCORE</span>
@@ -1552,7 +1722,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
               <span class="combo-text" id="comboText">x1</span>
             </div>
             <div class="best-block">
-              <span class="hud-caption">BEST</span>
+              <span class="hud-caption">🏆 BEST</span>
               <span class="best-value" id="bestDisplay">0</span>
             </div>
           </div>
@@ -1805,7 +1975,8 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   <div class="sheet-backdrop" id="gameOverSheet" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
     <div class="bottom-sheet">
       <div class="sheet-handle"></div>
-      <div style="text-align:center; margin-bottom:14px;">
+      <div style="text-align:center; margin-bottom:14px; display:flex; flex-direction:column; align-items:center;">
+        <canvas id="mochiGameOverCanvas" width="90" height="90" style="width:72px; height:72px; margin-bottom:6px; filter:drop-shadow(0 6px 14px rgba(0,0,0,0.3));" aria-label="Mochi"></canvas>
         <span class="hud-caption" id="goNewBestBadge" style="color:var(--accent-gold); font-size:12px; display:none;">★ NEW PERSONAL BEST! ★</span>
         <h2 class="sheet-title" id="gameOverTitle" style="font-size:26px;">Event Horizon Crossed</h2>
         <p id="goSubtitle" style="font-size:13px; color:var(--text-secondary);">Reached Tier: Moon • +25 Stardust Coins</p>
@@ -2258,17 +2429,17 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         SIMULATED_DURATION_SEC: 3
       },
       TIERS: [
-        { tier: 1,  name: 'Dust',         radius: 13,  color: '#B8C4FF', rim: '#E2E8FF', pattern: 'dots' },
-        { tier: 2,  name: 'Spark',        radius: 19,  color: '#5EF2FF', rim: '#C4FAFF', pattern: 'diamond' },
-        { tier: 3,  name: 'Comet',        radius: 26,  color: '#7CFFB2', rim: '#D2FFE6', pattern: 'tail' },
-        { tier: 4,  name: 'Asteroid',     radius: 33,  color: '#FFD166', rim: '#FFF0C2', pattern: 'polygon' },
-        { tier: 5,  name: 'Moon',         radius: 41,  color: '#E8E6FF', rim: '#FFFFFF', pattern: 'craters' },
-        { tier: 6,  name: 'Ember',        radius: 50,  color: '#FF8A5B', rim: '#FFD2BF', pattern: 'swirl' },
-        { tier: 7,  name: 'Ocean World',  radius: 60,  color: '#3D9BFF', rim: '#B8DCFF', pattern: 'waves' },
-        { tier: 8,  name: 'Ringed Giant', radius: 71,  color: '#C77DFF', rim: '#F0D9FF', pattern: 'ring' },
-        { tier: 9,  name: 'Sun',          radius: 83,  color: '#FFE45E', rim: '#FFF9D2', pattern: 'rays' },
-        { tier: 10, name: 'Neutron Star', radius: 96,  color: '#FF5DA2', rim: '#FFC4DE', pattern: 'pulsar' },
-        { tier: 11, name: 'Black Hole',   radius: 110, color: '#0B0B14', rim: '#FF9E3D', pattern: 'accretion' }
+        { tier: 1,  name: 'Dust',         radius: 13,  color: '#A5B4FC', rim: '#E0E7FF', pattern: 'dots' },
+        { tier: 2,  name: 'Spark',        radius: 19,  color: '#38BDF8', rim: '#BAE6FD', pattern: 'diamond' },
+        { tier: 3,  name: 'Comet',        radius: 26,  color: '#4ADE80', rim: '#DCFCE7', pattern: 'tail' },
+        { tier: 4,  name: 'Asteroid',     radius: 33,  color: '#FBBF24', rim: '#FEF3C7', pattern: 'polygon' },
+        { tier: 5,  name: 'Moon',         radius: 41,  color: '#E2E8F0', rim: '#FFFFFF', pattern: 'craters' },
+        { tier: 6,  name: 'Ember',        radius: 50,  color: '#FB7185', rim: '#FFE4E6', pattern: 'swirl' },
+        { tier: 7,  name: 'Ocean World',  radius: 60,  color: '#60A5FA', rim: '#DBEAFE', pattern: 'waves' },
+        { tier: 8,  name: 'Ringed Giant', radius: 71,  color: '#C084FC', rim: '#F3E8FF', pattern: 'ring' },
+        { tier: 9,  name: 'Sun',          radius: 83,  color: '#FDE047', rim: '#FEF9C3', pattern: 'rays' },
+        { tier: 10, name: 'Neutron Star', radius: 96,  color: '#F472B6', rim: '#FCE7F3', pattern: 'pulsar' },
+        { tier: 11, name: 'Black Hole',   radius: 110, color: '#1E1238', rim: '#FB923C', pattern: 'accretion' }
       ],
       SPAWN_WEIGHTS: [
         { tier: 1, weight: 42 },
@@ -3138,6 +3309,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         const newOrb = this.spawnOrb(midX, midY, nextTier, true);
         AudioEngine.playMerge(nextTier, Game.combo);
         FX.spawnMergeJuice(midX, midY, nextTierObj, basePoints, Game.combo);
+        if (typeof Mascot !== 'undefined' && Mascot.onMerge) {
+          Mascot.onMerge(nextTier, Game.combo);
+        }
 
         // Chain Reaction Perk check (25% chance per stack to pull & bonus-score a matching neighbor)
         const chainStacks = Game.activePerks['chain_reaction'] || 0;
@@ -3346,7 +3520,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         const scale = 2; // Bake at 2x resolution for crisp retina scaling
 
         for (const t of CONFIG.TIERS) {
-          const pad = 14;
+          const pad = Math.max(16, Math.round(t.radius * 0.32));
           const size = (t.radius + pad) * 2 * scale;
           const off = document.createElement('canvas');
           off.width = size;
@@ -3358,42 +3532,61 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           const cy = t.radius + pad;
           const r = t.radius;
 
-          // Outer glow
+          // 1. Outer Soft Pastel Glow
           const glow = c.createRadialGradient(cx, cy, r * 0.7, cx, cy, r + pad);
-          glow.addColorStop(0, t.tier === 11 ? 'rgba(255, 158, 61, 0.55)' : t.color + '55');
+          glow.addColorStop(0, t.tier === 11 ? 'rgba(251, 146, 60, 0.65)' : t.color + '66');
           glow.addColorStop(1, 'rgba(0,0,0,0)');
           c.fillStyle = glow;
           c.beginPath();
           c.arc(cx, cy, r + pad, 0, Math.PI * 2);
           c.fill();
 
-          // Body fill
+          // 2. Outer tier-specific cues (Golden Sun Petal Rays)
+          if (t.tier === 9) {
+            c.save();
+            c.fillStyle = '#FDE047';
+            c.strokeStyle = '#F59E0B';
+            c.lineWidth = 2;
+            for (let i = 0; i < 12; i++) {
+              const a = i * (Math.PI / 6);
+              const px = cx + Math.cos(a) * (r + 6);
+              const py = cy + Math.sin(a) * (r + 6);
+              c.beginPath();
+              c.arc(px, py, Math.max(4.5, r * 0.1), 0, Math.PI * 2);
+              c.fill();
+              c.stroke();
+            }
+            c.restore();
+          }
+
+          // 3. Body fill
           c.save();
           c.beginPath();
           c.arc(cx, cy, r, 0, Math.PI * 2);
           c.clip();
 
           if (t.tier === 11) {
-            // Black Hole core + accretion ring
-            const bhGrad = c.createRadialGradient(cx, cy, r * 0.1, cx, cy, r);
-            bhGrad.addColorStop(0, '#05050A');
-            bhGrad.addColorStop(0.62, '#0B0B14');
-            bhGrad.addColorStop(0.84, '#8A2BE2');
-            bhGrad.addColorStop(1, '#FF9E3D');
+            // Black Hole core: deep cosmic violet to obsidian
+            const bhGrad = c.createRadialGradient(cx, cy, r * 0.05, cx, cy, r);
+            bhGrad.addColorStop(0, '#06020D');
+            bhGrad.addColorStop(0.55, '#1A0E32');
+            bhGrad.addColorStop(0.85, '#581C87');
+            bhGrad.addColorStop(1, '#FB923C');
             c.fillStyle = bhGrad;
             c.fillRect(cx - r, cy - r, r * 2, r * 2);
           } else {
-            const bodyGrad = c.createRadialGradient(cx - r * 0.32, cy - r * 0.35, r * 0.1, cx, cy, r);
+            // Soft 3D Pastel Shading
+            const bodyGrad = c.createRadialGradient(cx - r * 0.32, cy - r * 0.35, r * 0.08, cx, cy, r);
             bodyGrad.addColorStop(0, t.rim);
-            bodyGrad.addColorStop(0.45, t.color);
-            bodyGrad.addColorStop(1, '#121632');
+            bodyGrad.addColorStop(0.48, t.color);
+            bodyGrad.addColorStop(1, '#1A1238');
             c.fillStyle = bodyGrad;
             c.fillRect(cx - r, cy - r, r * 2, r * 2);
           }
 
           // Skin-specific overlay
           if (skin === 'candy') {
-            c.strokeStyle = 'rgba(255,255,255,0.28)';
+            c.strokeStyle = 'rgba(255,255,255,0.32)';
             c.lineWidth = Math.max(2, r * 0.14);
             for (let k = -r * 2; k < r * 2; k += r * 0.45) {
               c.beginPath();
@@ -3417,36 +3610,57 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
             c.strokeRect(cx - r * 0.55, cy - r * 0.55, r * 1.1, r * 1.1);
           }
 
-          // Color-blind distinct shape cue per tier (Section 2 requirement)
-          this.drawTierShapeCue(c, cx, cy, r, t);
+          // Cute Tier Details (Asteroid spots, Moon craters, Ocean ripples)
+          this.drawTierDetails(c, cx, cy, r, t);
 
-          // Top-left specular highlight
+          // Kawaii expressive face on every tier!
+          this.drawKawaiiFace(c, cx, cy, r, t.tier);
+
+          // Top-left glossy specular highlight curve (3D candy sheen)
           const spec = c.createRadialGradient(cx - r * 0.35, cy - r * 0.38, 1, cx - r * 0.35, cy - r * 0.38, r * 0.45);
-          spec.addColorStop(0, 'rgba(255,255,255,0.75)');
+          spec.addColorStop(0, 'rgba(255,255,255,0.85)');
+          spec.addColorStop(0.7, 'rgba(255,255,255,0.22)');
           spec.addColorStop(1, 'rgba(255,255,255,0)');
           c.fillStyle = spec;
           c.beginPath();
           c.arc(cx - r * 0.35, cy - r * 0.38, r * 0.45, 0, Math.PI * 2);
           c.fill();
 
-          c.restore();
+          c.restore(); // end body clip
 
-          // Rim border
-          c.strokeStyle = skin === 'neon' ? '#FFFFFF' : t.rim;
-          c.lineWidth = skin === 'neon' ? 2.6 : 1.6;
+          // 4. Rim border
+          c.strokeStyle = skin === 'neon' ? '#FFFFFF' : (t.tier === 11 ? '#FB923C' : t.rim);
+          c.lineWidth = skin === 'neon' ? 2.8 : 1.8;
           c.beginPath();
           c.arc(cx, cy, r - 0.8, 0, Math.PI * 2);
           c.stroke();
 
-          // External ring / ray cues that extend slightly inside/around
-          if (t.pattern === 'ring' || t.tier === 11) {
+          // 5. External Rings (Saturn Ring for Tier 8 & Accretion Disk for Tier 11)
+          if (t.tier === 8) {
+            c.save();
+            c.translate(cx, cy);
+            c.rotate(-0.35);
+            c.strokeStyle = 'rgba(243, 232, 255, 0.9)';
+            c.lineWidth = Math.max(3, r * 0.14);
+            c.beginPath();
+            c.ellipse(0, 0, r * 1.34, r * 0.36, 0, 0, Math.PI * 2);
+            c.stroke();
+            c.strokeStyle = 'rgba(192, 132, 252, 0.55)';
+            c.lineWidth = 1.6;
+            c.beginPath();
+            c.ellipse(0, 0, r * 1.48, r * 0.42, 0, 0, Math.PI * 2);
+            c.stroke();
+            c.restore();
+          } else if (t.tier === 11) {
             c.save();
             c.translate(cx, cy);
             c.rotate(-0.32);
-            c.strokeStyle = t.tier === 11 ? '#FF9E3D' : 'rgba(255, 240, 255, 0.82)';
-            c.lineWidth = Math.max(2.5, r * 0.1);
+            c.strokeStyle = '#FB923C';
+            c.lineWidth = Math.max(3.8, r * 0.13);
+            c.shadowColor = '#FB923C';
+            c.shadowBlur = 10;
             c.beginPath();
-            c.ellipse(0, 0, r * 1.14, r * 0.34, 0, 0, Math.PI * 2);
+            c.ellipse(0, 0, r * 1.34, r * 0.36, 0, 0, Math.PI * 2);
             c.stroke();
             c.restore();
           }
@@ -3455,106 +3669,161 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         }
       },
 
-      drawTierShapeCue(c, cx, cy, r, t) {
+      drawTierDetails(c, cx, cy, r, t) {
         c.save();
-        c.strokeStyle = 'rgba(255,255,255,0.55)';
-        c.fillStyle = 'rgba(255,255,255,0.38)';
-        c.lineWidth = Math.max(1.4, r * 0.07);
-
-        switch (t.pattern) {
-          case 'dots': // Tier 1: 3 stardust dots
-            for (const [dx, dy] of [[-0.28, -0.1], [0.25, -0.2], [0.05, 0.28]]) {
-              c.beginPath();
-              c.arc(cx + dx * r, cy + dy * r, r * 0.14, 0, Math.PI * 2);
-              c.fill();
-            }
-            break;
-          case 'diamond': // Tier 2: 4-point spark star
+        if (t.tier === 4) {
+          c.fillStyle = 'rgba(180, 83, 9, 0.24)';
+          for (const [dx, dy, cr] of [[-0.28, -0.32, 0.16], [0.32, -0.22, 0.14], [-0.3, 0.26, 0.12]]) {
             c.beginPath();
-            c.moveTo(cx, cy - r * 0.55);
-            c.lineTo(cx + r * 0.2, cy - r * 0.2);
-            c.lineTo(cx + r * 0.55, cy);
-            c.lineTo(cx + r * 0.2, cy + r * 0.2);
-            c.lineTo(cx, cy + r * 0.55);
-            c.lineTo(cx - r * 0.2, cy + r * 0.2);
-            c.lineTo(cx - r * 0.55, cy);
-            c.lineTo(cx - r * 0.2, cy - r * 0.2);
-            c.closePath();
-            c.stroke();
-            break;
-          case 'tail': // Tier 3: Comet streaks
-            for (let i = -1; i <= 1; i++) {
-              c.beginPath();
-              c.arc(cx, cy + i * r * 0.24, r * 0.52, 0.2, Math.PI - 0.2);
-              c.stroke();
-            }
-            break;
-          case 'polygon': // Tier 4: Hexagon asteroid facet
+            c.arc(cx + dx * r, cy + dy * r, cr * r, 0, Math.PI * 2);
+            c.fill();
+          }
+        } else if (t.tier === 5) {
+          c.fillStyle = 'rgba(148, 163, 184, 0.28)';
+          for (const [dx, dy, cr] of [[-0.3, -0.28, 0.18], [0.32, -0.24, 0.15], [-0.05, 0.32, 0.12]]) {
             c.beginPath();
-            for (let i = 0; i < 6; i++) {
-              const a = (i * Math.PI) / 3;
-              const px = cx + Math.cos(a) * r * 0.56;
-              const py = cy + Math.sin(a) * r * 0.56;
-              if (i === 0) c.moveTo(px, py); else c.lineTo(px, py);
-            }
-            c.closePath();
-            c.stroke();
-            break;
-          case 'craters': // Tier 5: Moon craters
-            for (const [dx, dy, cr] of [[-0.26, -0.18, 0.22], [0.28, 0.16, 0.18], [-0.1, 0.32, 0.14]]) {
-              c.beginPath();
-              c.arc(cx + dx * r, cy + dy * r, cr * r, 0, Math.PI * 2);
-              c.stroke();
-            }
-            break;
-          case 'swirl': // Tier 6: Ember spiral bands
+            c.arc(cx + dx * r, cy + dy * r, cr * r, 0, Math.PI * 2);
+            c.fill();
+          }
+        } else if (t.tier === 7) {
+          c.strokeStyle = 'rgba(255, 255, 255, 0.28)';
+          c.lineWidth = Math.max(1.2, r * 0.05);
+          for (const wy of [-0.32, 0.32]) {
             c.beginPath();
-            c.arc(cx, cy, r * 0.34, 0, Math.PI * 1.4);
+            c.moveTo(cx - r * 0.6, cy + wy * r);
+            c.quadraticCurveTo(cx, cy + (wy - 0.12) * r, cx + r * 0.6, cy + wy * r);
             c.stroke();
-            c.beginPath();
-            c.arc(cx, cy, r * 0.6, Math.PI * 0.5, Math.PI * 1.9);
-            c.stroke();
-            break;
-          case 'waves': // Tier 7: Ocean latitude waves
-            for (const wy of [-0.3, 0, 0.3]) {
-              c.beginPath();
-              c.moveTo(cx - r * 0.7, cy + wy * r);
-              c.quadraticCurveTo(cx - r * 0.35, cy + (wy - 0.18) * r, cx, cy + wy * r);
-              c.quadraticCurveTo(cx + r * 0.35, cy + (wy + 0.18) * r, cx + r * 0.7, cy + wy * r);
-              c.stroke();
-            }
-            break;
-          case 'ring': // Tier 8: Banded stripes
-            c.fillRect(cx - r * 0.8, cy - r * 0.12, r * 1.6, r * 0.24);
-            break;
-          case 'rays': // Tier 9: Solar corona triangles
-            for (let i = 0; i < 8; i++) {
-              const a = (i * Math.PI) / 4;
-              c.beginPath();
-              c.moveTo(cx + Math.cos(a) * r * 0.35, cy + Math.sin(a) * r * 0.35);
-              c.lineTo(cx + Math.cos(a) * r * 0.78, cy + Math.sin(a) * r * 0.78);
-              c.stroke();
-            }
-            break;
-          case 'pulsar': // Tier 10: Crossed pulsar beams + core ring
-            c.beginPath();
-            c.moveTo(cx - r * 0.75, cy - r * 0.75);
-            c.lineTo(cx + r * 0.75, cy + r * 0.75);
-            c.moveTo(cx + r * 0.75, cy - r * 0.75);
-            c.lineTo(cx - r * 0.75, cy + r * 0.75);
-            c.stroke();
-            c.beginPath();
-            c.arc(cx, cy, r * 0.35, 0, Math.PI * 2);
-            c.stroke();
-            break;
-          case 'accretion': // Tier 11: Event horizon singularity ring
-            c.strokeStyle = '#FF9E3D';
-            c.beginPath();
-            c.arc(cx, cy, r * 0.56, 0, Math.PI * 2);
-            c.stroke();
-            break;
+          }
         }
         c.restore();
+      },
+
+      drawKawaiiFace(c, cx, cy, r, tier) {
+        c.save();
+        const eyeColor = tier === 11 ? '#FFFFFF' : '#1A0C2E';
+        const blushColor = 'rgba(255, 112, 166, 0.55)';
+
+        // 1. Cheek Blush (tiers >= 2)
+        if (r >= 16) {
+          const blushW = Math.max(3, r * 0.2);
+          const blushH = Math.max(2, r * 0.11);
+          const blushDist = r * 0.44;
+          c.fillStyle = blushColor;
+          c.beginPath();
+          c.ellipse(cx - blushDist, cy + r * 0.12, blushW, blushH, 0, 0, Math.PI * 2);
+          c.fill();
+          c.beginPath();
+          c.ellipse(cx + blushDist, cy + r * 0.12, blushW, blushH, 0, 0, Math.PI * 2);
+          c.fill();
+        }
+
+        // 2. Eyes
+        const eyeOffset = Math.max(3.2, r * 0.3);
+        const eyeY = cy - r * 0.04;
+        const eyeR = Math.max(2.0, r * 0.14);
+
+        if (tier === 5) {
+          // Tier 5 Moon: Cute Wink on Left Eye (like in prompt reference image!)
+          c.strokeStyle = eyeColor;
+          c.lineWidth = Math.max(1.8, r * 0.08);
+          c.beginPath();
+          c.arc(cx - eyeOffset, eyeY + 1, eyeR, Math.PI * 1.15, Math.PI * 1.85);
+          c.stroke();
+          // Right eye glossy with star
+          this.drawGlossyEye(c, cx + eyeOffset, eyeY, eyeR, eyeColor);
+        } else if (tier === 1) {
+          // Tier 1 Tiny Dust: Two cute glossy baby dots
+          c.fillStyle = eyeColor;
+          c.beginPath();
+          c.arc(cx - eyeOffset, eyeY, eyeR, 0, Math.PI * 2);
+          c.arc(cx + eyeOffset, eyeY, eyeR, 0, Math.PI * 2);
+          c.fill();
+          c.fillStyle = '#FFFFFF';
+          c.beginPath();
+          c.arc(cx - eyeOffset - 0.5, eyeY - 0.5, eyeR * 0.4, 0, Math.PI * 2);
+          c.arc(cx + eyeOffset - 0.5, eyeY - 0.5, eyeR * 0.4, 0, Math.PI * 2);
+          c.fill();
+        } else {
+          // Standard Kawaii Glossy Eyes with Star reflection
+          this.drawGlossyEye(c, cx - eyeOffset, eyeY, eyeR, eyeColor);
+          this.drawGlossyEye(c, cx + eyeOffset, eyeY, eyeR, eyeColor);
+        }
+
+        // 3. Cute Mouth
+        c.strokeStyle = eyeColor;
+        c.lineWidth = Math.max(1.4, r * 0.07);
+
+        if (tier === 9) {
+          // Tier 9 Sun: Joyful Open Smiling Mouth with cute pink tongue
+          const mw = r * 0.22;
+          const mh = r * 0.18;
+          const my = cy + r * 0.14;
+          c.beginPath();
+          c.arc(cx, my, mw, 0, Math.PI);
+          c.closePath();
+          c.fillStyle = '#1A0C2E';
+          c.fill();
+          c.save();
+          c.clip();
+          c.fillStyle = '#FF70A6';
+          c.beginPath();
+          c.arc(cx, my + mh * 0.55, mw * 0.65, 0, Math.PI * 2);
+          c.fill();
+          c.restore();
+        } else if (tier === 2 || tier === 4 || tier === 10) {
+          c.beginPath();
+          c.arc(cx, cy + r * 0.12, Math.max(2.4, r * 0.14), 0.1, Math.PI - 0.1);
+          c.stroke();
+        } else if (tier === 11) {
+          c.strokeStyle = '#FFFFFF';
+          c.beginPath();
+          c.arc(cx, cy + r * 0.1, Math.max(2.2, r * 0.12), 0.1, Math.PI - 0.1);
+          c.stroke();
+        } else {
+          c.beginPath();
+          c.arc(cx, cy + r * 0.14, Math.max(2.0, r * 0.14), 0.2, Math.PI - 0.2);
+          c.stroke();
+        }
+        c.restore();
+      },
+
+      drawGlossyEye(c, x, y, r, color) {
+        c.save();
+        c.fillStyle = color;
+        c.beginPath();
+        c.ellipse(x, y, r, r * 1.25, 0, 0, Math.PI * 2);
+        c.fill();
+
+        // White Star pupil reflection or round highlight
+        c.fillStyle = '#FFFFFF';
+        if (r >= 4.5) {
+          this.draw5Star(c, x - r * 0.25, y - r * 0.35, r * 0.58, r * 0.24);
+          c.fill();
+        } else {
+          c.beginPath();
+          c.arc(x - r * 0.28, y - r * 0.35, r * 0.42, 0, Math.PI * 2);
+          c.fill();
+        }
+
+        // Secondary tiny specular dot at bottom-right
+        if (r >= 3.5) {
+          c.beginPath();
+          c.arc(x + r * 0.32, y + r * 0.38, r * 0.22, 0, Math.PI * 2);
+          c.fill();
+        }
+        c.restore();
+      },
+
+      draw5Star(c, cx, cy, rOut, rIn) {
+        c.beginPath();
+        for (let i = 0; i < 10; i++) {
+          const r = i % 2 === 0 ? rOut : rIn;
+          const a = -Math.PI / 2 + i * (Math.PI / 5);
+          const px = cx + Math.cos(a) * r;
+          const py = cy + Math.sin(a) * r;
+          if (i === 0) c.moveTo(px, py); else c.lineTo(px, py);
+        }
+        c.closePath();
       },
 
       updateAmbientSpace(dt, nowSec) {
@@ -3668,31 +3937,52 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         const jarW = 364;
         const jarH = 594;
 
-        // Rim outer glow shifting to highest tier color in jar
+        // Jar Outer Soft Glow
         c.save();
         c.shadowColor = highestTierColor;
-        c.shadowBlur = 18;
-        c.fillStyle = 'rgba(20, 26, 54, 0.34)';
-        this.roundRectJar(c, jarX, jarY, jarW, jarH, 26);
+        c.shadowBlur = 20;
+        c.fillStyle = 'rgba(34, 20, 72, 0.42)';
+        this.roundRectJar(c, jarX, jarY, jarW, jarH, 28);
         c.fill();
         c.restore();
 
-        // Frosted 1.5px inner border
-        c.strokeStyle = 'rgba(255, 255, 255, 0.35)';
-        c.lineWidth = 1.5;
-        this.roundRectJar(c, jarX, jarY, jarW, jarH, 26);
+        // Jar Frosted Glass Border
+        c.save();
+        c.strokeStyle = 'rgba(216, 180, 254, 0.6)';
+        c.lineWidth = 2.4;
+        this.roundRectJar(c, jarX, jarY, jarW, jarH, 28);
         c.stroke();
 
-        // Top-left specular glass streak
-        const streakGrad = c.createLinearGradient(jarX + 8, jarY + 20, jarX + 8, jarY + 260);
-        streakGrad.addColorStop(0, 'rgba(255, 255, 255, 0.26)');
+        // Top Glass Neck Lip Ridges
+        c.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+        c.lineWidth = 2.2;
+        c.beginPath();
+        c.ellipse(jarX + jarW / 2, jarY + 8, jarW * 0.45, 7, 0, 0, Math.PI * 2);
+        c.stroke();
+        c.beginPath();
+        c.ellipse(jarX + jarW / 2, jarY + 20, jarW * 0.47, 7.5, 0, 0, Math.PI * 2);
+        c.stroke();
+
+        // Left specular glass highlight streak
+        const streakGrad = c.createLinearGradient(jarX + 10, jarY + 30, jarX + 10, jarY + 340);
+        streakGrad.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+        streakGrad.addColorStop(0.65, 'rgba(255, 255, 255, 0.18)');
         streakGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
         c.strokeStyle = streakGrad;
-        c.lineWidth = 3;
+        c.lineWidth = 3.5;
         c.beginPath();
-        c.moveTo(jarX + 8, jarY + 26);
-        c.lineTo(jarX + 8, jarY + 240);
+        c.moveTo(jarX + 12, jarY + 38);
+        c.lineTo(jarX + 12, jarY + 330);
         c.stroke();
+
+        // Right subtle glass rim reflection
+        c.strokeStyle = 'rgba(216, 180, 254, 0.3)';
+        c.lineWidth = 2;
+        c.beginPath();
+        c.moveTo(jarX + jarW - 12, jarY + 50);
+        c.lineTo(jarX + jarW - 12, jarY + 280);
+        c.stroke();
+        c.restore();
 
         // 3. Aim Guide Line + Ghost Landing Orb + Ready Drop Orb
         if (!Game.isGameOver && Game.canDrop) {
@@ -3880,13 +4170,19 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
       roundRectJar(c, x, y, w, h, rad) {
         c.beginPath();
-        c.moveTo(x, y + 10);
+        c.moveTo(x + 14, y + 22);
+        c.quadraticCurveTo(x, y + 26, x, y + 50);
         c.lineTo(x, y + h - rad);
         c.quadraticCurveTo(x, y + h, x + rad, y + h);
         c.lineTo(x + w - rad, y + h);
         c.quadraticCurveTo(x + w, y + h, x + w, y + h - rad);
-        c.lineTo(x + w, y + 10);
-        c.stroke();
+        c.lineTo(x + w, y + 50);
+        c.quadraticCurveTo(x + w, y + 26, x + w - 14, y + 22);
+        c.lineTo(x + w - 10, y + 6);
+        c.quadraticCurveTo(x + w - 10, y, x + w - 24, y);
+        c.lineTo(x + 24, y);
+        c.quadraticCurveTo(x + 10, y, x + 10, y + 6);
+        c.closePath();
       },
 
       computeGhostLandingY(aimX, radius) {
@@ -3903,6 +4199,597 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           }
         }
         return minY;
+      }
+    };
+
+    /* =========================================================================
+       9.5. MASCOT COMPANION MODULE (Mochi — Fluffy Kawaii Cosmic Mascot)
+       Fully procedural Canvas 2D character, reactive animations, speech bubble,
+       and multi-canvas support (Desktop stage, mobile HUD avatar, game over).
+       Zero external image dependencies.
+       ========================================================================= */
+    const Mascot = {
+      state: 'idle', // 'idle' | 'happy' | 'excited' | 'surprised' | 'sleepy' | 'supernova' | 'gameover'
+      stateTimer: 0,
+      time: 0,
+      blinkTimer: 3.2,
+      isBlinking: false,
+      blinkProgress: 0,
+      particles: [],
+      desktopCanvas: null,
+      desktopCtx: null,
+      mobileCanvas: null,
+      mobileCtx: null,
+      gameOverCanvas: null,
+      gameOverCtx: null,
+      speechEl: null,
+      speechTimeout: null,
+
+      init() {
+        this.desktopCanvas = document.getElementById('mascotCanvasDesktop');
+        if (this.desktopCanvas) this.desktopCtx = this.desktopCanvas.getContext('2d');
+
+        this.mobileCanvas = document.getElementById('mascotCanvasMobile');
+        if (this.mobileCanvas) this.mobileCtx = this.mobileCanvas.getContext('2d');
+
+        this.gameOverCanvas = document.getElementById('mochiGameOverCanvas');
+        if (this.gameOverCanvas) this.gameOverCtx = this.gameOverCanvas.getContext('2d');
+
+        this.speechEl = document.getElementById('mascotSpeech');
+
+        const interact = () => {
+          this.setState('excited', 1.8);
+          this.say(Utils.pickRandom([
+            "Let's make a Supernova! ✨",
+            "You've got this! 💖",
+            "Reach for the stars! 🌟",
+            "Mochi is cheering for you! 🚀",
+            "Keep merging, superstar! ⭐"
+          ]));
+          AudioEngine.playClick();
+        };
+
+        if (this.desktopCanvas) {
+          this.desktopCanvas.style.cursor = 'pointer';
+          this.desktopCanvas.addEventListener('click', interact);
+        }
+        const mobAvatar = document.getElementById('mobileMascotAvatar');
+        if (mobAvatar) {
+          mobAvatar.addEventListener('click', interact);
+        }
+
+        this.say("Hi, I'm Mochi! Drop an orb! ✨", 4000);
+      },
+
+      say(text, durationMs = 3200) {
+        if (!this.speechEl) return;
+        this.speechEl.textContent = text;
+        this.speechEl.classList.add('visible');
+        if (this.speechTimeout) clearTimeout(this.speechTimeout);
+        this.speechTimeout = setTimeout(() => {
+          if (this.speechEl) this.speechEl.classList.remove('visible');
+        }, durationMs);
+      },
+
+      setState(newState, durationSec = 1.5) {
+        this.state = newState;
+        this.stateTimer = durationSec;
+        if (newState === 'happy' || newState === 'excited' || newState === 'supernova') {
+          this.spawnSparkles(newState === 'supernova' ? 24 : 8);
+        }
+      },
+
+      spawnSparkles(count) {
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = 25 + Math.random() * 60;
+          this.particles.push({
+            x: 150 + (Math.random() - 0.5) * 60,
+            y: 190 + (Math.random() - 0.5) * 50,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 15,
+            r: 2 + Math.random() * 3.5,
+            life: 0,
+            maxLife: 0.6 + Math.random() * 0.5,
+            color: ['#FFE047', '#FF70A6', '#5CE1E6', '#E9D5FF'][Math.floor(Math.random() * 4)]
+          });
+        }
+      },
+
+      onMerge(tier, combo) {
+        if (tier >= 9) {
+          this.setState('supernova', 2.8);
+          this.say("The Sun!! You're a superstar! ☀️🌟", 3500);
+        } else if (tier >= 6 || combo >= 4) {
+          this.setState('excited', 1.8);
+          const lines = [
+            `Combo x${combo}!! Amazing! 🔥`,
+            "Cosmic power growing! 🌟",
+            "Look at that glow! ✨",
+            "Keep the rhythm! 🚀"
+          ];
+          this.say(Utils.pickRandom(lines));
+        } else {
+          this.setState('happy', 1.2);
+          if (combo > 1 && Math.random() > 0.4) {
+            this.say(`Nice merge! x${combo} 💫`);
+          }
+        }
+      },
+
+      onSupernova() {
+        this.setState('supernova', 3.5);
+        this.say("SUPERNOVA!! MAGICAL STAR EXPLOSION!! 💥✨🎉", 4000);
+        this.spawnSparkles(36);
+      },
+
+      onGameOver() {
+        this.setState('gameover', 9999);
+        this.say("So close! You did awesome, let's try again! 💖", 5000);
+      },
+
+      setMode(mode) {
+        if (mode === 'zen') {
+          this.setState('sleepy', 9999);
+          this.say("Zen mode... so calming... (˘ᵕ˘) 💤", 4000);
+        } else {
+          this.setState('idle', 0);
+        }
+      },
+
+      update(dt) {
+        this.time += dt;
+
+        if (this.stateTimer > 0) {
+          this.stateTimer -= dt;
+          if (this.stateTimer <= 0) {
+            this.state = (Game && Game.mode === 'zen') ? 'sleepy' : 'idle';
+          }
+        }
+
+        // Blinking
+        this.blinkTimer -= dt;
+        if (this.blinkTimer <= 0) {
+          this.isBlinking = true;
+          this.blinkProgress = 0;
+          this.blinkTimer = 2.5 + Math.random() * 3.5;
+        }
+        if (this.isBlinking) {
+          this.blinkProgress += dt * 8;
+          if (this.blinkProgress >= 1) {
+            this.isBlinking = false;
+            this.blinkProgress = 0;
+          }
+        }
+
+        // Sparkle particles
+        for (let i = this.particles.length - 1; i >= 0; i--) {
+          const p = this.particles[i];
+          p.life += dt;
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+          p.vy += 45 * dt;
+          if (p.life >= p.maxLife) {
+            this.particles.splice(i, 1);
+          }
+        }
+
+        this.render();
+      },
+
+      render() {
+        if (this.desktopCtx) {
+          this.renderFullMochi(this.desktopCtx, 300, 340);
+        }
+        if (this.mobileCtx) {
+          this.renderMochiFace(this.mobileCtx, 88, 88, false);
+        }
+        if (this.gameOverCtx && Game.isGameOver) {
+          this.renderMochiFace(this.gameOverCtx, 90, 90, true);
+        }
+      },
+
+      drawStarShape(c, cx, cy, rOut, rIn) {
+        c.beginPath();
+        for (let i = 0; i < 10; i++) {
+          const r = i % 2 === 0 ? rOut : rIn;
+          const a = -Math.PI / 2 + i * (Math.PI / 5);
+          const px = cx + Math.cos(a) * r;
+          const py = cy + Math.sin(a) * r;
+          if (i === 0) c.moveTo(px, py); else c.lineTo(px, py);
+        }
+        c.closePath();
+      },
+
+      renderFullMochi(c, w, h) {
+        c.clearRect(0, 0, w, h);
+        const cx = w * 0.5;
+        const cy = h * 0.54;
+
+        // Floating hover + breathing
+        let floatY = Math.sin(this.time * 2.2) * 8;
+        let tilt = Math.sin(this.time * 1.5) * 0.035;
+        let scaleBounce = 1;
+
+        if (this.state === 'happy' || this.state === 'excited') {
+          const bounce = Math.abs(Math.sin(this.time * 9)) * 14;
+          floatY -= bounce;
+          tilt = Math.sin(this.time * 8) * 0.07;
+          scaleBounce = 1 + Math.sin(this.time * 10) * 0.05;
+        } else if (this.state === 'supernova') {
+          floatY = Math.sin(this.time * 4) * 12 - 14;
+          scaleBounce = 1.08 + Math.sin(this.time * 12) * 0.06;
+        } else if (this.state === 'surprised') {
+          scaleBounce = 1.1;
+          floatY = -6;
+        }
+
+        c.save();
+        c.translate(cx, cy + floatY);
+        c.rotate(tilt);
+        c.scale(scaleBounce, scaleBounce);
+
+        // 1. Cape fluttering behind
+        c.save();
+        const capeWave = Math.sin(this.time * 3) * 6;
+        c.fillStyle = '#4C1D95';
+        c.beginPath();
+        c.ellipse(0, 32, 78 + capeWave, 48, 0, 0, Math.PI * 2);
+        c.fill();
+        c.fillStyle = '#6D28D9';
+        c.beginPath();
+        c.ellipse(0, 36, 68, 42, 0, 0, Math.PI * 2);
+        c.fill();
+        c.restore();
+
+        // 2. Fluffy cloud torso
+        c.save();
+        const torsoGrad = c.createRadialGradient(-15, 20, 10, 0, 35, 60);
+        torsoGrad.addColorStop(0, '#FFFFFF');
+        torsoGrad.addColorStop(0.7, '#EDE9FE');
+        torsoGrad.addColorStop(1, '#DDD6FE');
+        c.fillStyle = torsoGrad;
+        c.beginPath();
+        c.ellipse(0, 34, 48, 42, 0, 0, Math.PI * 2);
+        c.fill();
+
+        // Paws / Feet at bottom
+        c.fillStyle = '#FFFFFF';
+        c.strokeStyle = '#DDD6FE';
+        c.lineWidth = 2;
+        c.beginPath();
+        c.ellipse(-24, 68, 14, 10, -0.2, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+        c.beginPath();
+        c.ellipse(24, 68, 14, 10, 0.2, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+        c.restore();
+
+        // 3. Fluffy Cloud Head
+        c.save();
+        const headGrad = c.createRadialGradient(-20, -35, 12, 0, -20, 68);
+        headGrad.addColorStop(0, '#FFFFFF');
+        headGrad.addColorStop(0.72, '#EDE9FE');
+        headGrad.addColorStop(1, '#C4B5FD');
+        c.fillStyle = headGrad;
+
+        // Ear fluffs
+        c.beginPath();
+        c.arc(-42, -54, 22, 0, Math.PI * 2);
+        c.arc(42, -54, 22, 0, Math.PI * 2);
+        // Cheek fluffs
+        c.arc(-48, -16, 24, 0, Math.PI * 2);
+        c.arc(48, -16, 24, 0, Math.PI * 2);
+        // Top fluff
+        c.arc(0, -60, 20, 0, Math.PI * 2);
+        // Main head sphere
+        c.arc(0, -22, 52, 0, Math.PI * 2);
+        c.fill();
+        c.restore();
+
+        // 4. Rosy Cheek Blush
+        c.save();
+        c.fillStyle = 'rgba(255, 112, 166, 0.58)';
+        c.beginPath();
+        c.ellipse(-32, -8, 11, 6.5, 0, 0, Math.PI * 2);
+        c.fill();
+        c.beginPath();
+        c.ellipse(32, -8, 11, 6.5, 0, 0, Math.PI * 2);
+        c.fill();
+        c.restore();
+
+        // 5. Big Glossy Purple Eyes with Star Pupil Reflections
+        const eyeY = -22;
+        const eyeColor = '#1E0A34';
+
+        if (this.state === 'sleepy') {
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 3;
+          c.beginPath();
+          c.arc(-24, eyeY + 2, 9, 0.15, Math.PI - 0.15);
+          c.stroke();
+          c.beginPath();
+          c.arc(24, eyeY + 2, 9, 0.15, Math.PI - 0.15);
+          c.stroke();
+        } else if (this.isBlinking) {
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 3;
+          c.beginPath();
+          c.arc(-24, eyeY, 8, 0.1, Math.PI - 0.1);
+          c.stroke();
+          c.beginPath();
+          c.arc(24, eyeY, 8, 0.1, Math.PI - 0.1);
+          c.stroke();
+        } else if (this.state === 'happy' || this.state === 'excited') {
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 3.5;
+          c.beginPath();
+          c.arc(-24, eyeY + 2, 10, Math.PI * 1.15, Math.PI * 1.85);
+          c.stroke();
+          c.beginPath();
+          c.arc(24, eyeY + 2, 10, Math.PI * 1.15, Math.PI * 1.85);
+          c.stroke();
+        } else if (this.state === 'gameover') {
+          this.drawMochiEye(c, -24, eyeY, 11, eyeColor, true);
+          this.drawMochiEye(c, 24, eyeY, 11, eyeColor, true);
+        } else {
+          const r = this.state === 'surprised' ? 13 : 11;
+          this.drawMochiEye(c, -24, eyeY, r, eyeColor, false);
+          this.drawMochiEye(c, 24, eyeY, r, eyeColor, false);
+        }
+
+        // 6. Cute Mouth
+        c.strokeStyle = eyeColor;
+        c.lineWidth = 2.4;
+        if (this.state === 'happy' || this.state === 'excited' || this.state === 'supernova') {
+          c.beginPath();
+          c.arc(0, -9, 7.5, 0, Math.PI);
+          c.closePath();
+          c.fillStyle = eyeColor;
+          c.fill();
+          c.save();
+          c.clip();
+          c.fillStyle = '#FF70A6';
+          c.beginPath();
+          c.arc(0, -5, 5.5, 0, Math.PI * 2);
+          c.fill();
+          c.restore();
+        } else if (this.state === 'surprised') {
+          c.fillStyle = eyeColor;
+          c.beginPath();
+          c.ellipse(0, -9, 4, 6, 0, 0, Math.PI * 2);
+          c.fill();
+        } else if (this.state === 'gameover') {
+          c.beginPath();
+          c.arc(0, -5, 6, Math.PI * 1.1, Math.PI * 1.9);
+          c.stroke();
+        } else {
+          c.beginPath();
+          c.arc(0, -10, 6, 0.15, Math.PI - 0.15);
+          c.stroke();
+        }
+
+        // 7. Scarf / Collar wrapped in front
+        c.save();
+        c.fillStyle = '#7C3AED';
+        c.beginPath();
+        c.ellipse(0, 10, 42, 13, 0, 0, Math.PI * 2);
+        c.fill();
+        c.strokeStyle = '#DDD6FE';
+        c.lineWidth = 1.8;
+        c.stroke();
+        c.fillStyle = '#FFE047';
+        this.drawStarShape(c, 0, 12, 7.5, 3.2);
+        c.fill();
+        c.restore();
+
+        // 8. Transparent Astronaut Bubble Helmet
+        c.save();
+        const helmRadius = 76;
+        const helmGrad = c.createRadialGradient(-20, -35, 10, 0, -22, helmRadius);
+        helmGrad.addColorStop(0, 'rgba(255, 255, 255, 0.35)');
+        helmGrad.addColorStop(0.7, 'rgba(216, 180, 254, 0.15)');
+        helmGrad.addColorStop(1, 'rgba(165, 180, 252, 0.28)');
+        c.fillStyle = helmGrad;
+        c.beginPath();
+        c.arc(0, -22, helmRadius, 0, Math.PI * 2);
+        c.fill();
+        c.strokeStyle = 'rgba(233, 213, 255, 0.75)';
+        c.lineWidth = 2.5;
+        c.stroke();
+
+        c.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+        c.lineWidth = 3.5;
+        c.beginPath();
+        c.arc(0, -22, helmRadius - 4, -Math.PI * 0.85, -Math.PI * 0.42);
+        c.stroke();
+
+        // Earphone pods on sides of helmet
+        c.fillStyle = '#3730A3';
+        c.strokeStyle = '#A5B4FC';
+        c.lineWidth = 2;
+        c.beginPath();
+        c.ellipse(-helmRadius, -18, 9, 17, 0, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+        c.beginPath();
+        c.ellipse(helmRadius, -18, 9, 17, 0, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+
+        // Antenna with glowing star bulb
+        c.strokeStyle = '#CBD5E1';
+        c.lineWidth = 2.8;
+        c.beginPath();
+        c.moveTo(-helmRadius * 0.65, -helmRadius * 0.65);
+        c.quadraticCurveTo(-helmRadius * 0.88, -helmRadius - 10, -helmRadius * 0.75, -helmRadius - 20);
+        c.stroke();
+
+        const bulbGlow = c.createRadialGradient(-helmRadius * 0.75, -helmRadius - 20, 2, -helmRadius * 0.75, -helmRadius - 20, 14);
+        bulbGlow.addColorStop(0, '#FFF9C4');
+        bulbGlow.addColorStop(0.45, '#FFE047');
+        bulbGlow.addColorStop(1, 'rgba(255, 224, 71, 0)');
+        c.fillStyle = bulbGlow;
+        c.beginPath();
+        c.arc(-helmRadius * 0.75, -helmRadius - 20, 14, 0, Math.PI * 2);
+        c.fill();
+        c.fillStyle = '#FFE047';
+        c.beginPath();
+        c.arc(-helmRadius * 0.75, -helmRadius - 20, 5.5, 0, Math.PI * 2);
+        c.fill();
+        c.restore();
+
+        // 9. Golden Star held in paws
+        c.save();
+        const starY = 40 + Math.sin(this.time * 3) * 2;
+        const starGlowR = 34 + Math.sin(this.time * 4) * 4;
+        const starGlow = c.createRadialGradient(0, starY, 6, 0, starY, starGlowR);
+        starGlow.addColorStop(0, 'rgba(255, 224, 71, 0.7)');
+        starGlow.addColorStop(1, 'rgba(255, 224, 71, 0)');
+        c.fillStyle = starGlow;
+        c.beginPath();
+        c.arc(0, starY, starGlowR, 0, Math.PI * 2);
+        c.fill();
+
+        c.fillStyle = '#FFE047';
+        c.strokeStyle = '#F59E0B';
+        c.lineWidth = 2.2;
+        this.drawStarShape(c, 0, starY, 26, 11);
+        c.fill();
+        c.stroke();
+
+        // Paws hugging star
+        c.fillStyle = '#FFFFFF';
+        c.strokeStyle = '#DDD6FE';
+        c.lineWidth = 2;
+        c.beginPath();
+        c.ellipse(-18, starY - 2, 10, 8, -0.4, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+        c.beginPath();
+        c.ellipse(18, starY - 2, 10, 8, 0.4, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
+        c.restore();
+
+        c.restore(); // end Mochi transform
+
+        // 10. Magical Sparkles
+        for (const p of this.particles) {
+          const alpha = 1 - p.life / p.maxLife;
+          c.save();
+          c.fillStyle = p.color;
+          c.globalAlpha = alpha;
+          this.drawStarShape(c, p.x, p.y, p.r, p.r * 0.42);
+          c.fill();
+          c.restore();
+        }
+      },
+
+      drawMochiEye(c, x, y, r, color, hasTear = false) {
+        c.save();
+        c.fillStyle = color;
+        c.beginPath();
+        c.ellipse(x, y, r, r * 1.3, 0, 0, Math.PI * 2);
+        c.fill();
+
+        c.fillStyle = '#FFFFFF';
+        this.drawStarShape(c, x - r * 0.22, y - r * 0.35, r * 0.6, r * 0.25);
+        c.fill();
+
+        c.beginPath();
+        c.arc(x + r * 0.35, y + r * 0.4, r * 0.24, 0, Math.PI * 2);
+        c.fill();
+
+        if (hasTear) {
+          c.fillStyle = 'rgba(92, 225, 230, 0.85)';
+          c.beginPath();
+          c.arc(x + (x < 0 ? -r * 0.8 : r * 0.8), y + r * 0.9, 2.5, 0, Math.PI * 2);
+          c.fill();
+        }
+        c.restore();
+      },
+
+      renderMochiFace(c, w, h, isGameOver = false) {
+        c.clearRect(0, 0, w, h);
+        const cx = w * 0.5;
+        const cy = h * 0.52;
+
+        c.save();
+        c.fillStyle = '#FFFFFF';
+        c.beginPath();
+        c.arc(cx - 16, cy - 14, 11, 0, Math.PI * 2);
+        c.arc(cx + 16, cy - 14, 11, 0, Math.PI * 2);
+        c.arc(cx, cy, 22, 0, Math.PI * 2);
+        c.fill();
+
+        c.fillStyle = 'rgba(255, 112, 166, 0.6)';
+        c.beginPath();
+        c.ellipse(cx - 14, cy + 5, 4.5, 2.5, 0, 0, Math.PI * 2);
+        c.ellipse(cx + 14, cy + 5, 4.5, 2.5, 0, 0, Math.PI * 2);
+        c.fill();
+
+        const eyeColor = '#1E0A34';
+        if (isGameOver) {
+          this.drawMochiEye(c, cx - 10, cy, 5.5, eyeColor, true);
+          this.drawMochiEye(c, cx + 10, cy, 5.5, eyeColor, true);
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 1.8;
+          c.beginPath();
+          c.arc(cx, cy + 9, 3.5, Math.PI * 1.1, Math.PI * 1.9);
+          c.stroke();
+        } else if (this.isBlinking) {
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 1.8;
+          c.beginPath();
+          c.arc(cx - 10, cy, 4, 0.1, Math.PI - 0.1);
+          c.stroke();
+          c.beginPath();
+          c.arc(cx + 10, cy, 4, 0.1, Math.PI - 0.1);
+          c.stroke();
+          c.beginPath();
+          c.arc(cx, cy + 5, 3, 0.1, Math.PI - 0.1);
+          c.stroke();
+        } else {
+          this.drawMochiEye(c, cx - 10, cy, 5.5, eyeColor, false);
+          this.drawMochiEye(c, cx + 10, cy, 5.5, eyeColor, false);
+          c.strokeStyle = eyeColor;
+          c.lineWidth = 1.6;
+          c.beginPath();
+          c.arc(cx, cy + 5, 3, 0.1, Math.PI - 0.1);
+          c.stroke();
+        }
+
+        c.strokeStyle = 'rgba(216, 180, 254, 0.75)';
+        c.lineWidth = 1.8;
+        c.beginPath();
+        c.arc(cx, cy, 30, 0, Math.PI * 2);
+        c.stroke();
+
+        c.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+        c.lineWidth = 2;
+        c.beginPath();
+        c.arc(cx, cy, 27, -Math.PI * 0.8, -Math.PI * 0.35);
+        c.stroke();
+
+        c.fillStyle = '#4338CA';
+        c.fillRect(cx - 33, cy - 6, 4, 12);
+        c.fillRect(cx + 29, cy - 6, 4, 12);
+
+        c.strokeStyle = '#CBD5E1';
+        c.lineWidth = 1.8;
+        c.beginPath();
+        c.moveTo(cx - 20, cy - 22);
+        c.lineTo(cx - 25, cy - 31);
+        c.stroke();
+        c.fillStyle = '#FFE047';
+        c.beginPath();
+        c.arc(cx - 25, cy - 31, 3.5, 0, Math.PI * 2);
+        c.fill();
+
+        c.restore();
       }
     };
 
@@ -4102,6 +4989,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       startNewRun(mode = this.mode) {
         this.mode = mode;
         document.body.setAttribute('data-zen', mode === 'zen' ? 'true' : 'false');
+        if (typeof Mascot !== 'undefined' && Mascot.setMode) {
+          Mascot.setMode(mode);
+        }
 
         // Configure PRNG (seeded mulberry32 for Daily Challenge, standard Math.random otherwise)
         if (mode === 'daily') {
@@ -4277,6 +5167,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         Physics.clearAllOrbs();
         AudioEngine.playSupernova();
         FX.triggerSupernovaFX();
+        if (typeof Mascot !== 'undefined' && Mascot.onSupernova) {
+          Mascot.onSupernova();
+        }
         this.slowMoTimerMs = 600;
 
         const banner = document.getElementById('supernovaBanner');
@@ -4314,6 +5207,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         this.lastEarnedCoins = baseCoins;
         Storage.data.coins += baseCoins;
         Storage.save();
+        if (typeof Mascot !== 'undefined' && Mascot.onGameOver) {
+          Mascot.onGameOver();
+        }
 
         Achievements.evaluate();
         UI.openGameOverSheet(baseCoins);
@@ -4340,6 +5236,10 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         this.dangerRatio = 0;
         this.isGameOver = false;
         this.isPaused = false;
+        if (typeof Mascot !== 'undefined') {
+          Mascot.setState('happy', 2.0);
+          Mascot.say("Run Revived! You've got this! ✨");
+        }
         UI.closeAllSheets();
         UI.showToast('Run Revived! Top rows cleared ✨');
       },
@@ -4468,6 +5368,10 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           }
         }
 
+        if (typeof Mascot !== 'undefined') {
+          Mascot.update(rawDeltaSec);
+        }
+
         FX.update(rawDeltaSec);
         Render.drawFrame(nowMs);
         requestAnimationFrame((t) => this.loop(t));
@@ -4485,6 +5389,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         document.getElementById('dailyDateTag').textContent = Utils.getTodayDateSeed().label;
 
         this.syncSettingsToggles();
+        if (typeof Mascot !== 'undefined') {
+          Mascot.init();
+        }
         this.bindEvents();
         this.updateHUD();
         this.renderQueueCanvases();
