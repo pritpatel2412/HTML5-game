@@ -1,1 +1,1 @@
-# Add your line here: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-8074288228358823, DIRECT, f08c47fec0942fa0
