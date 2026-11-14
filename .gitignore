@@ -1,0 +1,9 @@
+# Test scripts and temporary developer tools
+/tools/
+/tools
+node_modules/
+.DS_Store
+Thumbs.db
+scratch*/
+.user_data*
+

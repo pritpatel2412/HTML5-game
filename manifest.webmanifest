@@ -1,0 +1,94 @@
+{
+  "name": "Stardust Merge",
+  "short_name": "Stardust",
+  "description": "Cozy celestial physics merge puzzle game starring Mochi and 11 collectible cosmic creatures.",
+  "id": "./",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "orientation": "any",
+  "background_color": "#14303A",
+  "theme_color": "#14303A",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "games",
+    "puzzle",
+    "casual"
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshots/after-mid-game-390x844.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Stardust Merge Mobile Gameplay"
+    },
+    {
+      "src": "./screenshots/after-mid-game-1440x900.png",
+      "sizes": "1440x900",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Stardust Merge Desktop Arena"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Challenge",
+      "short_name": "Daily",
+      "url": "./?mode=daily",
+      "description": "Play today's seeded cosmic challenge sequence",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Zen Mode",
+      "short_name": "Zen",
+      "url": "./?mode=zen",
+      "description": "Relax and merge calmly with no game over pressure",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
