@@ -52,6 +52,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Stardust Merge" />
@@ -551,13 +552,64 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       display: flex;
       justify-content: center;
       margin-bottom: 6px;
+      max-height: min(700px, calc(100dvh - 210px));
     }
 
     #gameCanvas {
       display: block;
-      width: 100%;
+      width: auto;
+      max-width: 100%;
       height: auto;
+      max-height: min(700px, calc(100dvh - 210px));
+      aspect-ratio: 400 / 700;
       border-radius: var(--radius-lg);
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        position: static !important;
+      }
+      .header-inner {
+        padding: 6px 12px !important;
+      }
+      .brand-title {
+        font-size: 1.2rem !important;
+      }
+      .stage-wrapper {
+        padding: 4px 4px 16px !important;
+      }
+      .hud-top {
+        gap: 4px !important;
+        margin-bottom: 4px !important;
+      }
+      .score-pill {
+        padding: 3px 6px !important;
+        gap: 6px !important;
+      }
+      .score-value {
+        font-size: 18px !important;
+      }
+      .best-value {
+        font-size: 13px !important;
+      }
+      .coins-pill {
+        padding: 4px 6px !important;
+        font-size: 12px !important;
+      }
+      .level-pill {
+        min-width: 42px !important;
+        padding: 2px 4px !important;
+      }
+      .icon-btn {
+        width: 34px !important;
+        height: 34px !important;
+      }
+      .hud-actions {
+        gap: 4px !important;
+      }
+      .hud-subrow {
+        margin-bottom: 4px !important;
+      }
     }
 
     /* Quick First-Load Title Card */
@@ -5435,7 +5487,12 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       useStarBomb() {
         if (this.isPaused || this.isGameOver) return;
         if (this.starBombs <= 0) {
-          UI.showToast('No Star Bombs left — tap "+1 Bomb Ad"!');
+          AdManager.showRewarded('free_star_bomb', () => {
+            this.starBombs += 1;
+            MochiMascot.setState('excited', 'jumping', 1.5);
+            UI.updateHUD();
+            UI.showToast('+1 Star Bomb Charged!');
+          });
           return;
         }
         if (Physics.orbs.length === 0) {
@@ -5813,7 +5870,12 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       },
 
       bindEvents() {
-        document.getElementById('btnMute').addEventListener('click', () => {
+        const on = (id, event, fn) => {
+          const el = document.getElementById(id);
+          if (el) el.addEventListener(event, fn);
+        };
+
+        on('btnMute', 'click', () => {
           Storage.data.settings.sound = !Storage.data.settings.sound;
           Storage.save();
           AudioEngine.unlock();
@@ -5821,41 +5883,29 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           this.syncSettingsToggles();
         });
 
-        document.getElementById('btnMenu').addEventListener('click', () => this.openMenuSheet('tabModes'));
-        document.getElementById('btnModeBadge').addEventListener('click', () => this.openMenuSheet('tabModes'));
-        document.getElementById('btnOpenShop').addEventListener('click', () => this.openMenuSheet('tabShop'));
-        document.getElementById('btnCloseMenu').addEventListener('click', () => this.closeMenuSheet());
-        document.getElementById('btnResumePlay').addEventListener('click', () => this.closeMenuSheet());
+        on('btnMenu', 'click', () => this.openMenuSheet('tabModes'));
+        on('btnModeBadge', 'click', () => this.openMenuSheet('tabModes'));
+        on('btnOpenShop', 'click', () => this.openMenuSheet('tabShop'));
+        on('btnCloseMenu', 'click', () => this.closeMenuSheet());
+        on('btnResumePlay', 'click', () => this.closeMenuSheet());
 
-        const btnLb = document.getElementById('btnLeaderboard');
-        if (btnLb) {
-          btnLb.addEventListener('click', () => {
-            AudioEngine.playClick();
-            this.openLeaderboardSheet('worldwide');
-          });
-        }
-        const btnCloseLb = document.getElementById('btnCloseLeaderboard');
-        if (btnCloseLb) {
-          btnCloseLb.addEventListener('click', () => {
-            AudioEngine.playClick();
-            this.closeLeaderboardSheet();
-          });
-        }
-        const btnRefLb = document.getElementById('btnRefreshLeaderboard');
-        if (btnRefLb) {
-          btnRefLb.addEventListener('click', () => {
-            AudioEngine.playClick();
-            Leaderboard.refresh();
-          });
-        }
-        const goLb = document.getElementById('goLeaderboardBanner');
-        if (goLb) {
-          goLb.addEventListener('click', () => {
-            AudioEngine.playClick();
-            this.closeAllSheets();
-            this.openLeaderboardSheet('worldwide');
-          });
-        }
+        on('btnLeaderboard', 'click', () => {
+          AudioEngine.playClick();
+          this.openLeaderboardSheet('worldwide');
+        });
+        on('btnCloseLeaderboard', 'click', () => {
+          AudioEngine.playClick();
+          this.closeLeaderboardSheet();
+        });
+        on('btnRefreshLeaderboard', 'click', () => {
+          AudioEngine.playClick();
+          Leaderboard.refresh();
+        });
+        on('goLeaderboardBanner', 'click', () => {
+          AudioEngine.playClick();
+          this.closeAllSheets();
+          this.openLeaderboardSheet('worldwide');
+        });
 
         // Geo Scope buttons
         ['worldwide', 'country', 'city'].forEach(scope => {
@@ -5889,13 +5939,10 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           const inp = document.getElementById('lbPlayerNameInput');
           if (inp && inp.value) Leaderboard.setPlayerName(inp.value);
         };
-        const saveNameBtn = document.getElementById('lbSaveNameBtn');
-        if (saveNameBtn) {
-          saveNameBtn.addEventListener('click', () => {
-            AudioEngine.playClick();
-            saveName();
-          });
-        }
+        on('lbSaveNameBtn', 'click', () => {
+          AudioEngine.playClick();
+          saveName();
+        });
         const nameInput = document.getElementById('lbPlayerNameInput');
         if (nameInput) {
           nameInput.addEventListener('change', saveName);
@@ -5904,17 +5951,8 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           });
         }
 
-        document.getElementById('btnHoldSwap').addEventListener('click', () => Game.holdOrSwapOrb());
-
-        document.getElementById('btnStarBomb').addEventListener('click', () => Game.useStarBomb());
-        document.getElementById('btnFreeBombAd').addEventListener('click', () => {
-          AdManager.showRewarded('free_star_bomb', () => {
-            Game.starBombs += 1;
-            MochiMascot.setState('excited', 'jumping', 1.5);
-            this.updateHUD();
-            this.showToast('+1 Star Bomb Charged!');
-          });
-        });
+        on('btnHoldSwap', 'click', () => Game.holdOrSwapOrb());
+        on('btnStarBomb', 'click', () => Game.useStarBomb());
 
         document.querySelectorAll('.sheet-tab-btn').forEach(btn => {
           btn.addEventListener('click', () => {
@@ -5933,35 +5971,19 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           });
         });
 
-        document.getElementById('toggleSound').addEventListener('click', () => {
-          Storage.data.settings.sound = !Storage.data.settings.sound;
-          Storage.save();
-          AudioEngine.unlock();
-          AudioEngine.syncAmbientPad();
-          this.syncSettingsToggles();
-        });
-
-        document.getElementById('toggleAmbient').addEventListener('click', () => {
-          Storage.data.settings.ambient = !Storage.data.settings.ambient;
-          Storage.save();
-          AudioEngine.unlock();
-          AudioEngine.syncAmbientPad();
-          this.syncSettingsToggles();
-        });
-
-        document.getElementById('toggleHaptics').addEventListener('click', () => {
+        on('toggleHaptics', 'click', () => {
           Storage.data.settings.haptics = !Storage.data.settings.haptics;
           Storage.save();
           this.syncSettingsToggles();
         });
 
-        document.getElementById('toggleReduceFX').addEventListener('click', () => {
+        on('toggleReduceFX', 'click', () => {
           Storage.data.settings.reduceFX = !Storage.data.settings.reduceFX;
           Storage.save();
           this.syncSettingsToggles();
         });
 
-        document.getElementById('toggleTierNums').addEventListener('click', () => {
+        on('toggleTierNums', 'click', () => {
           Storage.data.settings.tierNumbers = !Storage.data.settings.tierNumbers;
           Storage.save();
           this.syncSettingsToggles();
@@ -6001,22 +6023,16 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
             this.syncSettingsToggles();
           });
         }
-        const tFps = document.getElementById('toggleFpsCounter');
-        if (tFps) {
-          tFps.addEventListener('click', () => {
-            Storage.data.settings.showFps = !Storage.data.settings.showFps;
-            Storage.save();
-            this.syncSettingsToggles();
-          });
-        }
-        const tHighContrast = document.getElementById('toggleHighContrast');
-        if (tHighContrast) {
-          tHighContrast.addEventListener('click', () => {
-            Storage.data.settings.highContrast = !Storage.data.settings.highContrast;
-            Storage.save();
-            this.syncSettingsToggles();
-          });
-        }
+        on('toggleFpsCounter', 'click', () => {
+          Storage.data.settings.showFps = !Storage.data.settings.showFps;
+          Storage.save();
+          this.syncSettingsToggles();
+        });
+        on('toggleHighContrast', 'click', () => {
+          Storage.data.settings.highContrast = !Storage.data.settings.highContrast;
+          Storage.save();
+          this.syncSettingsToggles();
+        });
         const selTextSize = document.getElementById('selectTextSize');
         if (selTextSize) {
           selTextSize.addEventListener('change', (e) => {
@@ -6025,14 +6041,11 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
             this.syncSettingsToggles();
           });
         }
-        const tLeftHanded = document.getElementById('toggleLeftHanded');
-        if (tLeftHanded) {
-          tLeftHanded.addEventListener('click', () => {
-            Storage.data.settings.leftHanded = !Storage.data.settings.leftHanded;
-            Storage.save();
-            this.syncSettingsToggles();
-          });
-        }
+        on('toggleLeftHanded', 'click', () => {
+          Storage.data.settings.leftHanded = !Storage.data.settings.leftHanded;
+          Storage.save();
+          this.syncSettingsToggles();
+        });
         const selLang = document.getElementById('selectLanguage');
         if (selLang) {
           selLang.addEventListener('change', (e) => {
@@ -6052,76 +6065,67 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         }
 
         // Export Save Code & Download File
-        const btnExp = document.getElementById('btnExportSave');
-        if (btnExp) {
-          btnExp.addEventListener('click', () => {
-            const json = JSON.stringify(Storage.data);
-            const b64 = btoa(unescape(encodeURIComponent(json)));
-            navigator.clipboard.writeText(b64).then(() => {
-              this.showToast('Save Code Copied to Clipboard!');
-            }).catch(() => {
-              prompt('Copy your Stardust Save Code:', b64);
-            });
-
-            // Trigger file download
-            const blob = new Blob([json], { type: 'application/json' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `stardust-merge-save-${Date.now()}.json`;
-            a.click();
-            URL.revokeObjectURL(a.href);
+        on('btnExportSave', 'click', () => {
+          const json = JSON.stringify(Storage.data);
+          const b64 = btoa(unescape(encodeURIComponent(json)));
+          navigator.clipboard.writeText(b64).then(() => {
+            this.showToast('Save Code Copied to Clipboard!');
+          }).catch(() => {
+            prompt('Copy your Stardust Save Code:', b64);
           });
-        }
+
+          // Trigger file download
+          const blob = new Blob([json], { type: 'application/json' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = `stardust-merge-save-${Date.now()}.json`;
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
 
         // Import Save Code
-        const btnImp = document.getElementById('btnImportSave');
-        if (btnImp) {
-          btnImp.addEventListener('click', () => {
-            const input = prompt('Paste your Stardust Save Code or JSON:');
-            if (!input) return;
+        on('btnImportSave', 'click', () => {
+          const input = prompt('Paste your Stardust Save Code or JSON:');
+          if (!input) return;
+          try {
+            let parsed;
             try {
-              let parsed;
-              try {
-                parsed = JSON.parse(decodeURIComponent(escape(atob(input.trim()))));
-              } catch (_) {
-                parsed = JSON.parse(input.trim());
-              }
-              if (parsed && typeof parsed.coins === 'number') {
-                Storage.data = parsed;
-                Storage.save();
-                alert('Save imported successfully! Reloading game...');
-                window.location.reload();
-              } else {
-                throw new Error('Invalid schema');
-              }
-            } catch (err) {
-              alert('Could not parse save code. Please check that you copied the complete code.');
+              parsed = JSON.parse(decodeURIComponent(escape(atob(input.trim()))));
+            } catch (_) {
+              parsed = JSON.parse(input.trim());
             }
-          });
-        }
+            if (parsed && typeof parsed.coins === 'number') {
+              Storage.data = parsed;
+              Storage.save();
+              alert('Save imported successfully! Reloading game...');
+              window.location.reload();
+            } else {
+              throw new Error('Invalid schema');
+            }
+          } catch (err) {
+            alert('Could not parse save code. Please check that you copied the complete code.');
+          }
+        });
 
         // Share Card Trigger
-        const btnShareC = document.getElementById('btnShareCard');
-        if (btnShareC) {
-          btnShareC.addEventListener('click', () => {
-            if (window.ShareCard) {
-              window.ShareCard.generateAndShare(Game.score, Game.highestTierInJar, document.getElementById('gameCanvas'));
-            }
-          });
-        }
+        on('btnShareCard', 'click', () => {
+          if (window.ShareCard) {
+            window.ShareCard.generateAndShare(Game.score, Game.highestTierInJar, document.getElementById('gameCanvas'));
+          }
+        });
 
-        document.getElementById('btnResetData').addEventListener('click', () => {
+        on('btnResetData', 'click', () => {
           const hint = document.getElementById('resetConfirmHint');
           if (!this.resetConfirmPending) {
             this.resetConfirmPending = true;
-            hint.style.display = 'inline';
+            if (hint) hint.style.display = 'inline';
             setTimeout(() => {
               this.resetConfirmPending = false;
-              hint.style.display = 'none';
+              if (hint) hint.style.display = 'none';
             }, 3500);
           } else {
             this.resetConfirmPending = false;
-            hint.style.display = 'none';
+            if (hint) hint.style.display = 'none';
             Storage.resetAll();
             document.body.setAttribute('data-bg-theme', 'default');
             Render.bakeNebulaCanvas();
@@ -6132,69 +6136,74 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           }
         });
 
-        document.getElementById('btnRerollPerks').addEventListener('click', () => {
+        on('btnRerollPerks', 'click', () => {
           AdManager.showRewarded('reroll_perks', () => {
             this.renderPerkChoices();
             this.showToast('Mochi Rerolled Your Perks!');
           });
         });
 
-        document.getElementById('btnPlayAgain').addEventListener('click', () => {
+        on('btnPlayAgain', 'click', () => {
           AudioEngine.playClick();
           AdManager.maybeShowInterstitial(() => {
             Game.startNewRun(Game.mode);
           });
         });
 
-        document.getElementById('btnReviveAd').addEventListener('click', () => {
+        on('btnReviveAd', 'click', () => {
           AdManager.showRewarded('revive_run', () => {
             Game.reviveCurrentRun();
           });
         });
 
-        document.getElementById('btnDoubleCoinsAd').addEventListener('click', () => {
+        on('btnDoubleCoinsAd', 'click', () => {
           if (Game.doubleCoinsUsedThisRun) return;
           AdManager.showRewarded('double_gameover_coins', () => {
             Game.doubleCoinsUsedThisRun = true;
             Storage.data.coins += Game.lastEarnedCoins;
             Storage.save();
-            document.getElementById('goEarnedCoins').textContent = Utils.formatNumber(Game.lastEarnedCoins * 2);
-            document.getElementById('btnDoubleCoinsAd').disabled = true;
+            const earnedEl = document.getElementById('goEarnedCoins');
+            if (earnedEl) earnedEl.textContent = Utils.formatNumber(Game.lastEarnedCoins * 2);
+            const btnDbl = document.getElementById('btnDoubleCoinsAd');
+            if (btnDbl) btnDbl.disabled = true;
             this.updateHUD();
             this.showToast(`+${Game.lastEarnedCoins} Bonus Coins Added!`);
           });
         });
 
-        document.getElementById('btnShareScore').addEventListener('click', () => this.shareResult());
-
-        document.getElementById('btnDailyReward').addEventListener('click', () => this.openDailyStreakSheet());
-        document.getElementById('btnCloseDailySheet').addEventListener('click', () => {
-          document.getElementById('dailyStreakSheet').classList.remove('open');
+        on('btnShareScore', 'click', () => this.shareResult());
+        on('btnDailyReward', 'click', () => this.openDailyStreakSheet());
+        on('btnCloseDailySheet', 'click', () => {
+          const sheet = document.getElementById('dailyStreakSheet');
+          if (sheet) sheet.classList.remove('open');
           Game.isPaused = false;
         });
 
-        document.getElementById('btnClaimDailyBase').addEventListener('click', () => this.claimDailyStreak(1));
-        document.getElementById('btnClaimDailyDouble').addEventListener('click', () => {
+        on('btnClaimDailyBase', 'click', () => this.claimDailyStreak(1));
+        on('btnClaimDailyDouble', 'click', () => {
           AdManager.showRewarded('double_daily_streak', () => this.claimDailyStreak(2));
         });
 
         document.querySelectorAll('[data-legal]').forEach(btn => {
           btn.addEventListener('click', () => this.openLegalModal(btn.getAttribute('data-legal')));
         });
-        document.getElementById('btnCloseLegal').addEventListener('click', () => {
-          document.getElementById('legalSheet').classList.remove('open');
+        on('btnCloseLegal', 'click', () => {
+          const legal = document.getElementById('legalSheet');
+          if (legal) legal.classList.remove('open');
         });
 
-        document.getElementById('btnConsentAccept').addEventListener('click', () => {
+        on('btnConsentAccept', 'click', () => {
           Storage.data.consentGiven = 'personalized';
           Storage.save();
-          document.getElementById('consentBanner').classList.remove('visible');
+          const cb = document.getElementById('consentBanner');
+          if (cb) cb.classList.remove('visible');
           AdManager.init();
         });
-        document.getElementById('btnConsentNonPersonalized').addEventListener('click', () => {
+        on('btnConsentNonPersonalized', 'click', () => {
           Storage.data.consentGiven = 'non_personalized';
           Storage.save();
-          document.getElementById('consentBanner').classList.remove('visible');
+          const cb = document.getElementById('consentBanner');
+          if (cb) cb.classList.remove('visible');
           AdManager.init();
         });
       },
