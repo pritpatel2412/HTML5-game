@@ -1,0 +1,215 @@
+{
+  "art_direction": "Kawaii Cosmic Fluff Universe",
+  "lighting_direction": "Top-Left (-35 deg) warm starlight key + Bottom-Right pastel rim glow",
+  "eye_proportion_rule": "Large glossy oval/round eyes positioned at 52%-56% vertical midline, twin specular shine + 4-point star reflection",
+  "blush_rule": "Soft pastel pink (#FF9EBB) elliptical cheeks immediately below outer eye corners",
+  "mascot": {
+    "id": "mochi",
+    "name": "Mochi",
+    "body_color": "#FFFDF9",
+    "fur_tint": "#E5D4FF",
+    "eye_color": "#5B2E91",
+    "blush_color": "#FF9EBB",
+    "scarf_color": "#7E52C2",
+    "star_badge": "#FFE45E",
+    "helmet_rim": "#C4E4FF",
+    "expressions": [
+      "idle",
+      "happy",
+      "excited",
+      "surprised",
+      "sleepy",
+      "thinking",
+      "disappointed",
+      "supernova"
+    ],
+    "poses": [
+      "standing",
+      "floating",
+      "waving",
+      "sitting",
+      "jumping",
+      "star-holding",
+      "celebrating"
+    ]
+  },
+  "orbs": [
+    {
+      "tier": 1,
+      "id": "dust",
+      "name": "Dusty",
+      "radius": 13,
+      "primary_color": "#B8C4FF",
+      "secondary_color": "#E2E8FF",
+      "eye_color": "#3B1E6D",
+      "blush_color": "#FF9EBB",
+      "personality": "Shy, innocent and curious",
+      "features": [
+        "Powder-puff fur silhouette",
+        "Top fluffy tuft",
+        "3 floating star particles"
+      ]
+    },
+    {
+      "tier": 2,
+      "id": "spark",
+      "name": "Sparky",
+      "radius": 19,
+      "primary_color": "#5EF2FF",
+      "secondary_color": "#C4FAFF",
+      "eye_color": "#1E3A8A",
+      "blush_color": "#FF9EBB",
+      "personality": "Hyperactive, playful and energetic",
+      "features": [
+        "Pointed soft star-like fur tufts",
+        "Yellow lightning forehead mark",
+        "Two glowing antenna tips"
+      ]
+    },
+    {
+      "tier": 3,
+      "id": "comet",
+      "name": "Commy",
+      "radius": 26,
+      "primary_color": "#7CFFB2",
+      "secondary_color": "#D2FFE6",
+      "eye_color": "#065F46",
+      "blush_color": "#FF9EBB",
+      "personality": "Adventurous and playful",
+      "features": [
+        "Flowing curved comet-tail tuft",
+        "Mint forehead star",
+        "Sparkling trail"
+      ]
+    },
+    {
+      "tier": 4,
+      "id": "asteroid",
+      "name": "Rocky",
+      "radius": 33,
+      "primary_color": "#FFD166",
+      "secondary_color": "#FFF0C2",
+      "eye_color": "#5C3414",
+      "blush_color": "#FF9EBB",
+      "personality": "Brave, loyal and slightly clumsy",
+      "features": [
+        "Rounded bumpy space-rock silhouette",
+        "Soft round craters",
+        "Embedded golden crystal"
+      ]
+    },
+    {
+      "tier": 5,
+      "id": "moon",
+      "name": "Luna",
+      "radius": 41,
+      "primary_color": "#E8E6FF",
+      "secondary_color": "#FFFFFF",
+      "eye_color": "#4C1D95",
+      "blush_color": "#FFAFCC",
+      "personality": "Calm, gentle and dreamy",
+      "features": [
+        "Creamy lavender moon craters",
+        "Lavender crescent forehead mark",
+        "Orbiting star companion"
+      ]
+    },
+    {
+      "tier": 6,
+      "id": "ember",
+      "name": "Emberly",
+      "radius": 50,
+      "primary_color": "#FF8A5B",
+      "secondary_color": "#FFD2BF",
+      "eye_color": "#4A1D12",
+      "blush_color": "#FF7597",
+      "personality": "Warm, enthusiastic and cheerful",
+      "features": [
+        "3 rounded fluffy flame head tufts",
+        "Warm peach-gold inner aura",
+        "Golden glow spots"
+      ]
+    },
+    {
+      "tier": 7,
+      "id": "ocean-world",
+      "name": "Bubbly",
+      "radius": 60,
+      "primary_color": "#3D9BFF",
+      "secondary_color": "#B8DCFF",
+      "eye_color": "#0C2D6B",
+      "blush_color": "#FF9EBB",
+      "personality": "Gentle, playful and friendly",
+      "features": [
+        "Curled top wave crest",
+        "Turquoise patches & fluffy side clouds",
+        "Floating water bubbles"
+      ]
+    },
+    {
+      "tier": 8,
+      "id": "ringed-giant",
+      "name": "Saturny",
+      "radius": 71,
+      "primary_color": "#C77DFF",
+      "secondary_color": "#F0D9FF",
+      "eye_color": "#4A1578",
+      "blush_color": "#FF9EBB",
+      "personality": "Confident, charming and slightly proud",
+      "features": [
+        "Lilac plush stripes",
+        "Tilted orbital ring with embedded stars",
+        "Sparkling violet eyes"
+      ]
+    },
+    {
+      "tier": 9,
+      "id": "sun",
+      "name": "Sunny",
+      "radius": 83,
+      "primary_color": "#FFE45E",
+      "secondary_color": "#FFF9D2",
+      "eye_color": "#522508",
+      "blush_color": "#FF8A8A",
+      "personality": "Extremely cheerful, positive and energetic",
+      "features": [
+        "10 soft rounded plush sun-ray petals",
+        "Warm orange inner glow",
+        "Open happy smile"
+      ]
+    },
+    {
+      "tier": 10,
+      "id": "neutron-star",
+      "name": "Neutry",
+      "radius": 96,
+      "primary_color": "#FF5DA2",
+      "secondary_color": "#FFC4DE",
+      "eye_color": "#4A156B",
+      "blush_color": "#FFB8D9",
+      "personality": "Magical, mysterious, intelligent and friendly",
+      "features": [
+        "2 symmetrical rounded luminous pulse beams",
+        "Cheek star markings",
+        "Pulsing magenta aura"
+      ]
+    },
+    {
+      "tier": 11,
+      "id": "black-hole",
+      "name": "Coco",
+      "radius": 110,
+      "primary_color": "#0B0B14",
+      "secondary_color": "#FF9E3D",
+      "accretion_secondary": "#8A2BE2",
+      "eye_color": "#4A1D7A",
+      "blush_color": "#FF8AB5",
+      "personality": "Mysterious, powerful, gentle and surprisingly adorable",
+      "features": [
+        "Velvet near-black plush core",
+        "Orange-to-purple glowing accretion ring",
+        "Star-shaped ring highlights"
+      ]
+    }
+  ]
+}
