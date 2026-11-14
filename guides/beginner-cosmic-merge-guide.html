@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Complete Beginner's Cosmic Merge Manual — Stardust Merge Guides</title>
+  <meta name="description" content="Learn the foundational mechanics of Stardust Merge: jar geometry, drop spawn probabilities (Tiers 1-4), Event Horizon timers, and early-game stacking strategies." />
+  <link rel="canonical" href="https://pritpatel2412.github.io/HTML5-game/guides/beginner-cosmic-merge-guide.html" />
+  <meta name="theme-color" content="#14303A" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Stardust Merge" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8074288228358823" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Standalone App Return Bar -->
+  <aside class="back-to-game-bar">
+    <a href="../">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to Main Game</span>
+    </a>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="brand-link" aria-label="Stardust Merge Home">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2B33" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#FFC145"/></svg>
+        </div>
+        <span class="brand-title">Stardust Merge</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="../" class="btn-play-cta">Play Game</a>
+        <a href="../how-to-play.html" class="nav-link">How to Play</a>
+        <a href="./" class="nav-link active">Guides</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="nav-mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu-drawer" id="mobile-drawer">
+      <a href="../" class="btn-play-cta" style="justify-content:center;">Play Game</a>
+      <a href="../how-to-play.html" class="nav-link">How to Play</a>
+      <a href="./" class="nav-link active">Guides</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <article class="content-card prose">
+      <h1 class="page-title">The Complete Beginner's Cosmic Merge Manual</h1>
+      <p class="page-subtitle">Mastering the fundamentals of jar physics, drop spawn probabilities, and early game board structure.</p>
+
+      <h2>1. Understanding the Physical Jar</h2>
+      <p>
+        At first glance, Stardust Merge seems like a traditional drop-and-match puzzle, but under the hood operates a real-time 2D rigid-body physics engine built on Matter.js. The playing field is a cosmic jar calibrated to a logical width of <strong>400 pixels</strong> and a logical height of <strong>700 pixels</strong>, bounded by 60px thick collision walls.
+      </p>
+      <p>
+        Orbs spawn at <code>DROP_SPAWN_Y = 84px</code> from the top of the canvas and fall under a mild gravitational acceleration. Near the top of the jar lies the <strong>Event Horizon</strong> at <code>EVENT_HORIZON_Y = 146px</code>. If any celestial body crosses above this line and settles, the danger state activates. You receive a generous grace window of <strong>2,500 milliseconds (2.5 seconds)</strong> to trigger a merge or clear the overflow before game over occurs.
+      </p>
+
+      <h2>2. The Spawn Weight Mechanics (Tiers 1 to 4)</h2>
+      <p>
+        Crucially for beginners, you cannot spawn higher-tier planets directly from the dropper. The dropper only ever selects from the first 4 tiers based on the game's hardcoded probability weights:
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Creature Name</th>
+              <th>Radius</th>
+              <th>Spawn Weight</th>
+              <th>Exact Spawn Probability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Dusty</strong> (Dust)</td>
+              <td>13 px</td>
+              <td>42</td>
+              <td><strong>42.0%</strong></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Sparky</strong> (Spark)</td>
+              <td>19 px</td>
+              <td>30</td>
+              <td><strong>30.0%</strong></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Commy</strong> (Comet)</td>
+              <td>26 px</td>
+              <td>19</td>
+              <td><strong>19.0%</strong></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Rocky</strong> (Asteroid)</td>
+              <td>33 px</td>
+              <td>9</td>
+              <td><strong>9.0%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Understanding this distribution is critical: nearly <strong>72% of all dropped orbs</strong> will be either Dusty or Sparky! Because of this heavy skew toward small bodies, your primary spatial challenge will always be cleaning up small, agile orbs before they get trapped underneath larger celestial spheres.
+      </p>
+
+      <h2>3. The Drop Cooldown Window</h2>
+      <p>
+        The game enforces a <code>DROP_COOLDOWN_MS = 350ms</code> delay between consecutive drops. While this prevents accidental double-clicking, it also means you cannot spam orbs to brute-force a merge. Each drop must be intentional. Wait for the previous orb to establish its initial bounce trajectory before releasing the next body.
+      </p>
+
+      <h2>4. The Fundamental Valley Stacking Strategy</h2>
+      <p>
+        The number one mistake made by new players is dropping orbs directly into the center of the jar. This creates an inverted cone or pyramid with the highest peak in the middle, rapidly triggering the Event Horizon.
+      </p>
+      <div class="sticker-box accent-mint">
+        <strong style="color:var(--mint); font-size:1.1rem; display:block; margin-bottom:8px;">The Golden Rule of Stardust Merge:</strong>
+        <p style="margin-bottom:0;">Always stack in a <strong>U-shaped Valley</strong> or a <strong>Descending Ramp</strong>. Anchor your largest tier (e.g. Luna or Emberly) against one of the jar's outer walls (left or right). Arrange medium orbs in the center, and keep the opposite wall clear for rapid Tier-1 and Tier-2 cycling.</p>
+      </div>
+
+      <h2>5. Managing the Hold Pocket</h2>
+      <p>
+        At the top left of the HUD, next to the Next preview, is the <strong>Hold Pocket</strong>. Tapping the Hold pocket (or pressing <kbd>H</kbd> / <kbd>Shift</kbd>) stashes your currently active drop orb and brings down whatever was previously held (or draws the next queued orb if the pocket was empty).
+      </p>
+      <p>
+        You can use the Hold pocket once per drop cycle. Save Tier-4 Rockies or Tier-3 Commies in the pocket until their identical counterpart appears in the Next queue. Stashing awkward pieces preserves floor space and sets up guaranteed instant merges.
+      </p>
+
+      <!-- Content Responsive Ad -->
+      <div style="margin: 32px 0; text-align: center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8074288228358823"
+             data-ad-slot="5555555555"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <h2>6. Early-Game Checklist for New Players</h2>
+      <ul>
+        <li><strong>Step 1:</strong> Designate your heavy corner. Commit to making the bottom-left or bottom-right corner the home of your highest-tier creature.</li>
+        <li><strong>Step 2:</strong> Drop matching orbs directly next to each other so gravitational fusion occurs upon first contact.</li>
+        <li><strong>Step 3:</strong> If a drop cannot merge immediately, place it next to an orb that is one tier above or below it to enable cascade chains.</li>
+        <li><strong>Step 4:</strong> Check the Next preview before every release! Never drop blindly.</li>
+        <li><strong>Step 5:</strong> When the jar reaches 50% capacity, slow down your pace and plan two moves ahead.</li>
+      </ul>
+
+      <div style="text-align:center; margin-top:36px;">
+        <a href="../" class="btn-play-cta" style="font-size:1.2rem; padding:12px 30px;">Put It into Practice: Play Now &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../" class="footer-link">Play</a>
+        <a href="../how-to-play.html" class="footer-link">How to Play</a>
+        <a href="./" class="footer-link">Guides</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="../terms.html" class="footer-link">Terms of Service</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+        <button class="footer-btn-cookie">Cookie Settings</button>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Prit Patel. Stardust Merge &mdash; All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import '../js/pwa.js';
+    import '../js/consent.js';
+
+    const toggle = document.getElementById('mobile-toggle-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => drawer.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>

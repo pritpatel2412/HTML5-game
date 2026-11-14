@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Contact &amp; Bug Reports — Stardust Merge</title>
+  <meta name="description" content="Reach out to the creators of Stardust Merge. Send feedback, propose celestial features, or report physics bugs with one-click device debug info." />
+  <link rel="canonical" href="https://pritpatel2412.github.io/HTML5-game/contact.html" />
+  <meta name="theme-color" content="#14303A" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Stardust Merge" />
+  <link rel="stylesheet" href="./css/site.css" />
+</head>
+<body>
+  <!-- Standalone App Return Bar -->
+  <aside class="back-to-game-bar">
+    <a href="./">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to Main Game</span>
+    </a>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="brand-link" aria-label="Stardust Merge Home">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2B33" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#FFC145"/></svg>
+        </div>
+        <span class="brand-title">Stardust Merge</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="./" class="btn-play-cta">Play Game</a>
+        <a href="./how-to-play.html" class="nav-link">How to Play</a>
+        <a href="./guides/" class="nav-link">Guides</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <button class="nav-mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu-drawer" id="mobile-drawer">
+      <a href="./" class="btn-play-cta" style="justify-content:center;">Play Game</a>
+      <a href="./how-to-play.html" class="nav-link">How to Play</a>
+      <a href="./guides/" class="nav-link">Guides</a>
+      <a href="./about.html" class="nav-link">About</a>
+      <a href="./contact.html" class="nav-link active">Contact</a>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <div class="content-card">
+      <h1 class="page-title">Contact &amp; Support</h1>
+      <p class="page-subtitle">Got a question, bug report, or cosmic gameplay idea? We would love to hear from you!</p>
+
+      <div class="sticker-box accent-mustard" style="margin-bottom:28px;">
+        <p style="margin-bottom:8px;"><strong>Direct Email:</strong> <a href="mailto:pritpatel2412@gmail.com" style="color:var(--mustard); text-decoration:underline;">pritpatel2412@gmail.com</a></p>
+        <p style="margin-bottom:0;">You can use the form below, send an email directly, or copy diagnostic system info if you encountered a technical issue.</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" novalidate>
+        <!-- Hidden Honeypot to catch spambots -->
+        <div style="display:none;" aria-hidden="true">
+          <label>Do not fill this field: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Your Name *</label>
+          <input class="form-input" type="text" id="contact-name" name="name" required placeholder="Cosmic Voyager" />
+          <div id="err-name" style="color:var(--coral); font-size:0.85rem; display:none; margin-top:4px;">Please enter your name.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email Address *</label>
+          <input class="form-input" type="email" id="contact-email" name="email" required placeholder="voyager@galaxy.com" />
+          <div id="err-email" style="color:var(--coral); font-size:0.85rem; display:none; margin-top:4px;">Please provide a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-topic">Topic *</label>
+          <select class="form-select" id="contact-topic" name="topic" required>
+            <option value="Feedback">Gameplay Feedback &amp; Ideas</option>
+            <option value="Bug">Bug / Physics Glitch Report</option>
+            <option value="Inquiry">General Question</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Message *</label>
+          <textarea class="form-textarea" id="contact-message" name="message" required placeholder="Write your message here..."></textarea>
+          <div id="err-message" style="color:var(--coral); font-size:0.85rem; display:none; margin-top:4px;">Please write a message.</div>
+        </div>
+
+        <input type="hidden" name="debug_info" id="field-debug-info" />
+        <div id="form-status" style="margin-bottom:16px; font-weight:800; display:none;"></div>
+
+        <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+          <button type="submit" id="submit-btn" class="btn-primary" style="padding:12px 28px;">Send Message</button>
+          <button type="button" id="copy-debug-btn" class="btn-secondary" style="font-size:0.9rem; padding:12px 20px;">
+            📋 Copy Debug Info
+          </button>
+          <button type="button" id="btnCopyDebug" style="display:none;" aria-hidden="true"></button>
+        </div>
+      </form>
+
+      <!-- Fallback Mailto Box (shown automatically if endpoint fails or is unconfigured) -->
+      <div id="mailto-fallback-box" class="sticker-box accent-coral" style="display:none; margin-top:24px;">
+        <strong style="color:var(--coral); display:block; margin-bottom:6px;">Direct Mail Option:</strong>
+        <p style="margin-bottom:12px;">The form couldn't reach the backend directly. You can launch your email client with one click:</p>
+        <a id="mailto-link" href="mailto:pritpatel2412@gmail.com" class="btn-accent" style="display:inline-block; text-decoration:none;">Open Mail Client</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="./" class="footer-link">Play</a>
+        <a href="./how-to-play.html" class="footer-link">How to Play</a>
+        <a href="./guides/" class="footer-link">Guides</a>
+        <a href="./about.html" class="footer-link">About</a>
+        <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="./terms.html" class="footer-link">Terms of Service</a>
+        <a href="./contact.html" class="footer-link">Contact</a>
+        <button class="footer-btn-cookie">Cookie Settings</button>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Prit Patel. Stardust Merge &mdash; All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { CONFIG } from './js/config.js';
+    import './js/pwa.js';
+    import './js/consent.js';
+
+    const toggle = document.getElementById('mobile-toggle-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => drawer.classList.toggle('open'));
+    }
+
+    // Diagnostic Debug Info Generator
+    function getDiagnosticInfo() {
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      return [
+        `=== STARDUST MERGE DEBUG INFO ===`,
+        `Game Version: ${CONFIG.APP_VERSION}`,
+        `URL: ${window.location.href}`,
+        `Display Mode: ${isStandalone ? 'PWA Standalone' : 'Browser Tab'}`,
+        `Screen Resolution: ${window.screen.width}x${window.screen.height} (DPR: ${window.devicePixelRatio || 1})`,
+        `Viewport Size: ${window.innerWidth}x${window.innerHeight}`,
+        `Touch Supported: ${('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'Yes' : 'No'}`,
+        `User Agent: ${navigator.userAgent}`,
+        `Date: ${new Date().toISOString()}`
+      ].join('\\n');
+    }
+
+    const copyBtn = document.getElementById('copy-debug-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        const text = getDiagnosticInfo();
+        try {
+          await navigator.clipboard.writeText(text);
+          const orig = copyBtn.textContent;
+          copyBtn.textContent = '✓ Copied to Clipboard!';
+          setTimeout(() => { copyBtn.textContent = orig; }, 2500);
+        } catch (e) {
+          prompt('Copy this debug info manually:', text);
+        }
+      });
+    }
+
+    // Form submission handling
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const fallbackBox = document.getElementById('mailto-fallback-box');
+    const mailtoLink = document.getElementById('mailto-link');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset error displays
+      document.getElementById('err-name').style.display = 'none';
+      document.getElementById('err-email').style.display = 'none';
+      document.getElementById('err-message').style.display = 'none';
+      statusDiv.style.display = 'none';
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const topic = document.getElementById('contact-topic').value;
+      const message = document.getElementById('contact-message').value.trim();
+      const gotcha = form.querySelector('[name="_gotcha"]').value;
+
+      // Bot protection
+      if (gotcha) return;
+
+      let valid = true;
+      if (!name) {
+        document.getElementById('err-name').style.display = 'block';
+        valid = false;
+      }
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        document.getElementById('err-email').style.display = 'block';
+        valid = false;
+      }
+      if (!message) {
+        document.getElementById('err-message').style.display = 'block';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Prepare mailto fallback URL
+      const mailtoUrl = `mailto:${CONFIG.CONTACT_EMAIL}?subject=${encodeURIComponent(`[Stardust Merge] ${topic} - ${name}`)}&body=${encodeURIComponent(message + '\\n\\n' + getDiagnosticInfo())}`;
+      mailtoLink.href = mailtoUrl;
+
+      // If FORM_ENDPOINT is placeholder or unset, trigger mailto directly
+      if (!CONFIG.FORM_ENDPOINT || CONFIG.FORM_ENDPOINT.includes('web3forms.com/submit')) {
+        fallbackBox.style.display = 'block';
+        window.location.href = mailtoUrl;
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Transmitting...';
+
+      try {
+        const res = await fetch(CONFIG.FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            topic,
+            message,
+            debug: getDiagnosticInfo()
+          })
+        });
+
+        if (res.ok) {
+          statusDiv.style.color = 'var(--mint)';
+          statusDiv.textContent = '✓ Message transmitted successfully! We will get back to you soon.';
+          statusDiv.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Server returned non-200');
+        }
+      } catch (err) {
+        statusDiv.style.color = 'var(--coral)';
+        statusDiv.textContent = 'Could not send message via form endpoint. Please use the direct mail option below:';
+        statusDiv.style.display = 'block';
+        fallbackBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -2,63 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pritpatel2412.github.io/HTML5-game/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/how-to-play/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/how-to-play.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/tips-and-strategy/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/tiers/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/beginner-cosmic-merge-guide.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/supernova/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/how-to-reach-black-hole-coco.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/game-modes/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/combos-scoring-and-multipliers.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/about/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/perk-tier-list-and-synergies.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pritpatel2412.github.io/HTML5-game/guides/daily-challenge-strategy.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pritpatel2412.github.io/HTML5-game/about.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pritpatel2412.github.io/HTML5-game/privacy.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/privacy-policy/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/terms/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://pritpatel2412.github.io/HTML5-game/contact/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <loc>https://pritpatel2412.github.io/HTML5-game/terms.html</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pritpatel2412.github.io/HTML5-game/contact.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
-

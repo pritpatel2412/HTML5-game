@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Deep Dive into Combos, Cascade Timing &amp; Multipliers — Stardust Merge Guides</title>
+  <meta name="description" content="Master Stardust Merge scoring mathematics: 1.2-second combo windows, chain reaction physics, 8x combo caps, and the compounding power of Ascension multipliers." />
+  <link rel="canonical" href="https://pritpatel2412.github.io/HTML5-game/guides/combos-scoring-and-multipliers.html" />
+  <meta name="theme-color" content="#14303A" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Stardust Merge" />
+  <link rel="stylesheet" href="../css/site.css" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8074288228358823" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Standalone App Return Bar -->
+  <aside class="back-to-game-bar">
+    <a href="../">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to Main Game</span>
+    </a>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="brand-link" aria-label="Stardust Merge Home">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2B33" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="#FFC145"/></svg>
+        </div>
+        <span class="brand-title">Stardust Merge</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="../" class="btn-play-cta">Play Game</a>
+        <a href="../how-to-play.html" class="nav-link">How to Play</a>
+        <a href="./" class="nav-link active">Guides</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="nav-mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu-drawer" id="mobile-drawer">
+      <a href="../" class="btn-play-cta" style="justify-content:center;">Play Game</a>
+      <a href="../how-to-play.html" class="nav-link">How to Play</a>
+      <a href="./" class="nav-link active">Guides</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <article class="content-card prose">
+      <h1 class="page-title">Deep Dive into Combos, Cascade Timing &amp; Multipliers</h1>
+      <p class="page-subtitle">The exact mathematical engine that transforms ordinary merges into world-record scores.</p>
+
+      <h2>1. The Architecture of the Score Formula</h2>
+      <p>
+        In Stardust Merge, points are not assigned arbitrarily. The game engine executes an exact mathematical formula whenever two orbs fuse:
+      </p>
+      <div class="sticker-box accent-mustard">
+        <code style="font-size:1.15rem; color:var(--mustard); font-family:monospace; display:block; margin-bottom:8px;">
+          Points = Math.round(Tier &times; Tier &times; 10 &times; Combo &times; AscensionMult)
+        </code>
+        <p style="margin-bottom:0;">
+          Notice the quadratic term: <code>Tier &times; Tier</code>. A Tier-2 Sparky awards <code>2 &times; 2 &times; 10 = 40 pts</code>, but a Tier-10 Neutry awards <code>10 &times; 10 &times; 10 = 1,000 pts</code>. That is 25 times more points before any multipliers are applied!
+        </p>
+      </div>
+
+      <h2>2. The 1,200ms Combo Window</h2>
+      <p>
+        Whenever any merge occurs in the jar, the game engine sets an internal countdown timer:
+        <code>BASE_COMBO_WINDOW_MS = 1,200 milliseconds (1.2 seconds)</code>.
+      </p>
+      <p>
+        If a second merge occurs before those 1,200ms elapse:
+      </p>
+      <ul>
+        <li>The combo counter increases by +1 (e.g., from 1x to 2x, then 3x).</li>
+        <li>The timer resets to full duration (plus any active perk bonuses).</li>
+        <li>Visual fireworks flash and Web Audio synthesis raises the pitch of the chime harmonic.</li>
+        <li>The combo multiplier caps out at <code>MAX_COMBO = 8</code>.</li>
+      </ul>
+      <p>
+        At maximum combo (8x), a Tier-10 Neutry merge explodes with <strong>8,000 points</strong> in a single pop!
+      </p>
+
+      <h2>3. The Power of the Combo Ribbon Perk</h2>
+      <p>
+        Because the base window is only 1.2 seconds, spontaneous cascades are often required to maintain long combo streaks. That is why the <strong>Combo Ribbon</strong> perk is widely regarded as one of the strongest buffs in the game:
+      </p>
+      <div class="sticker-box accent-mint">
+        <strong style="color:var(--mint); font-size:1.1rem; display:block; margin-bottom:6px;">Combo Ribbon Math:</strong>
+        <p style="margin-bottom:0;">Each stack of Combo Ribbon adds <strong>+1,000ms (1.0 second)</strong> to your combo window. With two stacks, your window grows from 1.2s to <strong>3.2 full seconds</strong>! At 3.2 seconds, you have enough time to manually aim and drop new orbs to keep an 8x combo running indefinitely.</p>
+      </div>
+
+      <h2>4. Engineering Gravity Cascades</h2>
+      <p>
+        A &ldquo;cascade&rdquo; happens when one merge collapses support beneath other bodies, causing them to tumble downward into secondary collisions. You can proactively engineer cascades with careful board staging:
+      </p>
+      <ol>
+        <li><strong>Step Staging:</strong> Position a pair of Tier 3 Commies directly above a pair of Tier 4 Rockies. When the Commies merge into a Rocky, the newly created Rocky drops directly into the waiting Rocky below for an automatic instant 2x combo!</li>
+        <li><strong>The Sparkle Chain Bonus:</strong> With the <em>Sparkle Chain</em> perk, every merge has a 25% chance per stack to trigger gravitational attraction on nearby identical orbs. If this triggers, adjacent orbs are sucked in and grant an additional <strong>+50% bonus points</strong> (<code>Math.round(basePoints &times; 0.5)</code>)!</li>
+      </ol>
+
+      <!-- Mid-Content Ad Slot -->
+      <div style="margin: 32px 0; text-align: center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8074288228358823"
+             data-ad-slot="5555555555"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <h2>5. Ascension Compounding: The True High Score Engine</h2>
+      <p>
+        The final multiplier term in the formula is <code>AscensionMult</code>. Every time two Black Holes merge to create a Supernova:
+      </p>
+      <ul>
+        <li><strong>Ascension 0 (Start):</strong> Mult = 1.00x</li>
+        <li><strong>Ascension 1 (1st Supernova):</strong> Mult = 1.50x</li>
+        <li><strong>Ascension 2 (2nd Supernova):</strong> Mult = 2.25x</li>
+        <li><strong>Ascension 3 (3rd Supernova):</strong> Mult = 3.38x</li>
+        <li><strong>Ascension 4 (4th Supernova):</strong> Mult = 5.06x</li>
+      </ul>
+      <p>
+        At Ascension 4 and 8x combo, a single Tier 11 Coco merge produces:
+        <br/>
+        <code>1,210 &times; 8 &times; 5.06 = 48,980 points!</code>
+      </p>
+
+      <div style="text-align:center; margin-top:36px;">
+        <a href="../" class="btn-play-cta" style="font-size:1.2rem; padding:12px 30px;">Start Building Your Combo Streak &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../" class="footer-link">Play</a>
+        <a href="../how-to-play.html" class="footer-link">How to Play</a>
+        <a href="./" class="footer-link">Guides</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="../terms.html" class="footer-link">Terms of Service</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+        <button class="footer-btn-cookie">Cookie Settings</button>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Prit Patel. Stardust Merge &mdash; All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import '../js/pwa.js';
+    import '../js/consent.js';
+
+    const toggle = document.getElementById('mobile-toggle-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggle && drawer) {
+      toggle.addEventListener('click', () => drawer.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>
