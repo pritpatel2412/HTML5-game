@@ -173,9 +173,18 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     /* App Inline SVG Icons */
     .app-icon {
-      display: inline-block;
-      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      display: block;
       flex-shrink: 0;
+      pointer-events: none;
+    }
+    .app-icon use {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
 
     button:focus-visible, a:focus-visible, input:focus-visible {
@@ -313,7 +322,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 6px;
     }
 
@@ -328,9 +337,10 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     .score-pill {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 4px 12px;
-      flex: 1;
+      gap: 8px;
+      padding: 4px 8px;
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .score-block, .best-block {
@@ -342,15 +352,15 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     .hud-caption {
       font-family: var(--font-display);
-      font-size: 10px;
+      font-size: 9px;
       line-height: 1;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: var(--ink);
     }
 
     .score-value {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 20px;
       line-height: 1.1;
       color: var(--coral);
       -webkit-text-stroke: 1.5px var(--ink);
@@ -360,7 +370,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     .best-value {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.1;
       color: var(--ink);
     }
@@ -408,13 +418,15 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     .coins-pill {
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding: 6px 10px;
+      gap: 4px;
+      padding: 4px 8px;
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1;
       cursor: pointer;
       box-shadow: var(--hard-shadow), var(--inset-highlight);
+      flex-shrink: 0;
+      white-space: nowrap;
       transition: transform 0.08s ease, box-shadow 0.08s ease;
     }
 
@@ -424,19 +436,22 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     }
 
     .crystal-gem-svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
     }
 
     /* HUD Actions: Icon Buttons */
     .hud-actions {
       display: flex;
-      gap: 6px;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .icon-btn {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      min-height: 34px;
       background-color: var(--cream);
       border: var(--stroke-width) solid var(--ink);
       border-radius: var(--radius-md);
@@ -446,7 +461,16 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       justify-content: center;
       cursor: pointer;
       color: var(--ink);
+      flex-shrink: 0;
+      padding: 0;
       transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+
+    .icon-btn .app-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      min-height: 18px;
     }
 
     .icon-btn:active {
@@ -460,12 +484,16 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      gap: 6px;
       margin-bottom: 6px;
+      flex-wrap: nowrap;
     }
 
     .queue-group {
       display: flex;
-      gap: 6px;
+      gap: 5px;
+      flex-shrink: 1;
+      min-width: 0;
     }
 
     .orb-slot-pill {
@@ -475,9 +503,23 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       box-shadow: var(--hard-shadow);
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 3px 8px;
-      height: 44px;
+      gap: 4px;
+      padding: 2px 6px;
+      height: 38px;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+
+    .orb-slot-pill .hud-caption {
+      white-space: nowrap;
+    }
+
+    #nextCharNameLbl {
+      display: inline-block;
+      max-width: 85px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .hold-btn {
@@ -492,19 +534,22 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     }
 
     .slot-canvas {
-      width: 34px;
-      height: 34px;
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
     }
 
     .slot-canvas.lucky-second {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
     }
 
     .mode-badge-group {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .mode-pill {
@@ -514,10 +559,12 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       border-radius: var(--radius-md);
       box-shadow: var(--hard-shadow), var(--inset-highlight);
       font-family: var(--font-display);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.04em;
-      padding: 6px 12px;
+      padding: 5px 8px;
       cursor: pointer;
+      flex-shrink: 0;
+      white-space: nowrap;
       transition: transform 0.08s ease, box-shadow 0.08s ease;
     }
 
@@ -528,20 +575,29 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
     .perk-strip {
       display: flex;
-      gap: 4px;
+      gap: 3px;
+      flex-shrink: 0;
+      align-items: center;
     }
 
     .perk-mini-badge {
-      width: 28px;
-      height: 28px;
+      height: 26px;
+      padding: 2px 6px;
+      min-width: 26px;
+      width: auto;
       background-color: var(--cream);
       border: 2px solid var(--ink);
       border-radius: var(--radius-sm);
       box-shadow: var(--hard-shadow-sm);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      gap: 2px;
+      font-size: 11px;
+      font-family: var(--font-display);
+      color: var(--ink);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Canvas Stage */
@@ -578,37 +634,180 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       .stage-wrapper {
         padding: 4px 4px 16px !important;
       }
+      .play-row {
+        padding: 0 4px !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .game-column {
+        width: 100% !important;
+        max-width: 400px !important;
+        padding: 0 !important;
+      }
       .hud-top {
         gap: 4px !important;
         margin-bottom: 4px !important;
+        width: 100% !important;
       }
       .score-pill {
         padding: 3px 6px !important;
-        gap: 6px !important;
+        gap: 5px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
       }
       .score-value {
         font-size: 18px !important;
       }
       .best-value {
-        font-size: 13px !important;
+        font-size: 12px !important;
+      }
+      .hud-caption {
+        font-size: 9px !important;
+      }
+      .combo-ring-wrap {
+        padding: 2px 4px !important;
       }
       .coins-pill {
         padding: 4px 6px !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
+        gap: 4px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
       }
       .level-pill {
-        min-width: 42px !important;
+        min-width: 38px !important;
         padding: 2px 4px !important;
+        flex-shrink: 0 !important;
       }
       .icon-btn {
-        width: 34px !important;
-        height: 34px !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        flex-shrink: 0 !important;
+      }
+      .icon-btn .app-icon {
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
       }
       .hud-actions {
-        gap: 4px !important;
+        gap: 3px !important;
+        flex-shrink: 0 !important;
       }
       .hud-subrow {
+        gap: 4px !important;
         margin-bottom: 4px !important;
+        width: 100% !important;
+      }
+      .queue-group {
+        gap: 4px !important;
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+      }
+      .orb-slot-pill {
+        height: 36px !important;
+        padding: 2px 5px !important;
+        gap: 3px !important;
+      }
+      .orb-slot-pill .hud-caption {
+        font-size: 9px !important;
+        white-space: nowrap !important;
+      }
+      .slot-canvas {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      .slot-canvas.lucky-second {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .mode-badge-group {
+        gap: 3px !important;
+        flex-shrink: 0 !important;
+      }
+      .mode-pill {
+        padding: 4px 6px !important;
+        font-size: 10px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+      .perk-strip {
+        gap: 2px !important;
+        flex-shrink: 0 !important;
+      }
+      .perk-mini-badge {
+        height: 24px !important;
+        padding: 2px 5px !important;
+        font-size: 10px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+      .sheet-header .icon-btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        max-width: 36px !important;
+        max-height: 36px !important;
+        flex: 0 0 36px !important;
+        align-self: center !important;
+      }
+      .bottom-sheet {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 12px 24px !important;
+        box-sizing: border-box !important;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .hud-top {
+        gap: 2px !important;
+      }
+      .score-pill {
+        padding: 2px 4px !important;
+        gap: 3px !important;
+      }
+      .score-value {
+        font-size: 16px !important;
+      }
+      .best-value {
+        font-size: 11px !important;
+      }
+      .coins-pill {
+        padding: 2px 4px !important;
+        font-size: 10px !important;
+      }
+      .level-pill {
+        min-width: 32px !important;
+        padding: 1px 3px !important;
+      }
+      .icon-btn {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+      }
+      .icon-btn .app-icon {
+        width: 14px !important;
+        height: 14px !important;
+        min-width: 14px !important;
+        min-height: 14px !important;
+      }
+      .hud-actions {
+        gap: 2px !important;
+      }
+      .mode-pill {
+        padding: 3px 5px !important;
+        font-size: 9px !important;
+      }
+      .perk-mini-badge {
+        height: 22px !important;
+        padding: 1px 4px !important;
+        font-size: 9px !important;
       }
     }
 
@@ -935,19 +1134,36 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       display: flex;
       gap: 6px;
       margin-bottom: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 4px;
+    }
+    .sheet-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .sheet-tab-btn {
-      flex: 1;
+      flex: 1 0 auto;
       height: 38px;
+      padding: 0 16px;
       background-color: var(--cream);
       border: var(--stroke-width) solid var(--ink);
       border-radius: var(--radius-md);
       box-shadow: var(--hard-shadow-sm);
       font-family: var(--font-display);
       font-size: 13px;
+      letter-spacing: 0.5px;
       cursor: pointer;
       color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: transform 0.08s ease, background-color 0.12s ease;
     }
 
     .sheet-tab-btn.active {
@@ -1695,7 +1911,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
   </header> 
 
   <!-- Inline SVG Symbols Spritesheet (24px grid, 3px rounded strokes, locked palette) -->
-  <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <symbol id="icon-play" viewBox="0 0 24 24">
         <polygon points="6,4 20,12 6,20" fill="var(--mint)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" />
@@ -1848,7 +2064,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           </div>
 
           <button type="button" class="glass-pill coins-pill" id="btnOpenShop" aria-label="Stardust Coins and Shop">
-            <svg class="app-icon" width="18" height="18"><use href="#icon-coin"></use></svg>
+            <svg class="app-icon" viewBox="0 0 24 24" width="18" height="18"><use href="#icon-coin" xlink:href="#icon-coin"></use></svg>
              <span id="coinsDisplay">0</span>
           </button>
 
@@ -1865,13 +2081,13 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
           <div class="hud-actions">
             <button type="button" class="icon-btn" id="btnLeaderboard" aria-label="Cosmic Leaderboard" title="Live Worldwide, Country &amp; City Leaderboard">
-              <svg class="app-icon" width="20" height="20"><use href="#icon-trophy"></use></svg>
+              <svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-trophy" xlink:href="#icon-trophy"></use></svg>
             </button>
             <button type="button" class="icon-btn" id="btnMute" aria-label="Toggle Sound">
-              <svg class="app-icon" id="muteIconSvg" width="20" height="20"><use href="#icon-sound-on"></use></svg>
+              <svg class="app-icon" viewBox="0 0 24 24" id="muteIconSvg" width="20" height="20"><use href="#icon-sound-on" xlink:href="#icon-sound-on"></use></svg>
             </button>
             <button type="button" class="icon-btn" id="btnMenu" aria-label="Open Game Menu and Modes">
-              <svg class="app-icon" width="20" height="20"><use href="#icon-menu"></use></svg>
+              <svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-menu" xlink:href="#icon-menu"></use></svg>
             </button>
           </div>
         </header>
@@ -1936,7 +2152,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           </button>
 
           <button type="button" class="action-pill-btn star-bomb-btn" id="btnStarBomb" aria-label="Activate Star Bomb" title="Pop 5 Smallest Orbs (40 coins)">
-            <svg class="app-icon" width="18" height="18"><use href="#icon-bomb"></use></svg>
+            <svg class="app-icon" viewBox="0 0 24 24" width="18" height="18"><use href="#icon-bomb" xlink:href="#icon-bomb"></use></svg>
             <span>Bomb</span>
             <span class="star-bomb-count" id="starBombCount">1</span>
           </button>
@@ -1947,7 +2163,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           </button>
 
           <button type="button" class="action-pill-btn" id="btnDailyReward" aria-label="Claim Daily Login Streak Reward">
-            <svg class="app-icon" width="18" height="18"><use href="#icon-gift"></use></svg>
+            <svg class="app-icon" viewBox="0 0 24 24" width="18" height="18"><use href="#icon-gift" xlink:href="#icon-gift"></use></svg>
             <span id="dailyBtnText">Daily Gift</span>
           </button>
         </div>
@@ -2015,7 +2231,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           <canvas id="menuMochiCanvas" width="96" height="96" style="width:48px; height:48px;"></canvas>
           <h2 class="sheet-title" id="menuSheetTitle">Mochi's Cosmic Menu</h2>
         </div>
-        <button type="button" class="icon-btn" id="btnCloseMenu" aria-label="Resume Game"><svg class="app-icon" width="16" height="16"><use href="#icon-close"></use></svg></button>
+        <button type="button" class="icon-btn" id="btnCloseMenu" aria-label="Resume Game"><svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-close" xlink:href="#icon-close"></use></svg></button>
       </div>
 
       <nav class="sheet-tabs" aria-label="Menu Sections">
@@ -2297,7 +2513,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       <!-- Real-time Leaderboard Status Banner -->
       <div class="go-rank-pill" id="goLeaderboardBanner" title="View Real-Time Standings">
         <div style="display:flex; align-items:center; gap:8px;">
-          <svg class="app-icon" width="16" height="16"><use href="#icon-trophy"></use></svg>
+          <svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-trophy" xlink:href="#icon-trophy"></use></svg>
           <span id="goRankText">Submitting score to live leaderboard...</span>
         </div>
         <span style="font-size:11px; font-weight:800;">View</span>
@@ -2337,7 +2553,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       <div class="sheet-handle"></div>
       <div class="sheet-header">
         <h2 class="sheet-title" id="dailyStreakTitle">Mochi's 7-Day Star Gift</h2>
-        <button type="button" class="icon-btn" id="btnCloseDailySheet" aria-label="Close Daily Streak"><svg class="app-icon" width="16" height="16"><use href="#icon-close"></use></svg></button>
+        <button type="button" class="icon-btn" id="btnCloseDailySheet" aria-label="Close Daily Streak"><svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-close" xlink:href="#icon-close"></use></svg></button>
       </div>
       <p style="font-size:13px; color:var(--text-secondary); margin-bottom:12px; position:relative; z-index:1;">
         Visit Mochi daily to collect sweet Stardust Coin gifts!
@@ -2361,7 +2577,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       <div class="sheet-handle"></div>
       <div class="sheet-header">
         <h2 class="sheet-title" id="legalSheetTitle">Information</h2>
-        <button type="button" class="icon-btn" id="btnCloseLegal" aria-label="Close Information Window"><svg class="app-icon" width="16" height="16"><use href="#icon-close"></use></svg></button>
+        <button type="button" class="icon-btn" id="btnCloseLegal" aria-label="Close Information Window"><svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-close" xlink:href="#icon-close"></use></svg></button>
       </div>
       <div id="legalSheetBody"
         style="font-size:14px; line-height:1.6; color:var(--text-secondary); position:relative; z-index:1;"></div>
@@ -2375,26 +2591,26 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
       <div class="sheet-header">
         <div style="display:flex; align-items:center; gap:8px;">
-          <svg class="app-icon" width="28" height="28"><use href="#icon-trophy"></use></svg>
+          <svg class="app-icon" viewBox="0 0 24 24" width="28" height="28"><use href="#icon-trophy" xlink:href="#icon-trophy"></use></svg>
           <div>
             <h2 class="sheet-title" id="lbSheetTitle" style="font-size:20px; margin:0;">Cosmic Leaderboard</h2>
             <div style="font-size:11px; color:var(--text-secondary);">Real-Time Worldwide, Country &amp; City Rankings</div>
           </div>
         </div>
-        <button type="button" class="icon-btn" id="btnCloseLeaderboard" aria-label="Close Leaderboard"><svg class="app-icon" width="16" height="16"><use href="#icon-close"></use></svg></button>
+        <button type="button" class="icon-btn" id="btnCloseLeaderboard" aria-label="Close Leaderboard"><svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-close" xlink:href="#icon-close"></use></svg></button>
       </div>
 
       <!-- Player Profile Strip -->
       <div class="lb-profile-box">
         <div class="lb-player-tag">
-          <div class="lb-avatar-badge" id="lbUserAvatar"><svg class="app-icon" width="16" height="16"><use href="#icon-star"></use></svg></div>
+          <div class="lb-avatar-badge" id="lbUserAvatar"><svg class="app-icon" viewBox="0 0 24 24" width="16" height="16"><use href="#icon-star" xlink:href="#icon-star"></use></svg></div>
           <div style="min-width:0;">
             <div style="display:flex; align-items:center; gap:6px;">
               <input type="text" id="lbPlayerNameInput" class="lb-name-input" maxlength="20" placeholder="Enter Name" aria-label="Your Player Name" />
-              <button type="button" id="lbSaveNameBtn" class="lb-tiny-btn" title="Save Nickname"><svg class="app-icon" width="12" height="12"><use href="#icon-edit"></use></svg></button>
+              <button type="button" id="lbSaveNameBtn" class="lb-tiny-btn" title="Save Nickname"><svg class="app-icon" viewBox="0 0 24 24" width="12" height="12"><use href="#icon-edit" xlink:href="#icon-edit"></use></svg></button>
             </div>
             <div class="lb-location-pill" id="lbUserLocation" title="Detected Geographic Region">
-              <svg class="app-icon" width="14" height="14" style="margin-right:2px;"><use href="#icon-globe"></use></svg> <span id="lbUserLocText">Worldwide</span>
+              <svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:2px;"><use href="#icon-globe" xlink:href="#icon-globe"></use></svg> <span id="lbUserLocText">Worldwide</span>
             </div>
           </div>
         </div>
@@ -2407,21 +2623,21 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       <!-- Geo Scope Tabs (Worldwide | Country | City) -->
       <div class="lb-scope-tabs" role="tablist" aria-label="Geographic Scope">
         <button type="button" class="lb-scope-btn active" id="lbScopeWorldwide" data-scope="worldwide" role="tab" aria-selected="true">
-          <svg class="app-icon" width="14" height="14" style="margin-right:4px;"><use href="#icon-globe"></use></svg> Worldwide
+          <svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:4px;"><use href="#icon-globe" xlink:href="#icon-globe"></use></svg> Worldwide
         </button>
         <button type="button" class="lb-scope-btn" id="lbScopeCountry" data-scope="country" role="tab" aria-selected="false">
-          <svg class="app-icon" width="14" height="14" style="margin-right:2px;"><use href="#icon-flag"></use></svg> <span id="lbCountryTabLabel">Country</span>
+          <svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:2px;"><use href="#icon-flag" xlink:href="#icon-flag"></use></svg> <span id="lbCountryTabLabel">Country</span>
         </button>
         <button type="button" class="lb-scope-btn" id="lbScopeCity" data-scope="city" role="tab" aria-selected="false">
-          <svg class="app-icon" width="14" height="14" style="margin-right:2px;"><use href="#icon-city"></use></svg> <span id="lbCityTabLabel">City / Region</span>
+          <svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:2px;"><use href="#icon-city" xlink:href="#icon-city"></use></svg> <span id="lbCityTabLabel">City / Region</span>
         </button>
       </div>
 
       <!-- Mode Selector (Endless | Daily | Zen) -->
       <div class="lb-mode-pills" role="tablist" aria-label="Game Mode">
-        <button type="button" class="lb-mode-btn active" data-lb-mode="endless"><svg class="app-icon" width="14" height="14" style="margin-right:4px;"><use href="#icon-rocket"></use></svg> Endless</button>
+        <button type="button" class="lb-mode-btn active" data-lb-mode="endless"><svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:4px;"><use href="#icon-rocket" xlink:href="#icon-rocket"></use></svg> Endless</button>
         <button type="button" class="lb-mode-btn" data-lb-mode="daily">⭐ Daily Star</button>
-        <button type="button" class="lb-mode-btn" data-lb-mode="zen"><svg class="app-icon" width="14" height="14" style="margin-right:4px;"><use href="#icon-moon"></use></svg> Zen Merge</button>
+        <button type="button" class="lb-mode-btn" data-lb-mode="zen"><svg class="app-icon" viewBox="0 0 24 24" width="14" height="14" style="margin-right:4px;"><use href="#icon-moon" xlink:href="#icon-moon"></use></svg> Zen Merge</button>
       </div>
 
       <!-- Leaderboard Entries List -->
@@ -3404,49 +3620,49 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         {
           id: 'gravity_well',
           name: 'GRAVITY CUDDLE',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-star"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-star" xlink:href="#icon-star"></use></svg>',
           desc: 'Dropped creatures gently pull matching-tier friends together for 1.0 second.'
         },
         {
           id: 'chain_reaction',
           name: 'SPARKLE CHAIN',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-bomb"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-bomb" xlink:href="#icon-bomb"></use></svg>',
           desc: '25% chance per stack that a merge pulls nearby matching creatures with +50% bonus points.'
         },
         {
           id: 'golden_dust',
           name: 'GOLDEN DUSTY',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-coin"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-coin" xlink:href="#icon-coin"></use></svg>',
           desc: 'Tier-1 Dusty drops have a 35% chance per stack to upgrade automatically into Tier-2 Sparky.'
         },
         {
           id: 'soft_landing',
           name: 'PILLOW LANDING',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-moon"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-moon" xlink:href="#icon-moon"></use></svg>',
           desc: 'Cushions plush impacts (-45% bounce restitution) for calmer, steadier stacking.'
         },
         {
           id: 'combo_keeper',
           name: 'COMBO RIBBON',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-refresh"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-refresh" xlink:href="#icon-refresh"></use></svg>',
           desc: 'Extends the active merge combo timer window by +1.0 second per stack.'
         },
         {
           id: 'slow_orbit',
           name: 'SAFE BUBBLE',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-flag"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-flag" xlink:href="#icon-flag"></use></svg>',
           desc: 'Adds +1.5 seconds of Event Horizon grace time before game over triggers.'
         },
         {
           id: 'star_bomb',
           name: 'STAR POP +1',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-bomb"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-bomb" xlink:href="#icon-bomb"></use></svg>',
           desc: 'Grants +1 immediate Star Bomb charge to pop the 5 smallest orbs for bonus points.'
         },
         {
           id: 'lucky_next',
           name: 'MOCHI PEEK',
-          icon: '<svg class="app-icon" width="20" height="20"><use href="#icon-play"></use></svg>',
+          icon: '<svg class="app-icon" viewBox="0 0 24 24" width="20" height="20"><use href="#icon-play" xlink:href="#icon-play"></use></svg>',
           desc: 'Reveals 2 upcoming creatures in the Next preview window and boosts high-tier drop odds.'
         }
       ],
@@ -6462,7 +6678,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           card.className = `shop-card ${unlocked ? 'equipped' : ''}`;
           card.style.opacity = unlocked ? '1' : '0.55';
           card.innerHTML = `
-            <div class="shop-card-title"><svg class="app-icon" width="14" height="14"><use href="#icon-star"></use></svg> ${ach.name}</div>
+            <div class="shop-card-title"><svg class="app-icon" viewBox="0 0 24 24" width="14" height="14"><use href="#icon-star" xlink:href="#icon-star"></use></svg> ${ach.name}</div>
             <div class="shop-card-sub">${ach.desc}</div>
           `;
           achGrid.appendChild(card);
@@ -6608,7 +6824,11 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       syncSettingsToggles() {
         const s = Storage.data.settings;
         const iconUse = document.querySelector('#muteIconSvg use');
-        if (iconUse) iconUse.setAttribute('href', s.sound ? '#icon-sound-on' : '#icon-sound-off');
+        if (iconUse) {
+          const sym = s.sound ? '#icon-sound-on' : '#icon-sound-off';
+          iconUse.setAttribute('href', sym);
+          iconUse.setAttribute('xlink:href', sym);
+        }
         if (document.getElementById('toggleSound')) document.getElementById('toggleSound').classList.toggle('on', !!s.sound);
         if (document.getElementById('toggleAmbient')) document.getElementById('toggleAmbient').classList.toggle('on', !!s.ambient);
         if (document.getElementById('toggleHaptics')) document.getElementById('toggleHaptics').classList.toggle('on', !!s.haptics);
@@ -7043,7 +7263,7 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           const emptyDiv = document.createElement('div');
           emptyDiv.style.cssText = 'text-align:center; padding:36px 16px; background:rgba(255,253,249,0.06); border-radius:20px; border:1.5px dashed rgba(255,253,249,0.2);';
           emptyDiv.innerHTML = `
-            <div style="margin-bottom:8px;"><svg class="app-icon" width="32" height="32"><use href="#icon-rocket"></use></svg></div>
+            <div style="margin-bottom:8px;"><svg class="app-icon" viewBox="0 0 24 24" width="32" height="32"><use href="#icon-rocket" xlink:href="#icon-rocket"></use></svg></div>
             <div style="font-weight:900; font-size:15px; color:var(--warm-gold); margin-bottom:4px;">No Scores Yet in This Region!</div>
             <div style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">Be the very first cosmic explorer to claim the #1 spot!</div>
             <button type="button" class="primary-cta-btn" id="btnLbPlayNow" style="width:auto; padding:8px 24px; font-size:13px; margin:0 auto;">
