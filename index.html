@@ -1415,6 +1415,375 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       text-decoration: underline;
     }
 
+    /* =========================================================================
+       LEADERBOARD STYLES (Kawaii Cosmic Fluff Theme)
+       ========================================================================= */
+    .lb-profile-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(255, 253, 249, 0.12);
+      border: 1.5px solid rgba(255, 253, 249, 0.28);
+      border-radius: 20px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lb-player-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .lb-avatar-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #FFAFCC 0%, #A2D2FF 100%);
+      border: 2px solid #FFFDF9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+    }
+
+    .lb-name-input {
+      background: rgba(255, 253, 249, 0.18);
+      border: 1.5px solid rgba(255, 253, 249, 0.4);
+      border-radius: 10px;
+      color: #FFFDF9;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 3px 8px;
+      width: 130px;
+      max-width: 140px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .lb-name-input:focus {
+      background: rgba(255, 253, 249, 0.3);
+      border-color: var(--warm-gold);
+      box-shadow: 0 0 8px rgba(255, 228, 94, 0.4);
+    }
+
+    .lb-tiny-btn {
+      background: rgba(255, 253, 249, 0.2);
+      border: 1px solid rgba(255, 253, 249, 0.4);
+      border-radius: 8px;
+      color: var(--warm-gold);
+      font-size: 12px;
+      padding: 3px 7px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .lb-tiny-btn:hover {
+      background: rgba(255, 228, 94, 0.3);
+    }
+
+    .lb-location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--mint-sparkle);
+      background: rgba(184, 242, 230, 0.14);
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-top: 3px;
+      font-weight: 700;
+      max-width: 170px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lb-scope-tabs {
+      display: flex;
+      gap: 6px;
+      background: rgba(24, 12, 52, 0.35);
+      border-radius: 16px;
+      padding: 4px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lb-scope-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px 4px;
+      border: none;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s var(--ease-spring);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lb-scope-btn.active {
+      background: linear-gradient(135deg, #FFE45E 0%, #FFAFCC 100%);
+      color: #331A56;
+      box-shadow: 0 4px 12px rgba(255, 175, 204, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .lb-mode-pills {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lb-mode-btn {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255, 253, 249, 0.25);
+      background: rgba(255, 253, 249, 0.08);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lb-mode-btn.active {
+      background: rgba(255, 253, 249, 0.3);
+      border-color: var(--warm-gold);
+      color: var(--warm-gold);
+      box-shadow: 0 0 10px rgba(255, 228, 94, 0.3);
+    }
+
+    .lb-list-container {
+      max-height: 48dvh;
+      overflow-y: auto;
+      padding-right: 2px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lb-list-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .lb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: rgba(255, 253, 249, 0.09);
+      border: 1.5px solid rgba(255, 253, 249, 0.16);
+      border-radius: 16px;
+      padding: 8px 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .lb-row:hover {
+      transform: scale(1.01);
+      background: rgba(255, 253, 249, 0.14);
+    }
+
+    .lb-row.top-1 {
+      background: linear-gradient(90deg, rgba(255, 228, 94, 0.25) 0%, rgba(255, 175, 204, 0.18) 100%);
+      border: 1.5px solid rgba(255, 228, 94, 0.7);
+      box-shadow: 0 4px 14px rgba(255, 228, 94, 0.18);
+    }
+
+    .lb-row.top-2 {
+      background: linear-gradient(90deg, rgba(220, 230, 255, 0.22) 0%, rgba(162, 210, 255, 0.16) 100%);
+      border: 1.5px solid rgba(220, 230, 255, 0.55);
+    }
+
+    .lb-row.top-3 {
+      background: linear-gradient(90deg, rgba(255, 186, 130, 0.2) 0%, rgba(255, 138, 91, 0.14) 100%);
+      border: 1.5px solid rgba(255, 186, 130, 0.5);
+    }
+
+    .lb-row.is-user {
+      background: linear-gradient(90deg, rgba(255, 228, 94, 0.32) 0%, rgba(184, 242, 230, 0.28) 100%) !important;
+      border: 2px solid var(--warm-gold) !important;
+      box-shadow: 0 0 16px rgba(255, 228, 94, 0.45);
+      animation: pulseUserRow 2.4s infinite ease-in-out;
+    }
+
+    .lb-rank-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      flex-shrink: 0;
+      background: rgba(255, 253, 249, 0.18);
+      color: #FFFDF9;
+    }
+
+    .lb-rank-badge.rank-1 {
+      background: linear-gradient(135deg, #FFE45E 0%, #FFA834 100%);
+      color: #331A56;
+      box-shadow: 0 2px 8px rgba(255, 228, 94, 0.5);
+    }
+
+    .lb-rank-badge.rank-2 {
+      background: linear-gradient(135deg, #FFFFFF 0%, #C7D2FE 100%);
+      color: #1E1B4B;
+    }
+
+    .lb-rank-badge.rank-3 {
+      background: linear-gradient(135deg, #FDBA74 0%, #EA580C 100%);
+      color: #FFFFFF;
+    }
+
+    .lb-player-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lb-player-text {
+      min-width: 0;
+    }
+
+    .lb-player-name {
+      font-weight: 800;
+      font-size: 13px;
+      color: #FFFDF9;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lb-you-tag {
+      background: var(--warm-gold);
+      color: #331A56;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 1px 5px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      display: inline-block;
+    }
+
+    .lb-player-meta {
+      font-size: 11px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lb-tier-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .lb-score-val {
+      font-family: var(--font-score);
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--warm-gold);
+      text-align: right;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .lb-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 253, 249, 0.12);
+      font-size: 11px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .lb-live-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2ECC71;
+      box-shadow: 0 0 8px #2ECC71;
+      animation: pulseDot 1.8s infinite;
+    }
+
+    .go-rank-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: rgba(255, 228, 94, 0.18);
+      border: 1.5px solid var(--warm-gold);
+      border-radius: 18px;
+      padding: 9px 14px;
+      margin-bottom: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--warm-gold);
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.2s;
+    }
+
+    .go-rank-pill:hover {
+      background: rgba(255, 228, 94, 0.28);
+      transform: translateY(-1px);
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    @keyframes pulseUserRow {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 228, 94, 0.25); }
+      50% { box-shadow: 0 0 20px rgba(255, 228, 94, 0.55); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -1485,6 +1854,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           </button>
 
           <div class="hud-actions">
+            <button type="button" class="icon-btn" id="btnLeaderboard" aria-label="Cosmic Leaderboard" title="Live Worldwide, Country &amp; City Leaderboard">
+              <span aria-hidden="true">🏆</span>
+            </button>
             <button type="button" class="icon-btn" id="btnMute" aria-label="Toggle Sound">
               <span id="muteIcon" aria-hidden="true">🔊</span>
             </button>
@@ -1771,6 +2143,15 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         </div>
       </div>
 
+      <!-- Real-time Leaderboard Status Banner -->
+      <div class="go-rank-pill" id="goLeaderboardBanner" title="View Real-Time Standings">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span>🏆</span>
+          <span id="goRankText">Submitting score to live leaderboard...</span>
+        </div>
+        <span style="font-size:11px; opacity:0.85;">View ➔</span>
+      </div>
+
       <!-- Primary Auto-Focused 1-Tap Restart Button -->
       <button type="button" class="primary-cta-btn" id="btnPlayAgain">
         <span>PLAY AGAIN</span>
@@ -1830,6 +2211,82 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       </div>
       <div id="legalSheetBody"
         style="font-size:14px; line-height:1.6; color:var(--text-secondary); position:relative; z-index:1;"></div>
+    </div>
+  </div>
+
+  <!-- 6. Real-time Worldwide, Country & City Leaderboard Sheet -->
+  <div class="sheet-backdrop" id="leaderboardSheet" role="dialog" aria-modal="true" aria-labelledby="lbSheetTitle">
+    <div class="bottom-sheet" style="max-height:92dvh;">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:24px;">🏆</span>
+          <div>
+            <h2 class="sheet-title" id="lbSheetTitle" style="font-size:20px; margin:0;">Cosmic Leaderboard</h2>
+            <div style="font-size:11px; color:var(--text-secondary);">Real-Time Worldwide, Country &amp; City Rankings</div>
+          </div>
+        </div>
+        <button type="button" class="icon-btn" id="btnCloseLeaderboard" aria-label="Close Leaderboard">✕</button>
+      </div>
+
+      <!-- Player Profile Strip -->
+      <div class="lb-profile-box">
+        <div class="lb-player-tag">
+          <div class="lb-avatar-badge" id="lbUserAvatar">🌟</div>
+          <div style="min-width:0;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <input type="text" id="lbPlayerNameInput" class="lb-name-input" maxlength="20" placeholder="Enter Name" aria-label="Your Player Name" />
+              <button type="button" id="lbSaveNameBtn" class="lb-tiny-btn" title="Save Nickname">✎</button>
+            </div>
+            <div class="lb-location-pill" id="lbUserLocation" title="Detected Geographic Region">
+              <span id="lbUserFlag">🌍</span> <span id="lbUserLocText">Worldwide</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div class="hud-caption" style="font-size:9px;">YOUR BEST</div>
+          <div class="score-value" id="lbUserBestScore" style="font-size:18px; color:var(--warm-gold);">0</div>
+        </div>
+      </div>
+
+      <!-- Geo Scope Tabs (Worldwide | Country | City) -->
+      <div class="lb-scope-tabs" role="tablist" aria-label="Geographic Scope">
+        <button type="button" class="lb-scope-btn active" id="lbScopeWorldwide" data-scope="worldwide" role="tab" aria-selected="true">
+          🌍 Worldwide
+        </button>
+        <button type="button" class="lb-scope-btn" id="lbScopeCountry" data-scope="country" role="tab" aria-selected="false">
+          <span id="lbCountryTabFlag">🏳️</span> <span id="lbCountryTabLabel">Country</span>
+        </button>
+        <button type="button" class="lb-scope-btn" id="lbScopeCity" data-scope="city" role="tab" aria-selected="false">
+          🏙️ <span id="lbCityTabLabel">City / Region</span>
+        </button>
+      </div>
+
+      <!-- Mode Selector (Endless | Daily | Zen) -->
+      <div class="lb-mode-pills" role="tablist" aria-label="Game Mode">
+        <button type="button" class="lb-mode-btn active" data-lb-mode="endless">🚀 Endless</button>
+        <button type="button" class="lb-mode-btn" data-lb-mode="daily">⭐ Daily Star</button>
+        <button type="button" class="lb-mode-btn" data-lb-mode="zen">🌸 Zen Merge</button>
+      </div>
+
+      <!-- Leaderboard Entries List -->
+      <div class="lb-list-container" id="lbListContainer" role="region" aria-live="polite" aria-label="Leaderboard Rankings">
+        <div id="lbListItems" class="lb-list-items">
+          <!-- Dynamic Leaderboard Rows -->
+        </div>
+      </div>
+
+      <!-- Live Sync Status & Refresh Action -->
+      <div class="lb-status-bar">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span class="lb-live-pulse" aria-hidden="true"></span>
+          <span id="lbStatusText">Real-Time Sync Active</span>
+        </div>
+        <button type="button" class="action-pill-btn" id="btnRefreshLeaderboard" style="padding:4px 10px; font-size:11px;">
+          <span>⟳ Refresh</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2054,6 +2511,15 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
       formatNumber(n) {
         return Math.floor(n).toLocaleString('en-US');
       },
+      escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      },
       vibrate(ms) {
         if (!Storage.data.settings.haptics) return;
         try {
@@ -2104,7 +2570,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
             reduceFX: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
             tierNumbers: false
           },
-          consentGiven: null
+          consentGiven: null,
+          playerName: '',
+          playerGeo: null
         };
       },
       load() {
@@ -2119,6 +2587,8 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
           this.data = {
             ...defaults,
             ...parsed,
+            playerName: (parsed.playerName || '').slice(0, 20),
+            playerGeo: parsed.playerGeo || null,
             bestScores: { ...defaults.bestScores, ...(parsed.bestScores || {}) },
             stats: { ...defaults.stats, ...(parsed.stats || {}) },
             cosmetics: { ...defaults.cosmetics, ...(parsed.cosmetics || {}) },
@@ -4942,6 +5412,9 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
         Achievements.evaluate();
         UI.openGameOverSheet(baseCoins);
+        if (this.score > 0) {
+          Leaderboard.submitScore(this.score, this.highestTierInJar, this.mode);
+        }
       },
 
       reviveCurrentRun() {
@@ -5157,6 +5630,83 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         document.getElementById('btnOpenShop').addEventListener('click', () => this.openMenuSheet('tabShop'));
         document.getElementById('btnCloseMenu').addEventListener('click', () => this.closeMenuSheet());
         document.getElementById('btnResumePlay').addEventListener('click', () => this.closeMenuSheet());
+
+        const btnLb = document.getElementById('btnLeaderboard');
+        if (btnLb) {
+          btnLb.addEventListener('click', () => {
+            AudioEngine.playClick();
+            this.openLeaderboardSheet('worldwide');
+          });
+        }
+        const btnCloseLb = document.getElementById('btnCloseLeaderboard');
+        if (btnCloseLb) {
+          btnCloseLb.addEventListener('click', () => {
+            AudioEngine.playClick();
+            this.closeLeaderboardSheet();
+          });
+        }
+        const btnRefLb = document.getElementById('btnRefreshLeaderboard');
+        if (btnRefLb) {
+          btnRefLb.addEventListener('click', () => {
+            AudioEngine.playClick();
+            Leaderboard.refresh();
+          });
+        }
+        const goLb = document.getElementById('goLeaderboardBanner');
+        if (goLb) {
+          goLb.addEventListener('click', () => {
+            AudioEngine.playClick();
+            this.closeAllSheets();
+            this.openLeaderboardSheet('worldwide');
+          });
+        }
+
+        // Geo Scope buttons
+        ['worldwide', 'country', 'city'].forEach(scope => {
+          const btn = document.getElementById('lbScope' + scope.charAt(0).toUpperCase() + scope.slice(1));
+          if (btn) {
+            btn.addEventListener('click', () => {
+              AudioEngine.playClick();
+              document.querySelectorAll('.lb-scope-btn').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+              });
+              btn.classList.add('active');
+              btn.setAttribute('aria-selected', 'true');
+              Leaderboard.setScope(scope);
+            });
+          }
+        });
+
+        // Mode buttons inside leaderboard
+        document.querySelectorAll('.lb-mode-btn').forEach(b => {
+          b.addEventListener('click', () => {
+            AudioEngine.playClick();
+            document.querySelectorAll('.lb-mode-btn').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            Leaderboard.setMode(b.getAttribute('data-lb-mode'));
+          });
+        });
+
+        // Name save
+        const saveName = () => {
+          const inp = document.getElementById('lbPlayerNameInput');
+          if (inp && inp.value) Leaderboard.setPlayerName(inp.value);
+        };
+        const saveNameBtn = document.getElementById('lbSaveNameBtn');
+        if (saveNameBtn) {
+          saveNameBtn.addEventListener('click', () => {
+            AudioEngine.playClick();
+            saveName();
+          });
+        }
+        const nameInput = document.getElementById('lbPlayerNameInput');
+        if (nameInput) {
+          nameInput.addEventListener('change', saveName);
+          nameInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') saveName();
+          });
+        }
 
         document.getElementById('btnHoldSwap').addEventListener('click', () => Game.holdOrSwapOrb());
 
@@ -5475,8 +6025,21 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
         }
       },
 
+      openLeaderboardSheet(scope = 'worldwide') {
+        Game.isPaused = true;
+        document.getElementById('leaderboardSheet').classList.add('open');
+        Leaderboard.open(scope);
+      },
+
+      closeLeaderboardSheet() {
+        document.getElementById('leaderboardSheet').classList.remove('open');
+        Leaderboard.close();
+        if (!Game.isGameOver) Game.isPaused = false;
+      },
+
       closeAllSheets() {
         document.querySelectorAll('.sheet-backdrop').forEach(s => s.classList.remove('open'));
+        Leaderboard.close();
       },
 
       switchMenuTab(tabId) {
@@ -5565,6 +6128,11 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
 
         document.getElementById('btnReviveAd').disabled = Game.reviveUsedThisRun;
         document.getElementById('btnDoubleCoinsAd').disabled = Game.doubleCoinsUsedThisRun;
+
+        const rankEl = document.getElementById('goRankText');
+        if (rankEl) {
+          rankEl.textContent = Game.score > 0 ? 'Submitting score to live leaderboard...' : 'View Global Leaderboard';
+        }
 
         const sheet = document.getElementById('gameOverSheet');
         sheet.classList.add('open');
@@ -5715,12 +6283,496 @@ WHERE TO PUT ADSENSE IDs & ads.txt:
     };
 
     /* =========================================================================
+       13.5 REAL-TIME MULTI-TIER LEADERBOARD CONTROLLER (Neon Postgres Cloud API)
+       ========================================================================= */
+    const Leaderboard = {
+      API_URL: 'https://ep-long-wave-aod62vc7.apirest.c-2.ap-southeast-1.aws.neon.tech/neondb/rest/v1/leaderboard',
+      AUTH_URL: 'https://ep-long-wave-aod62vc7.neonauth.c-2.ap-southeast-1.aws.neon.tech/neondb/auth/token/anonymous',
+      currentScope: 'worldwide',
+      currentMode: 'endless',
+      token: null,
+      tokenExpiresAt: 0,
+      pollTimer: null,
+      lastSubmittedId: null,
+      playerGeo: {
+        country: 'Worldwide',
+        countryCode: 'WW',
+        region: '',
+        city: '',
+        flag: '🌍'
+      },
+
+      init() {
+        this.currentMode = Game ? (Game.mode || 'endless') : 'endless';
+        this.detectLocation();
+        this.updateProfileUI();
+        this.getAuthToken().catch(() => {});
+      },
+
+      countryCodeToFlag(code) {
+        if (!code || typeof code !== 'string' || code.length !== 2) return '🌍';
+        const base = 127397;
+        const c1 = code.toUpperCase().charCodeAt(0);
+        const c2 = code.toUpperCase().charCodeAt(1);
+        if (c1 < 65 || c1 > 90 || c2 < 65 || c2 > 90) return '🌍';
+        return String.fromCodePoint(base + c1, base + c2);
+      },
+
+      estimateGeoFromTimezone(tz) {
+        const t = (tz || '').toLowerCase();
+        if (t.includes('kolkata') || t.includes('calcutta') || t.includes('india')) {
+          return { country: 'India', countryCode: 'IN', region: 'Gujarat', city: 'Ahmedabad', flag: '🇮🇳' };
+        }
+        if (t.includes('new_york') || t.includes('eastern')) {
+          return { country: 'United States', countryCode: 'US', region: 'New York', city: 'New York', flag: '🇺🇸' };
+        }
+        if (t.includes('los_angeles') || t.includes('pacific')) {
+          return { country: 'United States', countryCode: 'US', region: 'California', city: 'San Francisco', flag: '🇺🇸' };
+        }
+        if (t.includes('chicago') || t.includes('central')) {
+          return { country: 'United States', countryCode: 'US', region: 'Illinois', city: 'Chicago', flag: '🇺🇸' };
+        }
+        if (t.includes('london')) {
+          return { country: 'United Kingdom', countryCode: 'GB', region: 'England', city: 'London', flag: '🇬🇧' };
+        }
+        if (t.includes('tokyo')) {
+          return { country: 'Japan', countryCode: 'JP', region: 'Kanto', city: 'Tokyo', flag: '🇯🇵' };
+        }
+        if (t.includes('seoul')) {
+          return { country: 'South Korea', countryCode: 'KR', region: 'Seoul', city: 'Seoul', flag: '🇰🇷' };
+        }
+        if (t.includes('berlin') || t.includes('munich') || t.includes('frankfurt')) {
+          return { country: 'Germany', countryCode: 'DE', region: 'Bavaria', city: 'Munich', flag: '🇩🇪' };
+        }
+        if (t.includes('paris')) {
+          return { country: 'France', countryCode: 'FR', region: 'Île-de-France', city: 'Paris', flag: '🇫🇷' };
+        }
+        if (t.includes('sydney') || t.includes('melbourne')) {
+          return { country: 'Australia', countryCode: 'AU', region: 'New South Wales', city: 'Sydney', flag: '🇦🇺' };
+        }
+        if (t.includes('toronto') || t.includes('vancouver') || t.includes('montreal')) {
+          return { country: 'Canada', countryCode: 'CA', region: 'Ontario', city: 'Toronto', flag: '🇨🇦' };
+        }
+        if (t.includes('sao_paulo') || t.includes('brazil')) {
+          return { country: 'Brazil', countryCode: 'BR', region: 'São Paulo', city: 'São Paulo', flag: '🇧🇷' };
+        }
+        return { country: 'Worldwide', countryCode: 'WW', region: '', city: '', flag: '🌍' };
+      },
+
+      async detectLocation() {
+        if (Storage.data && Storage.data.playerGeo && Storage.data.playerGeo.countryCode) {
+          this.playerGeo = Storage.data.playerGeo;
+          this.updateLocationUI();
+        } else {
+          try {
+            const tz = (Intl.DateTimeFormat && Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+            this.playerGeo = this.estimateGeoFromTimezone(tz);
+            this.updateLocationUI();
+          } catch (_) {}
+        }
+
+        try {
+          const res = await fetch('https://ipapi.co/json/', { mode: 'cors' });
+          if (res.ok) {
+            const d = await res.json();
+            if (d && d.country_code) {
+              const code = d.country_code.toUpperCase();
+              this.playerGeo = {
+                country: d.country_name || this.playerGeo.country,
+                countryCode: code,
+                region: d.region || this.playerGeo.region,
+                city: d.city || this.playerGeo.city,
+                flag: this.countryCodeToFlag(code)
+              };
+              if (Storage.data) {
+                Storage.data.playerGeo = this.playerGeo;
+                Storage.save();
+              }
+              this.updateLocationUI();
+            }
+          }
+        } catch (_) {}
+      },
+
+      updateLocationUI() {
+        const flagEl = document.getElementById('lbUserFlag');
+        const locEl = document.getElementById('lbUserLocText');
+        const countryFlagEl = document.getElementById('lbCountryTabFlag');
+        const countryLbl = document.getElementById('lbCountryTabLabel');
+        const cityLbl = document.getElementById('lbCityTabLabel');
+
+        const locName = [this.playerGeo.city, this.playerGeo.region, this.playerGeo.country].filter(Boolean).join(', ') || 'Worldwide';
+        if (flagEl) flagEl.textContent = this.playerGeo.flag || '🌍';
+        if (locEl) locEl.textContent = locName;
+        if (countryFlagEl) countryFlagEl.textContent = this.playerGeo.flag || '🏳️';
+        if (countryLbl) countryLbl.textContent = this.playerGeo.country || 'Country';
+        if (cityLbl) cityLbl.textContent = this.playerGeo.city || this.playerGeo.region || 'City / Region';
+      },
+
+      getPlayerName() {
+        if (Storage.data && Storage.data.playerName && Storage.data.playerName.trim()) {
+          return Storage.data.playerName.trim();
+        }
+        const rand = Math.floor(100 + Math.random() * 900);
+        const name = 'StarCaptain_' + rand;
+        if (Storage.data) {
+          Storage.data.playerName = name;
+          Storage.save();
+        }
+        return name;
+      },
+
+      setPlayerName(newName) {
+        const sanitized = (newName || '').trim().replace(/[^\w\s-]/g, '').slice(0, 20);
+        if (!sanitized) return;
+        if (Storage.data) {
+          Storage.data.playerName = sanitized;
+          Storage.save();
+        }
+        const inp = document.getElementById('lbPlayerNameInput');
+        if (inp) inp.value = sanitized;
+        UI.showToast(`Player name set to "${sanitized}"! ✨`);
+        this.refresh();
+      },
+
+      updateProfileUI() {
+        const inp = document.getElementById('lbPlayerNameInput');
+        if (inp) inp.value = this.getPlayerName();
+
+        const bestEl = document.getElementById('lbUserBestScore');
+        if (bestEl) {
+          const best = Storage.data && Storage.data.bestScores ? (Storage.data.bestScores[this.currentMode] || 0) : 0;
+          bestEl.textContent = Utils.formatNumber(best);
+        }
+      },
+
+      async getAuthToken() {
+        const now = Math.floor(Date.now() / 1000);
+        if (this.token && this.tokenExpiresAt > now + 60) {
+          return this.token;
+        }
+        try {
+          const res = await fetch(this.AUTH_URL, { cache: 'no-store' });
+          if (!res.ok) throw new Error('Neon Auth HTTP ' + res.status);
+          const data = await res.json();
+          this.token = data.token;
+          this.tokenExpiresAt = data.expires_at || (now + 3600);
+          return this.token;
+        } catch (err) {
+          console.warn('[Leaderboard] Anonymous token fetch error:', err);
+          return null;
+        }
+      },
+
+      open(scope = 'worldwide') {
+        this.currentScope = scope;
+        this.currentMode = Game ? (Game.mode || 'endless') : 'endless';
+
+        document.querySelectorAll('.lb-mode-btn').forEach(b => {
+          b.classList.toggle('active', b.getAttribute('data-lb-mode') === this.currentMode);
+        });
+
+        document.querySelectorAll('.lb-scope-btn').forEach(b => {
+          const isActive = b.getAttribute('data-scope') === this.currentScope;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        this.updateProfileUI();
+        this.updateLocationUI();
+        this.refresh();
+        this.startRealtimePolling();
+      },
+
+      close() {
+        this.stopRealtimePolling();
+      },
+
+      setScope(scope) {
+        if (this.currentScope === scope) return;
+        this.currentScope = scope;
+        this.refresh();
+      },
+
+      setMode(mode) {
+        if (this.currentMode === mode) return;
+        this.currentMode = mode;
+        this.updateProfileUI();
+        this.refresh();
+      },
+
+      startRealtimePolling() {
+        this.stopRealtimePolling();
+        this.pollTimer = setInterval(() => {
+          const sheet = document.getElementById('leaderboardSheet');
+          if (sheet && sheet.classList.contains('open')) {
+            this.fetchAndRenderScores(true);
+          } else {
+            this.stopRealtimePolling();
+          }
+        }, 12000);
+      },
+
+      stopRealtimePolling() {
+        if (this.pollTimer) {
+          clearInterval(this.pollTimer);
+          this.pollTimer = null;
+        }
+      },
+
+      async refresh() {
+        await this.fetchAndRenderScores(false);
+      },
+
+      async submitScore(score, highestTier, mode = 'endless') {
+        if (!score || score <= 0) return;
+        const token = await this.getAuthToken();
+        if (!token) return;
+
+        const payload = {
+          player_name: this.getPlayerName(),
+          score: Math.round(score),
+          highest_tier: Utils.clamp(highestTier || 1, 1, 11),
+          mode: mode || 'endless',
+          country: this.playerGeo.country || 'Worldwide',
+          country_code: this.playerGeo.countryCode || 'WW',
+          region: this.playerGeo.region || '',
+          city: this.playerGeo.city || '',
+          flag: this.playerGeo.flag || '🌍'
+        };
+
+        try {
+          const res = await fetch(this.API_URL, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=representation'
+            },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            const rows = await res.json();
+            if (rows && rows.length > 0) {
+              this.lastSubmittedId = rows[0].id;
+            }
+            this.updateGameOverRankText(score, mode);
+          }
+        } catch (err) {
+          console.warn('[Leaderboard] Score submission error:', err);
+        }
+      },
+
+      async updateGameOverRankText(score, mode) {
+        const textEl = document.getElementById('goRankText');
+        if (!textEl) return;
+        try {
+          const token = await this.getAuthToken();
+          if (!token) {
+            textEl.textContent = '★ Score Logged Live! Tap to View Standings ★';
+            return;
+          }
+          const countRes = await fetch(`${this.API_URL}?mode=eq.${mode}&score=gt.${score}&select=id`, {
+            headers: { 'Authorization': `Bearer ${token}`, 'Prefer': 'count=exact' }
+          });
+          const contentRange = countRes.headers.get('content-range');
+          let rank = 1;
+          if (contentRange && contentRange.includes('/')) {
+            const total = parseInt(contentRange.split('/')[1], 10);
+            if (!isNaN(total)) rank = total + 1;
+          }
+          const flag = this.playerGeo.flag || '🌍';
+          textEl.textContent = `★ Ranked #${rank} Worldwide! (${flag} Tap to view) ★`;
+        } catch (_) {
+          textEl.textContent = '★ Score Logged Live! Tap to View Standings ★';
+        }
+      },
+
+      async fetchAndRenderScores(isBackground = false) {
+        const container = document.getElementById('lbListItems');
+        const statusEl = document.getElementById('lbStatusText');
+        if (!container) return;
+
+        if (!isBackground) {
+          container.innerHTML = `
+            <div style="text-align:center; padding:32px 16px; color:var(--text-secondary);">
+              <div style="font-size:26px; animation:pulseDot 1.2s infinite ease-in-out;">⭐</div>
+              <div style="margin-top:8px; font-weight:800; font-size:13px;">Connecting to Live Galaxy...</div>
+            </div>`;
+          if (statusEl) statusEl.textContent = 'Syncing...';
+        }
+
+        const scores = await this.queryScores(this.currentScope, this.currentMode);
+        this.renderRows(scores, container);
+
+        if (statusEl) {
+          const nowStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          statusEl.textContent = `Live Sync Active • ${nowStr}`;
+        }
+      },
+
+      async queryScores(scope, mode) {
+        const token = await this.getAuthToken();
+        if (!token) return this.getOfflineFallbackScores(scope, mode);
+
+        let url = `${this.API_URL}?mode=eq.${mode}&order=score.desc&limit=50`;
+
+        if (scope === 'country' && this.playerGeo.countryCode && this.playerGeo.countryCode !== 'WW') {
+          url += `&country_code=eq.${encodeURIComponent(this.playerGeo.countryCode)}`;
+        } else if (scope === 'city') {
+          if (this.playerGeo.city && this.playerGeo.region) {
+            url += `&or=(city.ilike.*${encodeURIComponent(this.playerGeo.city)}*,region.ilike.*${encodeURIComponent(this.playerGeo.region)}*)`;
+          } else if (this.playerGeo.city) {
+            url += `&city=ilike.*${encodeURIComponent(this.playerGeo.city)}*`;
+          } else if (this.playerGeo.countryCode && this.playerGeo.countryCode !== 'WW') {
+            url += `&country_code=eq.${encodeURIComponent(this.playerGeo.countryCode)}`;
+          }
+        }
+
+        try {
+          const res = await fetch(url, {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          if (!res.ok) throw new Error('Data API HTTP ' + res.status);
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            return data;
+          }
+          if (scope === 'city' && this.playerGeo.countryCode && this.playerGeo.countryCode !== 'WW') {
+            const fallbackRes = await fetch(`${this.API_URL}?mode=eq.${mode}&country_code=eq.${encodeURIComponent(this.playerGeo.countryCode)}&order=score.desc&limit=25`, {
+              headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (fallbackRes.ok) {
+              const fbData = await fallbackRes.json();
+              if (Array.isArray(fbData) && fbData.length > 0) return fbData;
+            }
+          }
+          return data;
+        } catch (err) {
+          console.warn('[Leaderboard] Query failed, using fallback:', err);
+          return this.getOfflineFallbackScores(scope, mode);
+        }
+      },
+
+      renderRows(rows, container) {
+        container.innerHTML = '';
+
+        if (!rows || rows.length === 0) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.style.cssText = 'text-align:center; padding:36px 16px; background:rgba(255,253,249,0.06); border-radius:20px; border:1.5px dashed rgba(255,253,249,0.2);';
+          emptyDiv.innerHTML = `
+            <div style="font-size:32px; margin-bottom:8px;">🚀</div>
+            <div style="font-weight:900; font-size:15px; color:var(--warm-gold); margin-bottom:4px;">No Scores Yet in This Region!</div>
+            <div style="font-size:12px; color:var(--text-secondary); margin-bottom:14px;">Be the very first cosmic explorer to claim the #1 spot!</div>
+            <button type="button" class="primary-cta-btn" id="btnLbPlayNow" style="width:auto; padding:8px 24px; font-size:13px; margin:0 auto;">
+              <span>Drop First Orb</span>
+            </button>`;
+          container.appendChild(emptyDiv);
+          const playBtn = emptyDiv.querySelector('#btnLbPlayNow');
+          if (playBtn) {
+            playBtn.addEventListener('click', () => {
+              UI.closeLeaderboardSheet();
+              if (Game.isGameOver) Game.startNewRun(Leaderboard.currentMode);
+            });
+          }
+          return;
+        }
+
+        const myName = this.getPlayerName().toLowerCase();
+
+        rows.forEach((r, idx) => {
+          const rank = idx + 1;
+          const isUser = (this.lastSubmittedId && r.id === this.lastSubmittedId) || (r.player_name && r.player_name.toLowerCase() === myName);
+          const tierObj = CONFIG.TIERS[Utils.clamp((r.highest_tier || 1) - 1, 0, 10)];
+
+          const row = document.createElement('div');
+          row.className = `lb-row ${rank <= 3 ? 'top-' + rank : ''} ${isUser ? 'is-user' : ''}`;
+
+          let rankBadge = `<div class="lb-rank-badge rank-${rank}">#${rank}</div>`;
+          if (rank === 1) rankBadge = `<div class="lb-rank-badge rank-1" title="1st Place Champion">🥇</div>`;
+          else if (rank === 2) rankBadge = `<div class="lb-rank-badge rank-2" title="2nd Place">🥈</div>`;
+          else if (rank === 3) rankBadge = `<div class="lb-rank-badge rank-3" title="3rd Place">🥉</div>`;
+
+          const locationText = [r.city, r.country].filter(Boolean).join(', ') || 'Worldwide';
+          const safeName = Utils.escapeHtml(r.player_name || 'Anonymous Explorer');
+
+          row.innerHTML = `
+            ${rankBadge}
+            <div class="lb-player-info">
+              <span class="lb-tier-icon" style="background:${tierObj.color}; border:1.5px solid ${tierObj.rim};" title="Highest Friend: ${tierObj.charName} (${tierObj.name})">
+                ${tierObj.tier === 11 ? '🕳️' : (tierObj.tier === 9 ? '☀️' : (tierObj.tier === 5 ? '🌙' : '⭐'))}
+              </span>
+              <div class="lb-player-text">
+                <div class="lb-player-name">
+                  <span>${safeName}</span>
+                  ${isUser ? '<span class="lb-you-tag">YOU</span>' : ''}
+                </div>
+                <div class="lb-player-meta">
+                  <span>${r.flag || '🌍'}</span>
+                  <span>${locationText}</span>
+                </div>
+              </div>
+            </div>
+            <div class="lb-score-val">${Utils.formatNumber(r.score)}</div>
+          `;
+
+          container.appendChild(row);
+        });
+      },
+
+      getOfflineFallbackScores(scope, mode) {
+        const myName = this.getPlayerName();
+        const myBest = (Storage.data && Storage.data.bestScores ? Storage.data.bestScores[mode] : 0) || 0;
+        const myFlag = this.playerGeo.flag || '🌍';
+        const myCity = this.playerGeo.city || 'Local Area';
+        const myCountry = this.playerGeo.country || 'Worldwide';
+
+        const baseList = [
+          { player_name: 'MochiMaster', score: 148920, highest_tier: 11, mode, country: 'Japan', country_code: 'JP', city: 'Tokyo', flag: '🇯🇵' },
+          { player_name: 'CosmicNova', score: 134550, highest_tier: 11, mode, country: 'United States', country_code: 'US', city: 'San Francisco', flag: '🇺🇸' },
+          { player_name: 'AstroPrit', score: 128400, highest_tier: 10, mode, country: 'India', country_code: 'IN', city: 'Ahmedabad', flag: '🇮🇳' },
+          { player_name: 'StarGazer99', score: 112100, highest_tier: 10, mode, country: 'United Kingdom', country_code: 'GB', city: 'London', flag: '🇬🇧' },
+          { player_name: 'NebulaPilot', score: 98750, highest_tier: 9, mode, country: 'Germany', country_code: 'DE', city: 'Munich', flag: '🇩🇪' },
+          { player_name: 'GalaxyPuff', score: 92300, highest_tier: 9, mode, country: 'South Korea', country_code: 'KR', city: 'Seoul', flag: '🇰🇷' },
+          { player_name: 'LunaDrift', score: 84100, highest_tier: 8, mode, country: 'Canada', country_code: 'CA', city: 'Toronto', flag: '🇨🇦' },
+          { player_name: 'SolarFlare', score: 78900, highest_tier: 8, mode, country: 'Australia', country_code: 'AU', city: 'Sydney', flag: '🇦🇺' }
+        ];
+
+        if (myBest > 0) {
+          baseList.push({
+            player_name: myName,
+            score: myBest,
+            highest_tier: Storage.data && Storage.data.stats ? Storage.data.stats.highestTier : 1,
+            mode,
+            country: myCountry,
+            country_code: this.playerGeo.countryCode,
+            city: myCity,
+            flag: myFlag
+          });
+        }
+
+        let filtered = baseList;
+        if (scope === 'country' && this.playerGeo.countryCode && this.playerGeo.countryCode !== 'WW') {
+          filtered = baseList.filter(r => r.country_code === this.playerGeo.countryCode || r.player_name === myName);
+        } else if (scope === 'city') {
+          filtered = baseList.filter(r => (this.playerGeo.city && r.city.toLowerCase() === this.playerGeo.city.toLowerCase()) || r.player_name === myName);
+          if (filtered.length === 0) {
+            filtered = baseList.filter(r => r.country_code === this.playerGeo.countryCode || r.player_name === myName);
+          }
+        }
+
+        return filtered.sort((a, b) => b.score - a.score);
+      }
+    };
+
+    /* =========================================================================
        14. BOOT SECTION
        ========================================================================= */
     window.addEventListener('DOMContentLoaded', () => {
       Storage.load();
       Render.init();
       UI.init();
+      Leaderboard.init();
       Game.init();
     });
   </script>
