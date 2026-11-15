@@ -2,6 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/google445e6722b2b4a5de.html",
+      "destination": "/google445e6722b2b4a5de.html"
+    },
+    {
+      "source": "/google445e6722b2b4a5de",
+      "destination": "/google445e6722b2b4a5de.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
