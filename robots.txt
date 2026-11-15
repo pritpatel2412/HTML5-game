@@ -1,5 +1,5 @@
 # robots.txt for Stardust Merge
-# Website: https://pritpatel2412.github.io/HTML5-game/
+# Website: https://stardustmerge.vercel.app/
 
 User-agent: *
 Allow: /
@@ -27,5 +27,5 @@ User-agent: Applebot
 Allow: /
 
 # XML Sitemap declaration
-Sitemap: https://pritpatel2412.github.io/HTML5-game/sitemap.xml
+Sitemap: https://stardustmerge.vercel.app/sitemap.xml
 

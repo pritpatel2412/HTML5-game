@@ -2,7 +2,7 @@
 
 > Stardust Merge is a free, single-file browser-based cosmic physics puzzle game. Players drop glowing celestial orbs into a floating glass jar, fusing identical bodies through 11 astronomical tiers from microscopic Dust to supermassive Black Holes, triggering Supernovas, and collecting stackable roguelite Cosmic Perks.
 
-- **Official Website & Play Live**: https://pritpatel2412.github.io/HTML5-game/
+- **Official Website & Play Live**: https://stardustmerge.vercel.app/
 - **Game Engine**: Vanilla HTML5 Canvas + Matter.js 0.20.0 2D physics
 - **Audio Engine**: Synthesized real-time audio via Web Audio API (zero external sound files)
 - **Platforms**: Modern web browsers (Desktop Chrome, Safari, Firefox, Edge, iOS Safari, Android Chrome)
@@ -44,14 +44,14 @@
 
 ## Official Content & Guides
 
-- [Play Game Online](https://pritpatel2412.github.io/HTML5-game/)
-- [Complete Beginner's Guide](https://pritpatel2412.github.io/HTML5-game/how-to-play/)
-- [10 High-Score Strategies & Pro Tips](https://pritpatel2412.github.io/HTML5-game/tips-and-strategy/)
-- [Complete 11 Cosmic Orb Tiers Guide](https://pritpatel2412.github.io/HTML5-game/tiers/)
-- [How the Supernova Mechanic Works](https://pritpatel2412.github.io/HTML5-game/supernova/)
-- [Endless vs Zen vs Daily Challenge Mode Comparison](https://pritpatel2412.github.io/HTML5-game/game-modes/)
-- [About Stardust Merge](https://pritpatel2412.github.io/HTML5-game/about/)
-- [Privacy Policy](https://pritpatel2412.github.io/HTML5-game/privacy-policy/)
-- [Terms of Service](https://pritpatel2412.github.io/HTML5-game/terms/)
-- [Contact Support](https://pritpatel2412.github.io/HTML5-game/contact/)
+- [Play Game Online](https://stardustmerge.vercel.app/)
+- [Complete Beginner's Guide](https://stardustmerge.vercel.app/how-to-play/)
+- [10 High-Score Strategies & Pro Tips](https://stardustmerge.vercel.app/tips-and-strategy/)
+- [Complete 11 Cosmic Orb Tiers Guide](https://stardustmerge.vercel.app/tiers/)
+- [How the Supernova Mechanic Works](https://stardustmerge.vercel.app/supernova/)
+- [Endless vs Zen vs Daily Challenge Mode Comparison](https://stardustmerge.vercel.app/game-modes/)
+- [About Stardust Merge](https://stardustmerge.vercel.app/about/)
+- [Privacy Policy](https://stardustmerge.vercel.app/privacy-policy/)
+- [Terms of Service](https://stardustmerge.vercel.app/terms/)
+- [Contact Support](https://stardustmerge.vercel.app/contact/)
 

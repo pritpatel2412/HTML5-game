@@ -2,7 +2,7 @@
 
 **Project**: Stardust Merge  
 **Repository**: `https://github.com/pritpatel2412/HTML5-game.git`  
-**Base URL**: `https://pritpatel2412.github.io/HTML5-game/`  
+**Base URL**: `https://stardustmerge.vercel.app/`  
 **Changelog Date**: November 13, 2026
 
 ---
@@ -12,7 +12,7 @@
 ### 1. Metadata & On-Page Architecture (`index.html`)
 - **Title Tag**: Optimized from generic name to high-intent commercial title: `Stardust Merge – Play Free Cosmic Physics Merge Game Online` (60 characters).
 - **Meta Description**: Crafted compelling 152-character description emphasizing free browser gameplay, lack of downloads, and core mechanics.
-- **Canonicalization**: Implemented strict absolute canonical link (`https://pritpatel2412.github.io/HTML5-game/`).
+- **Canonicalization**: Implemented strict absolute canonical link (`https://stardustmerge.vercel.app/`).
 - **Robots Directives**: Added meta robots tag with `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`.
 - **Open Graph Protocol**: Implemented complete Open Graph tags (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:url`, `og:image`, `og:image:width`, `og:image:height`, `og:image:alt`, `og:locale`).
 - **Twitter / X Cards**: Configured `twitter:card` as `summary_large_image` referencing high-resolution `og-preview.png`.

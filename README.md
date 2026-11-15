@@ -1,6 +1,6 @@
 # 🌌 Stardust Merge — Cozy Cosmic Physics Puzzle
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://pritpatel2412.github.io/HTML5-game/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://stardustmerge.vercel.app/)
 [![Game Engine](https://img.shields.io/badge/physics-Matter.js%20v0.20.0-blue.svg)](https://brm.io/matter-js/)
 [![Audio](https://img.shields.io/badge/sound-Web%20Audio%20API-orange.svg)]()
 [![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Mobile%20%7C%20Desktop-purple.svg)]()
@@ -8,7 +8,7 @@
 
 > A cozy, atmospheric physics puzzle game set inside a floating glass jar. Drop glowing celestial bodies, chain cosmic merges, unlock stackable roguelite perks, and trigger a Supernova Ascension!
 
-🎮 **[Play Live in Browser](https://pritpatel2412.github.io/HTML5-game/)**
+🎮 **[Play Live in Browser](https://stardustmerge.vercel.app/)**
 
 ---
 

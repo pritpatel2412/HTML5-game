@@ -4,7 +4,7 @@
  */
 export const CONFIG = {
   // --- REQUIRED PLACEHOLDERS ---
-  SITE_URL: 'https://pritpatel2412.github.io/HTML5-game/',
+  SITE_URL: 'https://stardustmerge.vercel.app/',
   GAME_NAME: 'Stardust Merge',
   OWNER_NAME: 'Prit Patel',
   CONTACT_EMAIL: 'pritpatel2412@gmail.com',

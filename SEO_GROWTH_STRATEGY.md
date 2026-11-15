@@ -3,7 +3,7 @@
 **Document Version**: 1.0.0  
 **Effective Date**: November 13, 2026  
 **Author**: Technical SEO & Growth Engineering Team  
-**Website**: `https://pritpatel2412.github.io/HTML5-game/`  
+**Website**: `https://stardustmerge.vercel.app/`  
 **Target Search Verticals**: Google Search, Bing, Google AI Overviews, ChatGPT Search, Perplexity, Microsoft Copilot, Gemini.
 
 ---
@@ -120,7 +120,7 @@ All core technical SEO requirements have been implemented directly in the reposi
 4. **`og-preview.png`**:
    - Custom-rendered 1200x630 pixel-crisp cosmic social preview card featuring the glass jar, glowing orbs, typography, and clear "Play Free in Browser" value proposition.
 5. **Canonicalization**:
-   - Strict absolute canonical URLs (`https://pritpatel2412.github.io/HTML5-game/` and subpaths) preventing duplicate content indexing across parameters or casing.
+   - Strict absolute canonical URLs (`https://stardustmerge.vercel.app/` and subpaths) preventing duplicate content indexing across parameters or casing.
 6. **Custom `404.html`**:
    - Theme-aligned "Cosmic Singularity" error page preventing dead ends and routing lost visitors back to the playable game.
 
@@ -230,7 +230,7 @@ Hi [Editor Name],
 
 I hope you're having a great week!
 
-I’m reaching out to share a cozy, independent web game I recently developed: Stardust Merge (https://pritpatel2412.github.io/HTML5-game/).
+I’m reaching out to share a cozy, independent web game I recently developed: Stardust Merge (https://stardustmerge.vercel.app/).
 
 Unlike traditional grid-based matching puzzles, Stardust Merge combines tactile 2D rigid-body physics (Matter.js) with roguelite progression inside a drifting glass containment jar. Players drop glowing cosmic orbs, fusing 11 astronomical tiers from microscopic Dust all the way to supermassive Black Holes.
 
@@ -248,7 +248,7 @@ Warm regards,
 
 Prit Patel
 Creator, Stardust Merge Arcade Studio
-Website: https://pritpatel2412.github.io/HTML5-game/
+Website: https://stardustmerge.vercel.app/
 Email: support@stardustmerge.example.com
 ```
 
@@ -258,16 +258,16 @@ Email: support@stardustmerge.example.com
 
 ### 9.1 Google Search Console Verification
 1. Navigate to [Google Search Console](https://search.google.com/search-console).
-2. Select **URL prefix** and enter: `https://pritpatel2412.github.io/HTML5-game/`
+2. Select **URL prefix** and enter: `https://stardustmerge.vercel.app/`
 3. Choose the **HTML tag** verification method.
 4. Copy the verification token (e.g. `google-site-verification=...`) and place it inside the `<meta name="google-site-verification">` tag in `index.html`.
-5. Once verified, submit the sitemap URL: `https://pritpatel2412.github.io/HTML5-game/sitemap.xml`.
+5. Once verified, submit the sitemap URL: `https://stardustmerge.vercel.app/sitemap.xml`.
 6. Inspect the homepage URL to request initial indexing.
 
 ### 9.2 Bing Webmaster Tools
 1. Navigate to [Bing Webmaster Tools](https://www.bing.com/webmasters).
 2. Sign in and choose **Import from Google Search Console** for instant automatic verification, or use the meta tag method with `<meta name="msvalidate.01">`.
-3. Submit `https://pritpatel2412.github.io/HTML5-game/sitemap.xml`.
+3. Submit `https://stardustmerge.vercel.app/sitemap.xml`.
 
 ### 9.3 Google Analytics 4 (GA4) Event Taxonomy
 We have implemented a privacy-conscious, non-blocking telemetry hook in `index.html`. To track key gameplay metrics, insert your Measurement ID into `gtag('config', 'G-XXXXXXXXXX')`:
